@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:arg name="prefix"                default=""/>
+  <xacro:arg name="mesh_scale_visual"     default="1 1 1"/>
+  <xacro:arg name="mesh_scale_collision"  default="1 1 1"/>
+
+  <xacro:property name="prefix"               value="$(arg prefix)"/>
+  <xacro:property name="mesh_scale_visual"    value="$(arg mesh_scale_visual)"/>
+  <xacro:property name="mesh_scale_collision" value="$(arg mesh_scale_collision)"/>
+
+  <xacro:property name="deg" value="0.017453292519943295"/>
+</robot>

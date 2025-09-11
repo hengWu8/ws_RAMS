@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>click_to_move</name>
+  <version>0.0.1</version>
+  <description>Click a point in RViz to move the robot above that point (C++ / MoveIt2)</description>
+
+  <maintainer email="you@example.com">you</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <build_depend>rclcpp</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>tf2</build_depend>
+  <build_depend>tf2_ros</build_depend>
+  <build_depend>tf2_geometry_msgs</build_depend>
+  <build_depend>moveit_ros_planning_interface</build_depend>
+
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>tf2</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>tf2_geometry_msgs</exec_depend>
+  <exec_depend>moveit_ros_planning_interface</exec_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <exec_depend>realsense2_camera</exec_depend>
+
+  <exec_depend>abb_bringup</exec_depend>
+  <exec_depend>workcell_description</exec_depend>
+  <exec_depend>workcell_config</exec_depend>
+  <exec_depend>moveit_configs_utils</exec_depend>
+
+  <exec_depend>rams_perception</exec_depend>
+  <exec_depend>rams_interface</exec_depend>
+
+  <exec_depend>rviz2</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>

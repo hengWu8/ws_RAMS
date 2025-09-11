@@ -1,0 +1,10 @@
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/uninstall.dir
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/click_to_move_uninstall.dir
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/click_to_move_node.dir
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/test.dir
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/edit_cache.dir
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/rebuild_cache.dir
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/list_install_components.dir
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/install.dir
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/install/local.dir
+/home/ros2/ws_RAMS/build/click_to_move/CMakeFiles/install/strip.dir

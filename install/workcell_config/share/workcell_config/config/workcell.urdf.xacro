@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="workcell">
+  <xacro:arg name="use_fake_hardware" default="true"/>
+  <xacro:property name="use_fake_hardware" value="$(arg use_fake_hardware)"/>
+  <xacro:arg name="rws_ip"            default="None"/>
+  <xacro:property name="rws_ip"            value="$(arg rws_ip)"/>
+  <xacro:arg name="rws_port"         default="80"/>
+  <xacro:property name="rws_port"         value="$(arg rws_port)"/>
+  <xacro:arg name="configure_via_rws" default="true"/>
+  <xacro:property name="configure_via_rws" value="$(arg configure_via_rws)"/>
+  <xacro:arg name="prefix" default=""/>
+  <xacro:arg name="mesh_scale_visual" default="1 1 1"/>
+  <xacro:arg name="mesh_scale_collision" default="1 1 1"/>
+
+  <xacro:include filename="$(find workcell_description)/urdf/props/common_props.xacro"/>
+  <xacro:include filename="$(find workcell_description)/urdf/robots/irb6700_200_260.xacro"/>
+  <xacro:include filename="$(find workcell_description)/urdf/actuators/spindle.xacro"/>
+
+  <xacro:irb6700_200_260
+      prefix="${prefix}"
+      mesh_scale_visual="${mesh_scale_visual}"
+      mesh_scale_collision="${mesh_scale_collision}"/>
+
+  <xacro:mount_spindle
+      prefix="${prefix}"
+      parent_link="tool0"
+      mount_xyz="0 0 0" mount_rpy="1.5708 3.1416 -1.5708"
+      scale_v="${mesh_scale_visual}" scale_c="${mesh_scale_collision}"
+      tcp_offset="0.150"/>
+
+  <link name="wrist_cam_mount"/>
+  <joint name="tool0_to_wrist_cam_mount" type="fixed">
+    <parent link="tool0"/>
+    <child  link="wrist_cam_mount"/>
+    <origin xyz="0.050 0.000 0.120" rpy="1.5708 0.000 1.5708"/>
+  </joint>
+
+  <link name="fixed_cam_mount"/>
+  <joint name="base_to_fixed_cam_mount" type="fixed">
+    <parent link="base_link"/>
+    <child  link="fixed_cam_mount"/>
+    <origin xyz="0.30 0.10 1.50" rpy="0 0 3.14159"/>
+  </joint>
+
+  <xacro:include filename="$(find workcell_config)/config/workcell.ros2_control.xacro"/>
+  <xacro:workcell_ros2_control
+    name="ABBMultiInterfaceHardware"
+    use_fake_hardware="${use_fake_hardware}"
+    rws_ip="${rws_ip}"
+    rws_port="${rws_port}"
+    configure_via_rws="${configure_via_rws}"
+    initial_positions_file="$(find workcell_config)/config/initial_positions.yaml"/>
+</robot>

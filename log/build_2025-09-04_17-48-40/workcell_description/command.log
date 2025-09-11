@@ -1,0 +1,6 @@
+Invoking command in '/home/ros2/ws_RAMS/build/workcell_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ros2/ws_RAMS/src/workcell_description -DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/workcell_description
+Invoked command in '/home/ros2/ws_RAMS/build/workcell_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ros2/ws_RAMS/src/workcell_description -DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/workcell_description
+Invoking command in '/home/ros2/ws_RAMS/build/workcell_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ros2/ws_RAMS/build/workcell_description -- -j2 -l2
+Invoked command in '/home/ros2/ws_RAMS/build/workcell_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ros2/ws_RAMS/build/workcell_description -- -j2 -l2
+Invoking command in '/home/ros2/ws_RAMS/build/workcell_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ros2/ws_RAMS/build/workcell_description
+Invoked command in '/home/ros2/ws_RAMS/build/workcell_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ros2/ws_RAMS/build/workcell_description

@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: workcell_description
+    relative_path: urdf/workcell.urdf.xacro
+  srdf:
+    relative_path: config/workcell.srdf
+  package_settings:
+    author_name: Heng Wu
+    author_email: hang-wu23@mails.tsinghua.edu.cn
+    generated_timestamp: 1755510293
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- 电主轴装配宏 -->
+  <!-- 约定：TCP 的 +Z 指向出刀方向；TCP 点位于主轴轴线上 -->
+  <xacro:macro name="mount_spindle"
+               params="prefix:='' parent_link:='tool0'
+                       mount_xyz:='0 0 0' mount_rpy:='0 0 0'
+                       scale_v:='1 1 1' scale_c:='1 1 1'
+                       tcp_offset:='0.2595'
+                       mass:='3.0'
+                       ixx:='0.01' iyy:='0.01' izz:='0.005'">
+
+    <!-- 主轴本体 link -->
+    <link name="${prefix}spindle">
+      <!-- 惯量：占位；若要物理仿真请按实测/估算替换 -->
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="${mass}"/>
+        <inertia ixx="${ixx}" ixy="0" ixz="0" iyy="${iyy}" iyz="0" izz="${izz}"/>
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://workcell_description/meshes/actuators/visual/spindle.STL"
+                scale="${scale_v}"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://workcell_description/meshes/actuators/collision/spindle.STL"
+                scale="${scale_c}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- 安装到 tool0 的固定关节 -->
+    <joint name="${prefix}tool0-spindle" type="fixed">
+      <parent link="${prefix}${parent_link}"/>
+      <child  link="${prefix}spindle"/>
+      <origin xyz="${mount_xyz}" rpy="${mount_rpy}"/>
+    </joint>
+
+    <!-- 定义 TCP（刀尖/加工点） -->
+    <link name="${prefix}tcp"/>
+    <joint name="${prefix}spindle-tcp" type="fixed">
+      <parent link="${prefix}spindle"/>
+      <child  link="${prefix}tcp"/>
+      <!-- 让 TCP 位于主轴轴线上 +Z 方向距离 tcp_offset -->
+      <origin xyz="0 0 ${tcp_offset}" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+</robot>

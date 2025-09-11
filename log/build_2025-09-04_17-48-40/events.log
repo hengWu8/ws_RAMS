@@ -1,0 +1,781 @@
+[0.000000] (-) TimerEvent: {}
+[0.002852] (workcell_description) JobQueued: {'identifier': 'workcell_description', 'dependencies': OrderedDict()}
+[0.003023] (workcell_config) JobQueued: {'identifier': 'workcell_config', 'dependencies': OrderedDict([('workcell_description', '/home/ros2/ws_RAMS/install/workcell_description')])}
+[0.003129] (click_to_move) JobQueued: {'identifier': 'click_to_move', 'dependencies': OrderedDict([('workcell_description', '/home/ros2/ws_RAMS/install/workcell_description'), ('workcell_config', '/home/ros2/ws_RAMS/install/workcell_config')])}
+[0.003227] (workcell_description) JobStarted: {'identifier': 'workcell_description'}
+[0.045988] (workcell_description) JobProgress: {'identifier': 'workcell_description', 'progress': 'cmake'}
+[0.047093] (workcell_description) Command: {'cmd': ['/usr/bin/cmake', '/home/ros2/ws_RAMS/src/workcell_description', '-DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/workcell_description'], 'cwd': '/home/ros2/ws_RAMS/build/workcell_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ros2'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_hardware_interface/lib:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib:/home/ros2/ws_abb_ros2/install/abb_librws/lib:/home/ros2/ws_abb_ros2/install/abb_libegm/lib:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros2'), ('OLDPWD', '/home/ros2'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '1655'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ros2/ws_RAMS/install:/home/ros2/ws_abb_support/install:/home/ros2/ws_abb_ros2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ros2'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ros2'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ros2-virtual-machine:@/tmp/.ICE-unix/1383,unix/ros2-virtual-machine:/tmp/.ICE-unix/1383'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/ef884579_68a9_4301_b49b_d5f60d3568bd'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.89'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CMAKE_MODULE_PATH', '/home/ros2/ws_abb_ros2/install/abb_librws/share/abb_librws/cmake'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ros2/ws_RAMS/build/workcell_description'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble')]), 'shell': False}
+[0.101241] (-) TimerEvent: {}
+[0.201946] (-) TimerEvent: {}
+[0.264817] (workcell_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.302848] (-) TimerEvent: {}
+[0.404689] (-) TimerEvent: {}
+[0.467368] (workcell_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.500668] (workcell_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.506685] (-) TimerEvent: {}
+[0.607148] (-) TimerEvent: {}
+[0.707943] (-) TimerEvent: {}
+[0.808699] (-) TimerEvent: {}
+[0.863841] (workcell_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.893660] (workcell_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.894019] (workcell_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.897641] (workcell_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.908819] (-) TimerEvent: {}
+[0.910399] (workcell_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.011219] (-) TimerEvent: {}
+[1.111783] (-) TimerEvent: {}
+[1.214179] (-) TimerEvent: {}
+[1.241779] (workcell_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.258840] (workcell_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.259292] (workcell_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.262701] (workcell_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.278578] (workcell_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.315682] (-) TimerEvent: {}
+[1.418529] (-) TimerEvent: {}
+[1.519072] (-) TimerEvent: {}
+[1.619835] (-) TimerEvent: {}
+[1.723907] (-) TimerEvent: {}
+[1.828829] (-) TimerEvent: {}
+[1.883681] (workcell_description) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.928981] (-) TimerEvent: {}
+[2.030869] (-) TimerEvent: {}
+[2.131810] (-) TimerEvent: {}
+[2.238692] (-) TimerEvent: {}
+[2.339341] (-) TimerEvent: {}
+[2.439959] (-) TimerEvent: {}
+[2.493797] (workcell_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.506380] (workcell_description) StdoutLine: {'line': b'-- Generating done\n'}
+[2.516523] (workcell_description) StdoutLine: {'line': b'-- Build files have been written to: /home/ros2/ws_RAMS/build/workcell_description\n'}
+[2.527202] (workcell_description) CommandEnded: {'returncode': 0}
+[2.528951] (workcell_description) JobProgress: {'identifier': 'workcell_description', 'progress': 'build'}
+[2.533518] (workcell_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ros2/ws_RAMS/build/workcell_description', '--', '-j2', '-l2'], 'cwd': '/home/ros2/ws_RAMS/build/workcell_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ros2'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_hardware_interface/lib:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib:/home/ros2/ws_abb_ros2/install/abb_librws/lib:/home/ros2/ws_abb_ros2/install/abb_libegm/lib:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros2'), ('OLDPWD', '/home/ros2'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '1655'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ros2/ws_RAMS/install:/home/ros2/ws_abb_support/install:/home/ros2/ws_abb_ros2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ros2'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ros2'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ros2-virtual-machine:@/tmp/.ICE-unix/1383,unix/ros2-virtual-machine:/tmp/.ICE-unix/1383'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/ef884579_68a9_4301_b49b_d5f60d3568bd'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.89'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CMAKE_MODULE_PATH', '/home/ros2/ws_abb_ros2/install/abb_librws/share/abb_librws/cmake'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ros2/ws_RAMS/build/workcell_description'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble')]), 'shell': False}
+[2.540261] (-) TimerEvent: {}
+[2.640835] (-) TimerEvent: {}
+[2.678506] (workcell_description) CommandEnded: {'returncode': 0}
+[2.679326] (workcell_description) JobProgress: {'identifier': 'workcell_description', 'progress': 'install'}
+[2.709523] (workcell_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ros2/ws_RAMS/build/workcell_description'], 'cwd': '/home/ros2/ws_RAMS/build/workcell_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ros2'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_hardware_interface/lib:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib:/home/ros2/ws_abb_ros2/install/abb_librws/lib:/home/ros2/ws_abb_ros2/install/abb_libegm/lib:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros2'), ('OLDPWD', '/home/ros2'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '1655'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ros2/ws_RAMS/install:/home/ros2/ws_abb_support/install:/home/ros2/ws_abb_ros2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ros2'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ros2'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ros2-virtual-machine:@/tmp/.ICE-unix/1383,unix/ros2-virtual-machine:/tmp/.ICE-unix/1383'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/ef884579_68a9_4301_b49b_d5f60d3568bd'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.89'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CMAKE_MODULE_PATH', '/home/ros2/ws_abb_ros2/install/abb_librws/share/abb_librws/cmake'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ros2/ws_RAMS/build/workcell_description'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble')]), 'shell': False}
+[2.734672] (workcell_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[2.735250] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf\n'}
+[2.736185] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf/robots\n'}
+[2.736823] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf/robots/irb6700_200_260.xacro\n'}
+[2.740973] (-) TimerEvent: {}
+[2.741370] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf/sensors\n'}
+[2.742718] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf/actuators\n'}
+[2.742946] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf/actuators/spindle.xacro\n'}
+[2.744804] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf/workcell.urdf.xacro\n'}
+[2.745068] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf/workcell.urdf\n'}
+[2.752490] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf/props\n'}
+[2.753004] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/urdf/props/common_props.xacro\n'}
+[2.753905] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes\n'}
+[2.754783] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots\n'}
+[2.755121] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual\n'}
+[2.755385] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual/link_3.stl\n'}
+[2.763190] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual/link_2.stl\n'}
+[2.772361] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual/cylinder.stl\n'}
+[2.775123] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual/link_1.stl\n'}
+[2.786506] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual/link_6.stl\n'}
+[2.791130] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual/base_link.stl\n'}
+[2.797724] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual/piston.stl\n'}
+[2.801772] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual/link_4.stl\n'}
+[2.808931] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/visual/link_5.stl\n'}
+[2.813607] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision\n'}
+[2.814807] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision/link_3.stl\n'}
+[2.817683] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision/link_2.stl\n'}
+[2.821379] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision/cylinder.stl\n'}
+[2.824104] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision/link_1.stl\n'}
+[2.826279] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision/link_6.stl\n'}
+[2.828765] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision/base_link.stl\n'}
+[2.830053] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision/piston.stl\n'}
+[2.832310] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision/link_4.stl\n'}
+[2.835240] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/robots/collision/link_5.stl\n'}
+[2.837435] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/sensors\n'}
+[2.838144] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/sensors/visual\n'}
+[2.838465] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/sensors/visual/d415.stl\n'}
+[2.841316] (-) TimerEvent: {}
+[2.942465] (-) TimerEvent: {}
+[3.020054] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/sensors/visual/d435.dae\n'}
+[3.043486] (-) TimerEvent: {}
+[3.144731] (-) TimerEvent: {}
+[3.156981] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/sensors/collision\n'}
+[3.157608] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/sensors/collision/d415.stl\n'}
+[3.245410] (-) TimerEvent: {}
+[3.325680] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/sensors/collision/d435.dae\n'}
+[3.346350] (-) TimerEvent: {}
+[3.448631] (-) TimerEvent: {}
+[3.487780] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/actuators\n'}
+[3.489874] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/actuators/visual\n'}
+[3.490205] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/actuators/visual/spindle.STL\n'}
+[3.509051] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/actuators/collision\n'}
+[3.509668] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/meshes/actuators/collision/spindle.STL\n'}
+[3.535014] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/launch\n'}
+[3.535795] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/launch/description.launch.py\n'}
+[3.536684] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/launch/robot_viz.launch.py\n'}
+[3.536923] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/ament_index/resource_index/package_run_dependencies/workcell_description\n'}
+[3.537092] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/ament_index/resource_index/parent_prefix_path/workcell_description\n'}
+[3.537243] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/environment/ament_prefix_path.sh\n'}
+[3.537391] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/environment/ament_prefix_path.dsv\n'}
+[3.537539] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/environment/path.sh\n'}
+[3.538905] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/environment/path.dsv\n'}
+[3.539063] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/local_setup.bash\n'}
+[3.539212] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/local_setup.sh\n'}
+[3.539358] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/local_setup.zsh\n'}
+[3.539506] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/local_setup.dsv\n'}
+[3.540639] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.dsv\n'}
+[3.541025] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/ament_index/resource_index/packages/workcell_description\n'}
+[3.541767] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/cmake/workcell_descriptionConfig.cmake\n'}
+[3.542346] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/cmake/workcell_descriptionConfig-version.cmake\n'}
+[3.543064] (workcell_description) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.xml\n'}
+[3.547432] (workcell_description) CommandEnded: {'returncode': 0}
+[3.549842] (-) TimerEvent: {}
+[3.591312] (workcell_description) JobEnded: {'identifier': 'workcell_description', 'rc': 0}
+[3.594233] (workcell_config) JobStarted: {'identifier': 'workcell_config'}
+[3.625661] (workcell_config) JobProgress: {'identifier': 'workcell_config', 'progress': 'cmake'}
+[3.627223] (workcell_config) Command: {'cmd': ['/usr/bin/cmake', '/home/ros2/ws_RAMS/src/workcell_config', '-DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/workcell_config'], 'cwd': '/home/ros2/ws_RAMS/build/workcell_config', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ros2'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_hardware_interface/lib:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib:/home/ros2/ws_abb_ros2/install/abb_librws/lib:/home/ros2/ws_abb_ros2/install/abb_libegm/lib:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros2'), ('OLDPWD', '/home/ros2'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '1655'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ros2/ws_RAMS/install:/home/ros2/ws_abb_support/install:/home/ros2/ws_abb_ros2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ros2'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ros2'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ros2-virtual-machine:@/tmp/.ICE-unix/1383,unix/ros2-virtual-machine:/tmp/.ICE-unix/1383'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/ef884579_68a9_4301_b49b_d5f60d3568bd'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.89'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CMAKE_MODULE_PATH', '/home/ros2/ws_abb_ros2/install/abb_librws/share/abb_librws/cmake'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ros2/ws_RAMS/build/workcell_config'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble')]), 'shell': False}
+[3.651682] (-) TimerEvent: {}
+[3.752206] (-) TimerEvent: {}
+[3.803743] (workcell_config) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[3.852605] (-) TimerEvent: {}
+[3.954667] (-) TimerEvent: {}
+[3.978694] (workcell_config) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[4.001054] (workcell_config) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[4.054834] (-) TimerEvent: {}
+[4.157688] (-) TimerEvent: {}
+[4.236691] (workcell_config) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[4.251975] (workcell_config) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[4.252741] (workcell_config) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[4.255036] (workcell_config) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[4.257852] (-) TimerEvent: {}
+[4.261226] (workcell_config) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[4.358205] (-) TimerEvent: {}
+[4.459012] (-) TimerEvent: {}
+[4.539875] (workcell_config) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[4.555141] (workcell_config) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[4.555892] (workcell_config) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[4.558613] (workcell_config) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[4.559200] (-) TimerEvent: {}
+[4.570515] (workcell_config) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[4.659903] (-) TimerEvent: {}
+[4.760894] (-) TimerEvent: {}
+[4.861684] (-) TimerEvent: {}
+[4.962202] (-) TimerEvent: {}
+[5.036057] (workcell_config) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[5.062584] (-) TimerEvent: {}
+[5.163319] (-) TimerEvent: {}
+[5.264847] (-) TimerEvent: {}
+[5.366959] (-) TimerEvent: {}
+[5.468516] (-) TimerEvent: {}
+[5.531786] (workcell_config) StdoutLine: {'line': b'-- Configuring done\n'}
+[5.534649] (workcell_config) StdoutLine: {'line': b'-- Generating done\n'}
+[5.539607] (workcell_config) StdoutLine: {'line': b'-- Build files have been written to: /home/ros2/ws_RAMS/build/workcell_config\n'}
+[5.551177] (workcell_config) CommandEnded: {'returncode': 0}
+[5.552014] (workcell_config) JobProgress: {'identifier': 'workcell_config', 'progress': 'build'}
+[5.552083] (workcell_config) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ros2/ws_RAMS/build/workcell_config', '--', '-j2', '-l2'], 'cwd': '/home/ros2/ws_RAMS/build/workcell_config', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ros2'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_hardware_interface/lib:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib:/home/ros2/ws_abb_ros2/install/abb_librws/lib:/home/ros2/ws_abb_ros2/install/abb_libegm/lib:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros2'), ('OLDPWD', '/home/ros2'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '1655'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ros2/ws_RAMS/install:/home/ros2/ws_abb_support/install:/home/ros2/ws_abb_ros2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ros2'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ros2'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ros2-virtual-machine:@/tmp/.ICE-unix/1383,unix/ros2-virtual-machine:/tmp/.ICE-unix/1383'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/ef884579_68a9_4301_b49b_d5f60d3568bd'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.89'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CMAKE_MODULE_PATH', '/home/ros2/ws_abb_ros2/install/abb_librws/share/abb_librws/cmake'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ros2/ws_RAMS/build/workcell_config'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble')]), 'shell': False}
+[5.568723] (-) TimerEvent: {}
+[5.664113] (workcell_config) CommandEnded: {'returncode': 0}
+[5.666295] (workcell_config) JobProgress: {'identifier': 'workcell_config', 'progress': 'install'}
+[5.670778] (workcell_config) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ros2/ws_RAMS/build/workcell_config'], 'cwd': '/home/ros2/ws_RAMS/build/workcell_config', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ros2'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_hardware_interface/lib:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib:/home/ros2/ws_abb_ros2/install/abb_librws/lib:/home/ros2/ws_abb_ros2/install/abb_libegm/lib:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros2'), ('OLDPWD', '/home/ros2'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '1655'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ros2/ws_RAMS/install:/home/ros2/ws_abb_support/install:/home/ros2/ws_abb_ros2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ros2'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ros2'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ros2-virtual-machine:@/tmp/.ICE-unix/1383,unix/ros2-virtual-machine:/tmp/.ICE-unix/1383'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/ef884579_68a9_4301_b49b_d5f60d3568bd'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.89'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CMAKE_MODULE_PATH', '/home/ros2/ws_abb_ros2/install/abb_librws/share/abb_librws/cmake'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ros2/ws_RAMS/build/workcell_config'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble')]), 'shell': False}
+[5.672019] (-) TimerEvent: {}
+[5.695394] (workcell_config) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.696574] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/ament_index/resource_index/package_run_dependencies/workcell_config\n'}
+[5.697294] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/ament_index/resource_index/parent_prefix_path/workcell_config\n'}
+[5.697765] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/environment/ament_prefix_path.sh\n'}
+[5.698358] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/environment/ament_prefix_path.dsv\n'}
+[5.698785] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/environment/path.sh\n'}
+[5.699010] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/environment/path.dsv\n'}
+[5.699233] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/local_setup.bash\n'}
+[5.700752] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/local_setup.sh\n'}
+[5.700931] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/local_setup.zsh\n'}
+[5.701079] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/local_setup.dsv\n'}
+[5.701226] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.dsv\n'}
+[5.703726] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/ament_index/resource_index/packages/workcell_config\n'}
+[5.705076] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/cmake/workcell_configConfig.cmake\n'}
+[5.705349] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/cmake/workcell_configConfig-version.cmake\n'}
+[5.705525] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.xml\n'}
+[5.705727] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/launch\n'}
+[5.705879] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/launch/demo.launch.py\n'}
+[5.706069] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/launch/setup_assistant.launch.py\n'}
+[5.706235] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/launch/static_virtual_joint_tfs.launch.py\n'}
+[5.706384] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/launch/spawn_controllers.launch.py\n'}
+[5.706529] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/launch/move_group.launch.py\n'}
+[5.706702] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/launch/rsp.launch.py\n'}
+[5.706847] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/launch/warehouse_db.launch.py\n'}
+[5.706991] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/launch/moveit_rviz.launch.py\n'}
+[5.707133] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config\n'}
+[5.707287] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/moveit.rviz\n'}
+[5.711845] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/ros2_controllers.yaml\n'}
+[5.714867] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/sensors_3d.yaml\n'}
+[5.716751] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/initial_positions.yaml\n'}
+[5.718381] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/joint_limits.yaml\n'}
+[5.719764] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/workcell.srdf\n'}
+[5.721414] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/workcell.ros2_control.xacro\n'}
+[5.722868] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/moveit_controllers.yaml\n'}
+[5.724859] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/pilz_cartesian_limits.yaml\n'}
+[5.726258] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/abb_controllers.yaml\n'}
+[5.727707] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/workcell.urdf.xacro\n'}
+[5.728944] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/config/kinematics.yaml\n'}
+[5.730329] (workcell_config) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/.setup_assistant\n'}
+[5.736445] (workcell_config) CommandEnded: {'returncode': 0}
+[5.770926] (workcell_config) JobEnded: {'identifier': 'workcell_config', 'rc': 0}
+[5.774727] (-) TimerEvent: {}
+[5.775295] (click_to_move) JobStarted: {'identifier': 'click_to_move'}
+[5.811655] (click_to_move) JobProgress: {'identifier': 'click_to_move', 'progress': 'cmake'}
+[5.817099] (click_to_move) Command: {'cmd': ['/usr/bin/cmake', '/home/ros2/ws_RAMS/src/click_to_move', '-DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/click_to_move'], 'cwd': '/home/ros2/ws_RAMS/build/click_to_move', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ros2'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_hardware_interface/lib:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib:/home/ros2/ws_abb_ros2/install/abb_librws/lib:/home/ros2/ws_abb_ros2/install/abb_libegm/lib:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros2'), ('OLDPWD', '/home/ros2'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '1655'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ros2/ws_RAMS/install:/home/ros2/ws_abb_support/install:/home/ros2/ws_abb_ros2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ros2'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ros2'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ros2-virtual-machine:@/tmp/.ICE-unix/1383,unix/ros2-virtual-machine:/tmp/.ICE-unix/1383'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/ef884579_68a9_4301_b49b_d5f60d3568bd'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.89'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CMAKE_MODULE_PATH', '/home/ros2/ws_abb_ros2/install/abb_librws/share/abb_librws/cmake'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ros2/ws_RAMS/build/click_to_move'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble')]), 'shell': False}
+[5.874906] (-) TimerEvent: {}
+[5.976820] (-) TimerEvent: {}
+[5.991078] (click_to_move) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[6.077024] (-) TimerEvent: {}
+[6.168961] (click_to_move) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[6.178231] (-) TimerEvent: {}
+[6.189817] (click_to_move) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[6.278436] (-) TimerEvent: {}
+[6.379196] (-) TimerEvent: {}
+[6.454310] (click_to_move) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[6.471233] (click_to_move) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[6.471800] (click_to_move) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[6.473100] (click_to_move) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[6.480636] (-) TimerEvent: {}
+[6.481265] (click_to_move) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[6.580807] (-) TimerEvent: {}
+[6.681984] (-) TimerEvent: {}
+[6.733349] (click_to_move) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[6.750176] (click_to_move) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[6.751021] (click_to_move) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[6.752320] (click_to_move) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[6.765830] (click_to_move) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[6.782354] (-) TimerEvent: {}
+[6.883687] (-) TimerEvent: {}
+[6.984470] (-) TimerEvent: {}
+[7.085351] (-) TimerEvent: {}
+[7.186316] (-) TimerEvent: {}
+[7.210683] (click_to_move) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[7.286604] (-) TimerEvent: {}
+[7.388149] (-) TimerEvent: {}
+[7.488689] (-) TimerEvent: {}
+[7.538379] (click_to_move) StdoutLine: {'line': b'-- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[7.589069] (-) TimerEvent: {}
+[7.690004] (-) TimerEvent: {}
+[7.719767] (click_to_move) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[7.741760] (click_to_move) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[7.775620] (click_to_move) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[7.790193] (-) TimerEvent: {}
+[7.822757] (click_to_move) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[7.880458] (click_to_move) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[7.890370] (-) TimerEvent: {}
+[7.991188] (-) TimerEvent: {}
+[8.056765] (click_to_move) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[8.071279] (click_to_move) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[8.091394] (-) TimerEvent: {}
+[8.192343] (-) TimerEvent: {}
+[8.294847] (-) TimerEvent: {}
+[8.385891] (click_to_move) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[8.395016] (-) TimerEvent: {}
+[8.462739] (click_to_move) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[8.495370] (-) TimerEvent: {}
+[8.576075] (click_to_move) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[8.595671] (-) TimerEvent: {}
+[8.616618] (click_to_move) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[8.698442] (-) TimerEvent: {}
+[8.799164] (-) TimerEvent: {}
+[8.841784] (click_to_move) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[8.847664] (click_to_move) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[8.899427] (-) TimerEvent: {}
+[9.000894] (-) TimerEvent: {}
+[9.079468] (click_to_move) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[9.083766] (click_to_move) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[9.101135] (-) TimerEvent: {}
+[9.202668] (-) TimerEvent: {}
+[9.247412] (click_to_move) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[9.302894] (-) TimerEvent: {}
+[9.305182] (click_to_move) StdoutLine: {'line': b'-- Found tf2: 0.25.15 (/opt/ros/humble/share/tf2/cmake)\n'}
+[9.348718] (click_to_move) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.15 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[9.403123] (-) TimerEvent: {}
+[9.503802] (-) TimerEvent: {}
+[9.604383] (-) TimerEvent: {}
+[9.704964] (-) TimerEvent: {}
+[9.776653] (click_to_move) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.16 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[9.805261] (-) TimerEvent: {}
+[9.857019] (click_to_move) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[9.864296] (click_to_move) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[9.864636] (click_to_move) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[9.883634] (click_to_move) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.5.9 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)\n'}
+[9.905450] (-) TimerEvent: {}
+[10.000923] (click_to_move) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread \n'}
+[10.005801] (-) TimerEvent: {}
+[10.106301] (-) TimerEvent: {}
+[10.206872] (-) TimerEvent: {}
+[10.307613] (-) TimerEvent: {}
+[10.409669] (-) TimerEvent: {}
+[10.510155] (-) TimerEvent: {}
+[10.577979] (click_to_move) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[10.610388] (-) TimerEvent: {}
+[10.711055] (-) TimerEvent: {}
+[10.760754] (click_to_move) StdoutLine: {'line': b'-- Found parameter_traits: 0.5.0 (/opt/ros/humble/share/parameter_traits/cmake)\n'}
+[10.811523] (-) TimerEvent: {}
+[10.858760] (click_to_move) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 16.0.14 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)\n'}
+[10.911680] (-) TimerEvent: {}
+[10.948910] (click_to_move) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem \n'}
+[11.011880] (-) TimerEvent: {}
+[11.112739] (-) TimerEvent: {}
+[11.214127] (-) TimerEvent: {}
+[11.297679] (click_to_move) StdoutLine: {'line': b'-- library: /usr/lib/x86_64-linux-gnu/libcurl.so\n'}
+[11.314424] (-) TimerEvent: {}
+[11.415859] (-) TimerEvent: {}
+[11.516706] (-) TimerEvent: {}
+[11.617864] (-) TimerEvent: {}
+[11.718809] (-) TimerEvent: {}
+[11.727878] (click_to_move) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono \n'}
+[11.819711] (-) TimerEvent: {}
+[11.834189] (click_to_move) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options \n'}
+[11.920894] (-) TimerEvent: {}
+[11.927449] (click_to_move) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread \n'}
+[12.021731] (-) TimerEvent: {}
+[12.122315] (-) TimerEvent: {}
+[12.224589] (click_to_move) StdoutLine: {'line': b'-- Configuring done\n'}
+[12.224976] (-) TimerEvent: {}
+[12.326314] (-) TimerEvent: {}
+[12.343650] (click_to_move) StdoutLine: {'line': b'-- Generating done\n'}
+[12.360319] (click_to_move) StdoutLine: {'line': b'-- Build files have been written to: /home/ros2/ws_RAMS/build/click_to_move\n'}
+[12.390155] (click_to_move) CommandEnded: {'returncode': 0}
+[12.391468] (click_to_move) JobProgress: {'identifier': 'click_to_move', 'progress': 'build'}
+[12.394492] (click_to_move) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ros2/ws_RAMS/build/click_to_move', '--', '-j2', '-l2'], 'cwd': '/home/ros2/ws_RAMS/build/click_to_move', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ros2'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_hardware_interface/lib:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib:/home/ros2/ws_abb_ros2/install/abb_librws/lib:/home/ros2/ws_abb_ros2/install/abb_libegm/lib:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros2'), ('OLDPWD', '/home/ros2'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '1655'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ros2/ws_RAMS/install:/home/ros2/ws_abb_support/install:/home/ros2/ws_abb_ros2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ros2'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ros2'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ros2-virtual-machine:@/tmp/.ICE-unix/1383,unix/ros2-virtual-machine:/tmp/.ICE-unix/1383'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/ef884579_68a9_4301_b49b_d5f60d3568bd'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.89'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CMAKE_MODULE_PATH', '/home/ros2/ws_abb_ros2/install/abb_librws/share/abb_librws/cmake'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ros2/ws_RAMS/build/click_to_move'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble')]), 'shell': False}
+[12.427769] (-) TimerEvent: {}
+[12.528344] (-) TimerEvent: {}
+[12.571156] (click_to_move) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/click_to_move_node.dir/src/click_to_move_node.cpp.o\x1b[0m\n'}
+[12.628595] (-) TimerEvent: {}
+[12.729440] (-) TimerEvent: {}
+[12.831860] (-) TimerEvent: {}
+[12.932525] (-) TimerEvent: {}
+[13.034748] (-) TimerEvent: {}
+[13.136086] (-) TimerEvent: {}
+[13.237829] (-) TimerEvent: {}
+[13.338870] (-) TimerEvent: {}
+[13.439666] (-) TimerEvent: {}
+[13.540784] (-) TimerEvent: {}
+[13.641741] (-) TimerEvent: {}
+[13.742710] (-) TimerEvent: {}
+[13.843658] (-) TimerEvent: {}
+[13.944765] (-) TimerEvent: {}
+[14.045462] (-) TimerEvent: {}
+[14.146221] (-) TimerEvent: {}
+[14.247027] (-) TimerEvent: {}
+[14.347709] (-) TimerEvent: {}
+[14.448434] (-) TimerEvent: {}
+[14.549053] (-) TimerEvent: {}
+[14.649681] (-) TimerEvent: {}
+[14.750369] (-) TimerEvent: {}
+[14.851037] (-) TimerEvent: {}
+[14.951835] (-) TimerEvent: {}
+[15.052428] (-) TimerEvent: {}
+[15.153217] (-) TimerEvent: {}
+[15.253964] (-) TimerEvent: {}
+[15.354621] (-) TimerEvent: {}
+[15.455754] (-) TimerEvent: {}
+[15.556255] (-) TimerEvent: {}
+[15.657018] (-) TimerEvent: {}
+[15.757916] (-) TimerEvent: {}
+[15.858806] (-) TimerEvent: {}
+[15.959658] (-) TimerEvent: {}
+[16.060674] (-) TimerEvent: {}
+[16.161732] (-) TimerEvent: {}
+[16.263063] (-) TimerEvent: {}
+[16.363938] (-) TimerEvent: {}
+[16.464862] (-) TimerEvent: {}
+[16.565718] (-) TimerEvent: {}
+[16.666725] (-) TimerEvent: {}
+[16.767794] (-) TimerEvent: {}
+[16.868657] (-) TimerEvent: {}
+[16.969673] (-) TimerEvent: {}
+[17.070707] (-) TimerEvent: {}
+[17.171662] (-) TimerEvent: {}
+[17.272451] (-) TimerEvent: {}
+[17.373330] (-) TimerEvent: {}
+[17.474239] (-) TimerEvent: {}
+[17.575049] (-) TimerEvent: {}
+[17.675673] (-) TimerEvent: {}
+[17.776220] (-) TimerEvent: {}
+[17.877131] (-) TimerEvent: {}
+[17.977735] (-) TimerEvent: {}
+[18.078403] (-) TimerEvent: {}
+[18.179184] (-) TimerEvent: {}
+[18.279782] (-) TimerEvent: {}
+[18.380757] (-) TimerEvent: {}
+[18.481395] (-) TimerEvent: {}
+[18.582225] (-) TimerEvent: {}
+[18.683040] (-) TimerEvent: {}
+[18.783774] (-) TimerEvent: {}
+[18.884495] (-) TimerEvent: {}
+[18.985220] (-) TimerEvent: {}
+[19.086859] (-) TimerEvent: {}
+[19.187514] (-) TimerEvent: {}
+[19.288311] (-) TimerEvent: {}
+[19.389072] (-) TimerEvent: {}
+[19.489695] (-) TimerEvent: {}
+[19.590399] (-) TimerEvent: {}
+[19.691342] (-) TimerEvent: {}
+[19.792543] (-) TimerEvent: {}
+[19.893777] (-) TimerEvent: {}
+[19.994817] (-) TimerEvent: {}
+[20.095741] (-) TimerEvent: {}
+[20.196906] (-) TimerEvent: {}
+[20.297847] (-) TimerEvent: {}
+[20.398691] (-) TimerEvent: {}
+[20.499324] (-) TimerEvent: {}
+[20.600185] (-) TimerEvent: {}
+[20.700926] (-) TimerEvent: {}
+[20.801797] (-) TimerEvent: {}
+[20.902785] (-) TimerEvent: {}
+[21.003734] (-) TimerEvent: {}
+[21.104735] (-) TimerEvent: {}
+[21.205762] (-) TimerEvent: {}
+[21.307026] (-) TimerEvent: {}
+[21.407849] (-) TimerEvent: {}
+[21.509678] (-) TimerEvent: {}
+[21.610353] (-) TimerEvent: {}
+[21.711067] (-) TimerEvent: {}
+[21.812867] (-) TimerEvent: {}
+[21.913823] (-) TimerEvent: {}
+[22.015531] (-) TimerEvent: {}
+[22.116532] (-) TimerEvent: {}
+[22.217293] (-) TimerEvent: {}
+[22.318010] (-) TimerEvent: {}
+[22.418658] (-) TimerEvent: {}
+[22.519342] (-) TimerEvent: {}
+[22.620267] (-) TimerEvent: {}
+[22.721160] (-) TimerEvent: {}
+[22.821897] (-) TimerEvent: {}
+[22.922512] (-) TimerEvent: {}
+[23.023610] (-) TimerEvent: {}
+[23.124299] (-) TimerEvent: {}
+[23.225255] (-) TimerEvent: {}
+[23.326101] (-) TimerEvent: {}
+[23.426977] (-) TimerEvent: {}
+[23.527535] (-) TimerEvent: {}
+[23.628282] (-) TimerEvent: {}
+[23.729063] (-) TimerEvent: {}
+[23.829846] (-) TimerEvent: {}
+[23.930859] (-) TimerEvent: {}
+[24.031715] (-) TimerEvent: {}
+[24.132296] (-) TimerEvent: {}
+[24.233084] (-) TimerEvent: {}
+[24.333942] (-) TimerEvent: {}
+[24.434872] (-) TimerEvent: {}
+[24.535679] (-) TimerEvent: {}
+[24.636418] (-) TimerEvent: {}
+[24.737243] (-) TimerEvent: {}
+[24.838045] (-) TimerEvent: {}
+[24.938716] (-) TimerEvent: {}
+[25.039400] (-) TimerEvent: {}
+[25.140116] (-) TimerEvent: {}
+[25.241039] (-) TimerEvent: {}
+[25.341992] (-) TimerEvent: {}
+[25.443005] (-) TimerEvent: {}
+[25.543693] (-) TimerEvent: {}
+[25.644633] (-) TimerEvent: {}
+[25.745394] (-) TimerEvent: {}
+[25.846169] (-) TimerEvent: {}
+[25.946911] (-) TimerEvent: {}
+[26.047742] (-) TimerEvent: {}
+[26.148403] (-) TimerEvent: {}
+[26.249706] (-) TimerEvent: {}
+[26.350483] (-) TimerEvent: {}
+[26.451189] (-) TimerEvent: {}
+[26.552024] (-) TimerEvent: {}
+[26.652706] (-) TimerEvent: {}
+[26.753416] (-) TimerEvent: {}
+[26.854442] (-) TimerEvent: {}
+[26.955496] (-) TimerEvent: {}
+[27.056786] (-) TimerEvent: {}
+[27.157939] (-) TimerEvent: {}
+[27.258755] (-) TimerEvent: {}
+[27.359365] (-) TimerEvent: {}
+[27.459986] (-) TimerEvent: {}
+[27.560712] (-) TimerEvent: {}
+[27.661315] (-) TimerEvent: {}
+[27.761884] (-) TimerEvent: {}
+[27.863042] (-) TimerEvent: {}
+[27.963867] (-) TimerEvent: {}
+[28.064766] (-) TimerEvent: {}
+[28.165507] (-) TimerEvent: {}
+[28.266342] (-) TimerEvent: {}
+[28.367226] (-) TimerEvent: {}
+[28.468138] (-) TimerEvent: {}
+[28.568900] (-) TimerEvent: {}
+[28.669662] (-) TimerEvent: {}
+[28.770604] (-) TimerEvent: {}
+[28.871434] (-) TimerEvent: {}
+[28.972312] (-) TimerEvent: {}
+[29.073148] (-) TimerEvent: {}
+[29.173967] (-) TimerEvent: {}
+[29.274806] (-) TimerEvent: {}
+[29.375666] (-) TimerEvent: {}
+[29.476485] (-) TimerEvent: {}
+[29.578490] (-) TimerEvent: {}
+[29.679499] (-) TimerEvent: {}
+[29.780349] (-) TimerEvent: {}
+[29.881188] (-) TimerEvent: {}
+[29.981944] (-) TimerEvent: {}
+[30.082532] (-) TimerEvent: {}
+[30.183294] (-) TimerEvent: {}
+[30.284220] (-) TimerEvent: {}
+[30.385044] (-) TimerEvent: {}
+[30.485720] (-) TimerEvent: {}
+[30.586351] (-) TimerEvent: {}
+[30.687012] (-) TimerEvent: {}
+[30.787705] (-) TimerEvent: {}
+[30.888519] (-) TimerEvent: {}
+[30.989192] (-) TimerEvent: {}
+[31.089818] (-) TimerEvent: {}
+[31.190519] (-) TimerEvent: {}
+[31.291294] (-) TimerEvent: {}
+[31.391944] (-) TimerEvent: {}
+[31.492714] (-) TimerEvent: {}
+[31.593353] (-) TimerEvent: {}
+[31.693991] (-) TimerEvent: {}
+[31.794623] (-) TimerEvent: {}
+[31.895492] (-) TimerEvent: {}
+[31.996349] (-) TimerEvent: {}
+[32.097245] (-) TimerEvent: {}
+[32.198221] (-) TimerEvent: {}
+[32.299108] (-) TimerEvent: {}
+[32.399920] (-) TimerEvent: {}
+[32.500756] (-) TimerEvent: {}
+[32.601869] (-) TimerEvent: {}
+[32.702697] (-) TimerEvent: {}
+[32.803676] (-) TimerEvent: {}
+[32.904505] (-) TimerEvent: {}
+[33.005332] (-) TimerEvent: {}
+[33.106263] (-) TimerEvent: {}
+[33.207712] (-) TimerEvent: {}
+[33.308886] (-) TimerEvent: {}
+[33.410081] (-) TimerEvent: {}
+[33.511093] (-) TimerEvent: {}
+[33.612135] (-) TimerEvent: {}
+[33.712947] (-) TimerEvent: {}
+[33.813736] (-) TimerEvent: {}
+[33.914403] (-) TimerEvent: {}
+[34.015231] (-) TimerEvent: {}
+[34.115941] (-) TimerEvent: {}
+[34.216854] (-) TimerEvent: {}
+[34.317485] (-) TimerEvent: {}
+[34.423165] (-) TimerEvent: {}
+[34.525437] (-) TimerEvent: {}
+[34.629206] (-) TimerEvent: {}
+[34.729817] (-) TimerEvent: {}
+[34.830691] (-) TimerEvent: {}
+[34.931349] (-) TimerEvent: {}
+[35.032162] (-) TimerEvent: {}
+[35.132930] (-) TimerEvent: {}
+[35.233676] (-) TimerEvent: {}
+[35.334480] (-) TimerEvent: {}
+[35.435179] (-) TimerEvent: {}
+[35.535844] (-) TimerEvent: {}
+[35.636624] (-) TimerEvent: {}
+[35.737333] (-) TimerEvent: {}
+[35.842092] (-) TimerEvent: {}
+[35.942833] (-) TimerEvent: {}
+[36.043699] (-) TimerEvent: {}
+[36.144789] (-) TimerEvent: {}
+[36.245648] (-) TimerEvent: {}
+[36.346447] (-) TimerEvent: {}
+[36.447335] (-) TimerEvent: {}
+[36.548335] (-) TimerEvent: {}
+[36.649481] (-) TimerEvent: {}
+[36.750420] (-) TimerEvent: {}
+[36.851274] (-) TimerEvent: {}
+[36.952180] (-) TimerEvent: {}
+[37.053090] (-) TimerEvent: {}
+[37.153951] (-) TimerEvent: {}
+[37.254962] (-) TimerEvent: {}
+[37.355834] (-) TimerEvent: {}
+[37.456788] (-) TimerEvent: {}
+[37.557638] (-) TimerEvent: {}
+[37.658705] (-) TimerEvent: {}
+[37.759511] (-) TimerEvent: {}
+[37.860338] (-) TimerEvent: {}
+[37.961458] (-) TimerEvent: {}
+[38.062155] (-) TimerEvent: {}
+[38.162742] (-) TimerEvent: {}
+[38.263373] (-) TimerEvent: {}
+[38.364134] (-) TimerEvent: {}
+[38.464888] (-) TimerEvent: {}
+[38.565482] (-) TimerEvent: {}
+[38.666362] (-) TimerEvent: {}
+[38.767342] (-) TimerEvent: {}
+[38.868014] (-) TimerEvent: {}
+[38.968789] (-) TimerEvent: {}
+[39.069408] (-) TimerEvent: {}
+[39.170134] (-) TimerEvent: {}
+[39.270838] (-) TimerEvent: {}
+[39.371464] (-) TimerEvent: {}
+[39.472280] (-) TimerEvent: {}
+[39.572945] (-) TimerEvent: {}
+[39.673725] (-) TimerEvent: {}
+[39.774518] (-) TimerEvent: {}
+[39.875169] (-) TimerEvent: {}
+[39.976087] (-) TimerEvent: {}
+[40.076715] (-) TimerEvent: {}
+[40.177490] (-) TimerEvent: {}
+[40.278164] (-) TimerEvent: {}
+[40.379017] (-) TimerEvent: {}
+[40.480668] (-) TimerEvent: {}
+[40.583888] (-) TimerEvent: {}
+[40.684475] (-) TimerEvent: {}
+[40.786021] (-) TimerEvent: {}
+[40.886964] (-) TimerEvent: {}
+[40.988073] (-) TimerEvent: {}
+[41.088791] (-) TimerEvent: {}
+[41.189497] (-) TimerEvent: {}
+[41.290263] (-) TimerEvent: {}
+[41.390952] (-) TimerEvent: {}
+[41.491694] (-) TimerEvent: {}
+[41.592615] (-) TimerEvent: {}
+[41.693331] (-) TimerEvent: {}
+[41.794238] (-) TimerEvent: {}
+[41.895010] (-) TimerEvent: {}
+[41.995645] (-) TimerEvent: {}
+[42.096266] (-) TimerEvent: {}
+[42.197199] (-) TimerEvent: {}
+[42.298035] (-) TimerEvent: {}
+[42.399458] (-) TimerEvent: {}
+[42.500331] (-) TimerEvent: {}
+[42.601199] (-) TimerEvent: {}
+[42.702050] (-) TimerEvent: {}
+[42.803090] (-) TimerEvent: {}
+[42.904071] (-) TimerEvent: {}
+[43.005188] (-) TimerEvent: {}
+[43.105992] (-) TimerEvent: {}
+[43.206901] (-) TimerEvent: {}
+[43.307991] (-) TimerEvent: {}
+[43.408858] (-) TimerEvent: {}
+[43.509902] (-) TimerEvent: {}
+[43.610923] (-) TimerEvent: {}
+[43.712046] (-) TimerEvent: {}
+[43.813131] (-) TimerEvent: {}
+[43.913915] (-) TimerEvent: {}
+[44.014697] (-) TimerEvent: {}
+[44.115487] (-) TimerEvent: {}
+[44.216276] (-) TimerEvent: {}
+[44.317156] (-) TimerEvent: {}
+[44.418091] (-) TimerEvent: {}
+[44.518891] (-) TimerEvent: {}
+[44.619839] (-) TimerEvent: {}
+[44.720713] (-) TimerEvent: {}
+[44.821727] (-) TimerEvent: {}
+[44.922745] (-) TimerEvent: {}
+[45.023523] (-) TimerEvent: {}
+[45.128223] (-) TimerEvent: {}
+[45.228826] (-) TimerEvent: {}
+[45.329716] (-) TimerEvent: {}
+[45.430375] (-) TimerEvent: {}
+[45.531089] (-) TimerEvent: {}
+[45.631751] (-) TimerEvent: {}
+[45.732462] (-) TimerEvent: {}
+[45.833410] (-) TimerEvent: {}
+[45.934703] (-) TimerEvent: {}
+[46.035687] (-) TimerEvent: {}
+[46.136678] (-) TimerEvent: {}
+[46.237631] (-) TimerEvent: {}
+[46.338703] (-) TimerEvent: {}
+[46.440690] (-) TimerEvent: {}
+[46.541211] (-) TimerEvent: {}
+[46.642872] (-) TimerEvent: {}
+[46.744007] (-) TimerEvent: {}
+[46.844747] (-) TimerEvent: {}
+[46.945522] (-) TimerEvent: {}
+[47.046689] (-) TimerEvent: {}
+[47.147475] (-) TimerEvent: {}
+[47.248493] (-) TimerEvent: {}
+[47.349675] (-) TimerEvent: {}
+[47.450632] (-) TimerEvent: {}
+[47.552675] (-) TimerEvent: {}
+[47.653265] (-) TimerEvent: {}
+[47.754295] (-) TimerEvent: {}
+[47.855098] (-) TimerEvent: {}
+[47.956038] (-) TimerEvent: {}
+[48.056793] (-) TimerEvent: {}
+[48.157621] (-) TimerEvent: {}
+[48.258231] (-) TimerEvent: {}
+[48.358970] (-) TimerEvent: {}
+[48.459850] (-) TimerEvent: {}
+[48.560760] (-) TimerEvent: {}
+[48.661696] (-) TimerEvent: {}
+[48.762480] (-) TimerEvent: {}
+[48.863339] (-) TimerEvent: {}
+[48.964453] (-) TimerEvent: {}
+[49.065357] (-) TimerEvent: {}
+[49.166344] (-) TimerEvent: {}
+[49.267287] (-) TimerEvent: {}
+[49.368221] (-) TimerEvent: {}
+[49.469322] (-) TimerEvent: {}
+[49.570676] (-) TimerEvent: {}
+[49.671651] (-) TimerEvent: {}
+[49.772386] (-) TimerEvent: {}
+[49.873262] (-) TimerEvent: {}
+[49.974183] (-) TimerEvent: {}
+[50.075537] (-) TimerEvent: {}
+[50.176667] (-) TimerEvent: {}
+[50.277388] (-) TimerEvent: {}
+[50.378276] (-) TimerEvent: {}
+[50.478978] (-) TimerEvent: {}
+[50.579738] (-) TimerEvent: {}
+[50.680384] (-) TimerEvent: {}
+[50.781027] (-) TimerEvent: {}
+[50.881660] (-) TimerEvent: {}
+[50.982355] (-) TimerEvent: {}
+[51.083003] (-) TimerEvent: {}
+[51.183735] (-) TimerEvent: {}
+[51.284444] (-) TimerEvent: {}
+[51.385408] (-) TimerEvent: {}
+[51.486480] (-) TimerEvent: {}
+[51.587157] (-) TimerEvent: {}
+[51.688667] (-) TimerEvent: {}
+[51.790728] (-) TimerEvent: {}
+[51.815961] (click_to_move) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable click_to_move_node\x1b[0m\n'}
+[51.890955] (-) TimerEvent: {}
+[51.991490] (-) TimerEvent: {}
+[52.092292] (-) TimerEvent: {}
+[52.193110] (-) TimerEvent: {}
+[52.293923] (-) TimerEvent: {}
+[52.394645] (-) TimerEvent: {}
+[52.495934] (-) TimerEvent: {}
+[52.596718] (-) TimerEvent: {}
+[52.697658] (-) TimerEvent: {}
+[52.798654] (-) TimerEvent: {}
+[52.899522] (-) TimerEvent: {}
+[53.000541] (-) TimerEvent: {}
+[53.101859] (-) TimerEvent: {}
+[53.202967] (-) TimerEvent: {}
+[53.304023] (-) TimerEvent: {}
+[53.404897] (-) TimerEvent: {}
+[53.506018] (-) TimerEvent: {}
+[53.608671] (-) TimerEvent: {}
+[53.710653] (-) TimerEvent: {}
+[53.811360] (-) TimerEvent: {}
+[53.814913] (click_to_move) StdoutLine: {'line': b'[100%] Built target click_to_move_node\n'}
+[53.844061] (click_to_move) CommandEnded: {'returncode': 0}
+[53.853823] (click_to_move) JobProgress: {'identifier': 'click_to_move', 'progress': 'install'}
+[53.853921] (click_to_move) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ros2/ws_RAMS/build/click_to_move'], 'cwd': '/home/ros2/ws_RAMS/build/click_to_move', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ros2'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/lib:/home/ros2/ws_abb_ros2/install/abb_hardware_interface/lib:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib:/home/ros2/ws_abb_ros2/install/abb_librws/lib:/home/ros2/ws_abb_ros2/install/abb_libegm/lib:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros2'), ('OLDPWD', '/home/ros2'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '1655'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/ros2/ws_RAMS/install:/home/ros2/ws_abb_support/install:/home/ros2/ws_abb_ros2/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ros2'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_librws/lib/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/ros2/ws_abb_ros2/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ros2'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ros2-virtual-machine:@/tmp/.ICE-unix/1383,unix/ros2-virtual-machine:/tmp/.ICE-unix/1383'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/ef884579_68a9_4301_b49b_d5f60d3568bd'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.89'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CMAKE_MODULE_PATH', '/home/ros2/ws_abb_ros2/install/abb_librws/share/abb_librws/cmake'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ros2/ws_RAMS/build/click_to_move'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ros2/ws_abb_ros2/install/abb_robot_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs/local/lib/python3.10/dist-packages:/home/ros2/ws_abb_ros2/install/abb_egm_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble')]), 'shell': False}
+[53.877829] (click_to_move) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[53.878228] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/lib/click_to_move/click_to_move_node\n'}
+[53.889123] (click_to_move) StdoutLine: {'line': b'-- Set runtime path of "/home/ros2/ws_RAMS/install/click_to_move/lib/click_to_move/click_to_move_node" to ""\n'}
+[53.889495] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/launch\n'}
+[53.889722] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/launch/system_bringup.launch.py\n'}
+[53.890155] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/ament_index/resource_index/package_run_dependencies/click_to_move\n'}
+[53.890410] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/ament_index/resource_index/parent_prefix_path/click_to_move\n'}
+[53.890679] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/environment/ament_prefix_path.sh\n'}
+[53.890871] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/environment/ament_prefix_path.dsv\n'}
+[53.891074] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/environment/path.sh\n'}
+[53.891274] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/environment/path.dsv\n'}
+[53.891495] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/local_setup.bash\n'}
+[53.891765] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/local_setup.sh\n'}
+[53.892137] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/local_setup.zsh\n'}
+[53.892419] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/local_setup.dsv\n'}
+[53.893371] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.dsv\n'}
+[53.894079] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/ament_index/resource_index/packages/click_to_move\n'}
+[53.894441] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/cmake/click_to_moveConfig.cmake\n'}
+[53.894821] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/cmake/click_to_moveConfig-version.cmake\n'}
+[53.895068] (click_to_move) StdoutLine: {'line': b'-- Installing: /home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.xml\n'}
+[53.899957] (click_to_move) CommandEnded: {'returncode': 0}
+[53.911601] (-) TimerEvent: {}
+[53.943718] (click_to_move) JobEnded: {'identifier': 'click_to_move', 'rc': 0}
+[53.945687] (-) EventReactorShutdown: {}

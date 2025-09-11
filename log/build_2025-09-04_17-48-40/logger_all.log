@@ -1,0 +1,279 @@
+[0.328s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.328s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=2, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x786f63de7c10>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x786f63de7760>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x786f63de7760>>, mixin_verb=('build',))
+[0.813s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.813s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.813s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.813s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.813s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.814s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.814s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ros2/ws_RAMS'
+[0.814s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.814s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.814s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.815s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.815s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.815s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.815s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.815s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.815s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.848s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.848s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.851s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.851s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.851s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.851s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extensions ['ignore', 'ignore_ament_install']
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'ignore'
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'ignore_ament_install'
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extensions ['colcon_pkg']
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'colcon_pkg'
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extensions ['colcon_meta']
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'colcon_meta'
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extensions ['ros']
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'ros'
+[0.885s] DEBUG:colcon.colcon_core.package_identification:Package 'src/click_to_move' with type 'ros.ament_cmake' and name 'click_to_move'
+[0.886s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extensions ['ignore', 'ignore_ament_install']
+[0.886s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'ignore'
+[0.887s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'ignore_ament_install'
+[0.887s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extensions ['colcon_pkg']
+[0.887s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'colcon_pkg'
+[0.887s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extensions ['colcon_meta']
+[0.887s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'colcon_meta'
+[0.887s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extensions ['ros']
+[0.887s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'ros'
+[0.891s] DEBUG:colcon.colcon_core.package_identification:Package 'src/workcell_config' with type 'ros.ament_cmake' and name 'workcell_config'
+[0.891s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extensions ['ignore', 'ignore_ament_install']
+[0.891s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'ignore'
+[0.892s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'ignore_ament_install'
+[0.892s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extensions ['colcon_pkg']
+[0.892s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'colcon_pkg'
+[0.892s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extensions ['colcon_meta']
+[0.892s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'colcon_meta'
+[0.892s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extensions ['ros']
+[0.892s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'ros'
+[0.895s] DEBUG:colcon.colcon_core.package_identification:Package 'src/workcell_description' with type 'ros.ament_cmake' and name 'workcell_description'
+[0.895s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.895s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.895s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.895s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.895s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.949s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.949s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.954s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/ros2/ws_RAMS/install/click_to_move' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.954s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/ros2/ws_RAMS/install/workcell_config' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.954s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/ros2/ws_RAMS/install/workcell_description' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.955s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/ros2/ws_RAMS/install/click_to_move' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.955s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/ros2/ws_RAMS/install/workcell_config' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.956s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/ros2/ws_RAMS/install/workcell_description' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.957s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/ros2/ws_RAMS/install
+[0.958s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/ros2/ws_abb_support/install
+[0.961s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 15 installed packages in /home/ros2/ws_abb_ros2/install
+[0.967s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 367 installed packages in /opt/ros/humble
+[0.972s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.114s] Level 5:colcon.colcon_core.verb:set package 'workcell_description' build argument 'cmake_args' from command line to 'None'
+[1.115s] Level 5:colcon.colcon_core.verb:set package 'workcell_description' build argument 'cmake_target' from command line to 'None'
+[1.115s] Level 5:colcon.colcon_core.verb:set package 'workcell_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.115s] Level 5:colcon.colcon_core.verb:set package 'workcell_description' build argument 'cmake_clean_cache' from command line to 'False'
+[1.115s] Level 5:colcon.colcon_core.verb:set package 'workcell_description' build argument 'cmake_clean_first' from command line to 'False'
+[1.115s] Level 5:colcon.colcon_core.verb:set package 'workcell_description' build argument 'cmake_force_configure' from command line to 'False'
+[1.115s] Level 5:colcon.colcon_core.verb:set package 'workcell_description' build argument 'ament_cmake_args' from command line to 'None'
+[1.117s] Level 5:colcon.colcon_core.verb:set package 'workcell_description' build argument 'catkin_cmake_args' from command line to 'None'
+[1.117s] Level 5:colcon.colcon_core.verb:set package 'workcell_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.117s] DEBUG:colcon.colcon_core.verb:Building package 'workcell_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ros2/ws_RAMS/build/workcell_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ros2/ws_RAMS/install/workcell_description', 'merge_install': False, 'path': '/home/ros2/ws_RAMS/src/workcell_description', 'symlink_install': False, 'test_result_base': None}
+[1.119s] Level 5:colcon.colcon_core.verb:set package 'workcell_config' build argument 'cmake_args' from command line to 'None'
+[1.120s] Level 5:colcon.colcon_core.verb:set package 'workcell_config' build argument 'cmake_target' from command line to 'None'
+[1.120s] Level 5:colcon.colcon_core.verb:set package 'workcell_config' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.120s] Level 5:colcon.colcon_core.verb:set package 'workcell_config' build argument 'cmake_clean_cache' from command line to 'False'
+[1.120s] Level 5:colcon.colcon_core.verb:set package 'workcell_config' build argument 'cmake_clean_first' from command line to 'False'
+[1.120s] Level 5:colcon.colcon_core.verb:set package 'workcell_config' build argument 'cmake_force_configure' from command line to 'False'
+[1.120s] Level 5:colcon.colcon_core.verb:set package 'workcell_config' build argument 'ament_cmake_args' from command line to 'None'
+[1.120s] Level 5:colcon.colcon_core.verb:set package 'workcell_config' build argument 'catkin_cmake_args' from command line to 'None'
+[1.120s] Level 5:colcon.colcon_core.verb:set package 'workcell_config' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.120s] DEBUG:colcon.colcon_core.verb:Building package 'workcell_config' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ros2/ws_RAMS/build/workcell_config', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ros2/ws_RAMS/install/workcell_config', 'merge_install': False, 'path': '/home/ros2/ws_RAMS/src/workcell_config', 'symlink_install': False, 'test_result_base': None}
+[1.124s] Level 5:colcon.colcon_core.verb:set package 'click_to_move' build argument 'cmake_args' from command line to 'None'
+[1.124s] Level 5:colcon.colcon_core.verb:set package 'click_to_move' build argument 'cmake_target' from command line to 'None'
+[1.124s] Level 5:colcon.colcon_core.verb:set package 'click_to_move' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.124s] Level 5:colcon.colcon_core.verb:set package 'click_to_move' build argument 'cmake_clean_cache' from command line to 'False'
+[1.124s] Level 5:colcon.colcon_core.verb:set package 'click_to_move' build argument 'cmake_clean_first' from command line to 'False'
+[1.124s] Level 5:colcon.colcon_core.verb:set package 'click_to_move' build argument 'cmake_force_configure' from command line to 'False'
+[1.124s] Level 5:colcon.colcon_core.verb:set package 'click_to_move' build argument 'ament_cmake_args' from command line to 'None'
+[1.124s] Level 5:colcon.colcon_core.verb:set package 'click_to_move' build argument 'catkin_cmake_args' from command line to 'None'
+[1.124s] Level 5:colcon.colcon_core.verb:set package 'click_to_move' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.125s] DEBUG:colcon.colcon_core.verb:Building package 'click_to_move' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ros2/ws_RAMS/build/click_to_move', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ros2/ws_RAMS/install/click_to_move', 'merge_install': False, 'path': '/home/ros2/ws_RAMS/src/click_to_move', 'symlink_install': False, 'test_result_base': None}
+[1.125s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.128s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.129s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ros2/ws_RAMS/src/workcell_description' with build type 'ament_cmake'
+[1.129s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ros2/ws_RAMS/src/workcell_description'
+[1.138s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.139s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.139s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.175s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros2/ws_RAMS/build/workcell_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ros2/ws_RAMS/src/workcell_description -DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/workcell_description
+[3.655s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros2/ws_RAMS/build/workcell_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ros2/ws_RAMS/src/workcell_description -DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/workcell_description
+[3.661s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros2/ws_RAMS/build/workcell_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ros2/ws_RAMS/build/workcell_description -- -j2 -l2
+[3.806s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros2/ws_RAMS/build/workcell_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ros2/ws_RAMS/build/workcell_description -- -j2 -l2
+[3.837s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros2/ws_RAMS/build/workcell_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ros2/ws_RAMS/build/workcell_description
+[4.674s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(workcell_description)
+[4.675s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros2/ws_RAMS/build/workcell_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ros2/ws_RAMS/build/workcell_description
+[4.681s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description' for CMake module files
+[4.683s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description' for CMake config files
+[4.684s] Level 1:colcon.colcon_core.shell:create_environment_hook('workcell_description', 'cmake_prefix_path')
+[4.685s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/hook/cmake_prefix_path.ps1'
+[4.686s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/hook/cmake_prefix_path.dsv'
+[4.687s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/hook/cmake_prefix_path.sh'
+[4.689s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description/bin'
+[4.689s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description/lib/pkgconfig/workcell_description.pc'
+[4.690s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description/lib/python3.10/site-packages'
+[4.690s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description/bin'
+[4.691s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.ps1'
+[4.693s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.dsv'
+[4.694s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.sh'
+[4.696s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.bash'
+[4.697s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.zsh'
+[4.699s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros2/ws_RAMS/install/workcell_description/share/colcon-core/packages/workcell_description)
+[4.700s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(workcell_description)
+[4.701s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description' for CMake module files
+[4.702s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description' for CMake config files
+[4.703s] Level 1:colcon.colcon_core.shell:create_environment_hook('workcell_description', 'cmake_prefix_path')
+[4.704s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/hook/cmake_prefix_path.ps1'
+[4.705s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/hook/cmake_prefix_path.dsv'
+[4.706s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/hook/cmake_prefix_path.sh'
+[4.708s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description/bin'
+[4.709s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description/lib/pkgconfig/workcell_description.pc'
+[4.709s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description/lib/python3.10/site-packages'
+[4.709s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_description/bin'
+[4.710s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.ps1'
+[4.711s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.dsv'
+[4.713s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.sh'
+[4.714s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.bash'
+[4.716s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_description/share/workcell_description/package.zsh'
+[4.717s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros2/ws_RAMS/install/workcell_description/share/colcon-core/packages/workcell_description)
+[4.719s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ros2/ws_RAMS/src/workcell_config' with build type 'ament_cmake'
+[4.720s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ros2/ws_RAMS/src/workcell_config'
+[4.720s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.720s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.755s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros2/ws_RAMS/build/workcell_config': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake /home/ros2/ws_RAMS/src/workcell_config -DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/workcell_config
+[6.678s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros2/ws_RAMS/build/workcell_config' returned '0': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake /home/ros2/ws_RAMS/src/workcell_config -DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/workcell_config
+[6.680s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros2/ws_RAMS/build/workcell_config': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake --build /home/ros2/ws_RAMS/build/workcell_config -- -j2 -l2
+[6.792s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros2/ws_RAMS/build/workcell_config' returned '0': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake --build /home/ros2/ws_RAMS/build/workcell_config -- -j2 -l2
+[6.799s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros2/ws_RAMS/build/workcell_config': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake --install /home/ros2/ws_RAMS/build/workcell_config
+[6.862s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(workcell_config)
+[6.863s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config' for CMake module files
+[6.865s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros2/ws_RAMS/build/workcell_config' returned '0': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake --install /home/ros2/ws_RAMS/build/workcell_config
+[6.866s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config' for CMake config files
+[6.867s] Level 1:colcon.colcon_core.shell:create_environment_hook('workcell_config', 'cmake_prefix_path')
+[6.867s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/hook/cmake_prefix_path.ps1'
+[6.868s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/hook/cmake_prefix_path.dsv'
+[6.870s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/hook/cmake_prefix_path.sh'
+[6.871s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config/bin'
+[6.871s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config/lib/pkgconfig/workcell_config.pc'
+[6.872s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config/lib/python3.10/site-packages'
+[6.872s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config/bin'
+[6.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.ps1'
+[6.874s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.dsv'
+[6.875s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.sh'
+[6.876s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.bash'
+[6.878s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.zsh'
+[6.878s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros2/ws_RAMS/install/workcell_config/share/colcon-core/packages/workcell_config)
+[6.880s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(workcell_config)
+[6.880s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config' for CMake module files
+[6.882s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config' for CMake config files
+[6.882s] Level 1:colcon.colcon_core.shell:create_environment_hook('workcell_config', 'cmake_prefix_path')
+[6.883s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/hook/cmake_prefix_path.ps1'
+[6.884s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/hook/cmake_prefix_path.dsv'
+[6.886s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/hook/cmake_prefix_path.sh'
+[6.887s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config/bin'
+[6.888s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config/lib/pkgconfig/workcell_config.pc'
+[6.888s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config/lib/python3.10/site-packages'
+[6.889s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/workcell_config/bin'
+[6.889s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.ps1'
+[6.891s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.dsv'
+[6.892s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.sh'
+[6.894s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.bash'
+[6.895s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/workcell_config/share/workcell_config/package.zsh'
+[6.897s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros2/ws_RAMS/install/workcell_config/share/colcon-core/packages/workcell_config)
+[6.899s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ros2/ws_RAMS/src/click_to_move' with build type 'ament_cmake'
+[6.899s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ros2/ws_RAMS/src/click_to_move'
+[6.899s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.900s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.949s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros2/ws_RAMS/build/click_to_move': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake /home/ros2/ws_RAMS/src/click_to_move -DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/click_to_move
+[13.518s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros2/ws_RAMS/build/click_to_move' returned '0': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake /home/ros2/ws_RAMS/src/click_to_move -DCMAKE_INSTALL_PREFIX=/home/ros2/ws_RAMS/install/click_to_move
+[13.523s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros2/ws_RAMS/build/click_to_move': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake --build /home/ros2/ws_RAMS/build/click_to_move -- -j2 -l2
+[54.977s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros2/ws_RAMS/build/click_to_move' returned '0': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake --build /home/ros2/ws_RAMS/build/click_to_move -- -j2 -l2
+[54.981s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros2/ws_RAMS/build/click_to_move': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake --install /home/ros2/ws_RAMS/build/click_to_move
+[55.026s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(click_to_move)
+[55.026s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move' for CMake module files
+[55.028s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros2/ws_RAMS/build/click_to_move' returned '0': CMAKE_PREFIX_PATH=/home/ros2/ws_RAMS/install/workcell_config:/home/ros2/ws_RAMS/install/workcell_description:/home/ros2/ws_abb_ros2/install/abb_rws_client:/home/ros2/ws_abb_ros2/install/abb_ros2:/home/ros2/ws_abb_ros2/install/abb_robot_msgs:/home/ros2/ws_abb_ros2/install/abb_resources:/home/ros2/ws_abb_ros2/install/abb_rapid_sm_addin_msgs:/home/ros2/ws_abb_ros2/install/abb_rapid_msgs:/home/ros2/ws_abb_ros2/install/abb_hardware_interface:/home/ros2/ws_abb_ros2/install/abb_egm_rws_managers:/home/ros2/ws_abb_ros2/install/abb_librws:/home/ros2/ws_abb_ros2/install/abb_libegm:/home/ros2/ws_abb_ros2/install/abb_irb4600_support:/home/ros2/ws_abb_ros2/install/abb_irb1200_5_90_moveit_config:/home/ros2/ws_abb_ros2/install/abb_irb1200_support:/home/ros2/ws_abb_ros2/install/abb_egm_msgs:/home/ros2/ws_abb_ros2/install/abb_bringup:/home/ros2/ws_RAMS/install/click_to_move:/home/ros2/ws_abb_support/install/abb_irb6700_support:/opt/ros/humble /usr/bin/cmake --install /home/ros2/ws_RAMS/build/click_to_move
+[55.029s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move' for CMake config files
+[55.030s] Level 1:colcon.colcon_core.shell:create_environment_hook('click_to_move', 'cmake_prefix_path')
+[55.030s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/hook/cmake_prefix_path.ps1'
+[55.031s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/hook/cmake_prefix_path.dsv'
+[55.032s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/hook/cmake_prefix_path.sh'
+[55.034s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/lib'
+[55.034s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/bin'
+[55.034s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/lib/pkgconfig/click_to_move.pc'
+[55.035s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/lib/python3.10/site-packages'
+[55.035s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/bin'
+[55.036s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.ps1'
+[55.037s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.dsv'
+[55.039s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.sh'
+[55.041s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.bash'
+[55.042s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.zsh'
+[55.042s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros2/ws_RAMS/install/click_to_move/share/colcon-core/packages/click_to_move)
+[55.044s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(click_to_move)
+[55.045s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move' for CMake module files
+[55.047s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move' for CMake config files
+[55.048s] Level 1:colcon.colcon_core.shell:create_environment_hook('click_to_move', 'cmake_prefix_path')
+[55.048s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/hook/cmake_prefix_path.ps1'
+[55.050s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/hook/cmake_prefix_path.dsv'
+[55.051s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/hook/cmake_prefix_path.sh'
+[55.052s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/lib'
+[55.053s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/bin'
+[55.053s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/lib/pkgconfig/click_to_move.pc'
+[55.053s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/lib/python3.10/site-packages'
+[55.054s] Level 1:colcon.colcon_core.environment:checking '/home/ros2/ws_RAMS/install/click_to_move/bin'
+[55.054s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.ps1'
+[55.056s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.dsv'
+[55.057s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.sh'
+[55.059s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.bash'
+[55.061s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros2/ws_RAMS/install/click_to_move/share/click_to_move/package.zsh'
+[55.069s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros2/ws_RAMS/install/click_to_move/share/colcon-core/packages/click_to_move)
+[55.070s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[55.071s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[55.071s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[55.072s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[55.092s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[55.092s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[55.092s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[55.141s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[55.142s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros2/ws_RAMS/install/local_setup.ps1'
+[55.145s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ros2/ws_RAMS/install/_local_setup_util_ps1.py'
+[55.148s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros2/ws_RAMS/install/setup.ps1'
+[55.156s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros2/ws_RAMS/install/local_setup.sh'
+[55.160s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ros2/ws_RAMS/install/_local_setup_util_sh.py'
+[55.162s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros2/ws_RAMS/install/setup.sh'
+[55.169s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros2/ws_RAMS/install/local_setup.bash'
+[55.173s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros2/ws_RAMS/install/setup.bash'
+[55.179s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros2/ws_RAMS/install/local_setup.zsh'
+[55.181s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros2/ws_RAMS/install/setup.zsh'

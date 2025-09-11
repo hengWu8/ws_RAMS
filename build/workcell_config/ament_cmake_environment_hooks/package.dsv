@@ -1,0 +1,4 @@
+source;share/workcell_config/local_setup.bash
+source;share/workcell_config/local_setup.dsv
+source;share/workcell_config/local_setup.sh
+source;share/workcell_config/local_setup.zsh
