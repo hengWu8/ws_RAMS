@@ -1,6 +1,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <geometry_msgs/msg/point_stamped.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
+#include <std_msgs/msg/string.hpp>
 
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2/LinearMath/Matrix3x3.h>
@@ -22,6 +23,9 @@ public:
     base_frame_     = node_->declare_parameter<std::string>("base_frame", "base");
     actuator_link_  = node_->declare_parameter<std::string>("eef_link", "");
     clicked_topic_  = node_->declare_parameter<std::string>("clicked_point_topic", "/clicked_point");
+    control_mode_topic_ = node_->declare_parameter<std::string>("control_mode_topic", "/abb/control_mode");
+    required_control_mode_ = node_->declare_parameter<std::string>("required_control_mode", "trajectory");
+    current_control_mode_ = node_->declare_parameter<std::string>("default_control_mode", "trajectory");
     above_offset_   = node_->declare_parameter<double>("above_offset", 0.15);
     plan_only_      = node_->declare_parameter<bool>("plan_only", false);
     vel_scale_      = node_->declare_parameter<double>("velocity_scaling", 0.3);
@@ -49,8 +53,15 @@ public:
       clicked_topic_, rclcpp::QoS(10),
       std::bind(&ClickToMove::onPoint, this, std::placeholders::_1));
 
+    auto control_mode_qos = rclcpp::QoS(rclcpp::KeepLast(1)).reliable().transient_local();
+    control_mode_sub_ = node_->create_subscription<std_msgs::msg::String>(
+      control_mode_topic_, control_mode_qos,
+      std::bind(&ClickToMove::onControlMode, this, std::placeholders::_1));
+
     RCLCPP_INFO(node_->get_logger(), "click_to_move ready. group=%s, base_frame=%s, topic=%s",
                 planning_group_.c_str(), base_frame_.c_str(), clicked_topic_.c_str());
+    RCLCPP_INFO(node_->get_logger(), "click_to_move arbitration topic=%s, required_mode=%s, current_mode=%s",
+                control_mode_topic_.c_str(), required_control_mode_.c_str(), current_control_mode_.c_str());
   }
 
 private:
@@ -76,6 +87,13 @@ private:
 
   void onPoint(const geometry_msgs::msg::PointStamped::SharedPtr msg) {
     std::scoped_lock<std::mutex> lk(mutex_);
+
+    if (current_control_mode_ != required_control_mode_) {
+      RCLCPP_WARN(node_->get_logger(),
+                  "Ignoring clicked point because control mode is '%s' and click_to_move requires '%s'.",
+                  current_control_mode_.c_str(), required_control_mode_.c_str());
+      return;
+    }
 
     geometry_msgs::msg::PointStamped pin = *msg;
     if (pin.header.frame_id.empty()) pin.header.frame_id = base_frame_;
@@ -147,9 +165,20 @@ private:
     move_group_->clearPoseTargets();
   }
 
+  void onControlMode(const std_msgs::msg::String::SharedPtr msg) {
+    std::scoped_lock<std::mutex> lk(mutex_);
+    if (msg->data == current_control_mode_) {
+      return;
+    }
+    current_control_mode_ = msg->data;
+    RCLCPP_INFO(node_->get_logger(), "click_to_move control mode updated to '%s'.",
+                current_control_mode_.c_str());
+  }
+
   rclcpp::Node::SharedPtr node_;
   std::mutex mutex_;
   std::string planning_group_, base_frame_, actuator_link_, clicked_topic_;
+  std::string control_mode_topic_, required_control_mode_, current_control_mode_;
   double above_offset_{0.15};
   bool plan_only_{false}, use_current_orientation_{true};
   double vel_scale_{0.3}, acc_scale_{0.3};
@@ -158,6 +187,7 @@ private:
   tf2_ros::Buffer tf_buffer_;
   tf2_ros::TransformListener tf_listener_;
   rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr sub_;
+  rclcpp::Subscription<std_msgs::msg::String>::SharedPtr control_mode_sub_;
   std::unique_ptr<moveit::planning_interface::MoveGroupInterface> move_group_;
 };
 

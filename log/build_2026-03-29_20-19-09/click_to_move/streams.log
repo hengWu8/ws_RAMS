@@ -1,0 +1,60 @@
+[0.241s] Invoking command in '/home/heng/workspace/ws_RAMS/build/click_to_move': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/click_to_move -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/click_to_move
+[0.367s] -- The C compiler identification is GNU 11.4.0
+[0.499s] -- The CXX compiler identification is GNU 11.4.0
+[0.514s] -- Detecting C compiler ABI info
+[0.627s] -- Detecting C compiler ABI info - done
+[0.640s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.642s] -- Detecting C compile features
+[0.643s] -- Detecting C compile features - done
+[0.649s] -- Detecting CXX compiler ABI info
+[0.766s] -- Detecting CXX compiler ABI info - done
+[0.779s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.779s] -- Detecting CXX compile features
+[0.780s] -- Detecting CXX compile features - done
+[0.788s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.249s] -- Found Python3: /home/heng/miniconda3/bin/python3 (found version "3.13.9") found components: Interpreter 
+[1.376s] -- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+[1.426s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.431s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.441s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.456s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.474s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.523s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.526s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.640s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.686s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.735s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.747s] -- Looking for pthread.h
+[1.844s] -- Looking for pthread.h - found
+[1.844s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.957s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.959s] -- Found Threads: TRUE  
+[2.023s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[2.041s] -- Found tf2: 0.25.17 (/opt/ros/humble/share/tf2/cmake)
+[2.053s] -- Found tf2_ros: 0.25.17 (/opt/ros/humble/share/tf2_ros/cmake)
+[2.157s] -- Found tf2_geometry_msgs: 0.25.17 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[2.173s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[2.175s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.175s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.185s] CMake Error at CMakeLists.txt:16 (find_package):
+[2.185s]   By not providing "Findmoveit_ros_planning_interface.cmake" in
+[2.185s]   CMAKE_MODULE_PATH this project has asked CMake to find a package
+[2.186s]   configuration file provided by "moveit_ros_planning_interface", but CMake
+[2.186s]   did not find one.
+[2.186s] 
+[2.186s]   Could not find a package configuration file provided by
+[2.186s]   "moveit_ros_planning_interface" with any of the following names:
+[2.186s] 
+[2.186s]     moveit_ros_planning_interfaceConfig.cmake
+[2.186s]     moveit_ros_planning_interface-config.cmake
+[2.186s] 
+[2.187s]   Add the installation prefix of "moveit_ros_planning_interface" to
+[2.187s]   CMAKE_PREFIX_PATH or set "moveit_ros_planning_interface_DIR" to a directory
+[2.187s]   containing one of the above files.  If "moveit_ros_planning_interface"
+[2.187s]   provides a separate development package or SDK, be sure it has been
+[2.187s]   installed.
+[2.187s] 
+[2.187s] 
+[2.187s] -- Configuring incomplete, errors occurred!
+[2.187s] See also "/home/heng/workspace/ws_RAMS/build/click_to_move/CMakeFiles/CMakeOutput.log".
+[2.194s] Invoked command in '/home/heng/workspace/ws_RAMS/build/click_to_move' returned '1': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/click_to_move -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/click_to_move

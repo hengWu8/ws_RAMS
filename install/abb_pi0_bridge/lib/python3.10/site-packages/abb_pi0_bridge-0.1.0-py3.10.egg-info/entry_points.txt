@@ -1,0 +1,3 @@
+[console_scripts]
+abb_pi0_bridge_node = abb_pi0_bridge.bridge_node:main
+

@@ -1,0 +1,144 @@
+[0.000000] (-) TimerEvent: {}
+[0.000174] (-) JobUnselected: {'identifier': 'workcell_config'}
+[0.000323] (-) JobUnselected: {'identifier': 'workcell_description'}
+[0.000516] (abb_pi0_bridge) JobQueued: {'identifier': 'abb_pi0_bridge', 'dependencies': OrderedDict()}
+[0.000923] (click_to_move) JobQueued: {'identifier': 'click_to_move', 'dependencies': OrderedDict([('workcell_description', '/home/heng/workspace/ws_RAMS/install/workcell_description'), ('workcell_config', '/home/heng/workspace/ws_RAMS/install/workcell_config')])}
+[0.000980] (abb_pi0_bridge) JobStarted: {'identifier': 'abb_pi0_bridge'}
+[0.007474] (click_to_move) JobStarted: {'identifier': 'click_to_move'}
+[0.099437] (-) TimerEvent: {}
+[0.200053] (-) TimerEvent: {}
+[0.242795] (click_to_move) JobProgress: {'identifier': 'click_to_move', 'progress': 'cmake'}
+[0.243742] (click_to_move) Command: {'cmd': ['/usr/bin/cmake', '/home/heng/workspace/ws_RAMS/src/click_to_move', '-DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/click_to_move'], 'cwd': '/home/heng/workspace/ws_RAMS/build/click_to_move', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/heng'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('HTTPS_PROXY', 'http://127.0.0.1:27897'), ('CODEX_CI', '1'), ('USER', 'heng'), ('SSH_CLIENT', '192.168.1.103 64856 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/heng'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/heng/.vscode-server'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1002/vscode-ipc-583e736e-06c9-44e0-b186-729c560fb951.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', ''), ('_CE_M', ''), ('_CONDA_ROOT', '/home/heng/miniconda3'), ('https_proxy', 'http://127.0.0.1:27897'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'heng'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('http_proxy', 'http://127.0.0.1:27897'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '5892'), ('VSCODE_CLI_REQUIRE_TOKEN', '91e4665b-c98e-4552-a06e-ece7968d0944'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0Z3JYhy:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/home/heng/miniconda3/bin:/home/heng/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64'), ('VSCODE_AGENT_FOLDER', '/home/heng/.vscode-server'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/heng/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('CODEX_THREAD_ID', '019d3906-f335-7b11-8e6c-544764b4b3e2'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('_CONDA_EXE', '/home/heng/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('PWD', '/home/heng/workspace/ws_RAMS/build/click_to_move'), ('LC_ALL', 'C.UTF-8'), ('CONDA_EXE', '/home/heng/miniconda3/bin/conda'), ('SSH_CONNECTION', '192.168.1.103 64856 192.168.1.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:27897'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('CONDA_PREFIX', '/home/heng/miniconda3'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/opt/ros/humble')]), 'shell': False}
+[0.300138] (-) TimerEvent: {}
+[0.374232] (click_to_move) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.400229] (-) TimerEvent: {}
+[0.500549] (-) TimerEvent: {}
+[0.506620] (click_to_move) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.521809] (click_to_move) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.554322] (abb_pi0_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/abb_pi0_bridge', 'build', '--build-base', '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build', 'install', '--record', '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/heng', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CONDA_PROMPT_MODIFIER': '(base)', 'HTTPS_PROXY': 'http://127.0.0.1:27897', 'CODEX_CI': '1', 'USER': 'heng', 'SSH_CLIENT': '192.168.1.103 64856 22', 'LC_TIME': 'zh_CN.UTF-8', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'DEBUG': 'release', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/heng', 'CONDA_SHLVL': '1', 'OLDPWD': '/home/heng/.vscode-server', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-583e736e-06c9-44e0-b186-729c560fb951.sock', 'ROS_PYTHON_VERSION': '3', 'PAGER': 'cat', 'LC_MONETARY': 'zh_CN.UTF-8', 'LC_CTYPE': 'C.UTF-8', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': '', '_CE_M': '', '_CONDA_ROOT': '/home/heng/miniconda3', 'https_proxy': 'http://127.0.0.1:27897', 'ROS_DISTRO': 'humble', 'LOGNAME': 'heng', 'VSCODE_HANDLES_SIGPIPE': 'true', 'http_proxy': 'http://127.0.0.1:27897', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'RUST_LOG': 'warn', 'TERM': 'dumb', 'XDG_SESSION_ID': '5892', 'VSCODE_CLI_REQUIRE_TOKEN': '91e4665b-c98e-4552-a06e-ece7968d0944', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0Z3JYhy:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/home/heng/miniconda3/bin:/home/heng/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64', 'VSCODE_AGENT_FOLDER': '/home/heng/.vscode-server', 'LC_ADDRESS': 'zh_CN.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LC_TELEPHONE': 'zh_CN.UTF-8', 'GH_PAGER': 'cat', 'LS_COLORS': '', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/heng/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'zh_CN.UTF-8', 'ELECTRON_RUN_AS_NODE': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CONDA_DEFAULT_ENV': 'base', 'CODEX_THREAD_ID': '019d3906-f335-7b11-8e6c-544764b4b3e2', 'LC_MEASUREMENT': 'zh_CN.UTF-8', '_CONDA_EXE': '/home/heng/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'zh_CN.UTF-8', 'GIT_PAGER': 'cat', 'PWD': '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge', 'LC_ALL': 'C.UTF-8', 'CONDA_EXE': '/home/heng/miniconda3/bin/conda', 'SSH_CONNECTION': '192.168.1.103 64856 192.168.1.102 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'HTTP_PROXY': 'http://127.0.0.1:27897', 'LC_NUMERIC': 'zh_CN.UTF-8', 'CONDA_PREFIX': '/home/heng/miniconda3', 'LC_PAPER': 'zh_CN.UTF-8', 'COLCON': '1'}, 'shell': False}
+[0.600630] (-) TimerEvent: {}
+[0.634259] (click_to_move) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.647960] (click_to_move) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.649583] (click_to_move) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.650524] (click_to_move) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.656219] (click_to_move) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.701024] (-) TimerEvent: {}
+[0.766337] (abb_pi0_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[0.766770] (abb_pi0_bridge) StdoutLine: {'line': b'creating ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info\n'}
+[0.767022] (abb_pi0_bridge) StdoutLine: {'line': b'writing ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/PKG-INFO\n'}
+[0.767353] (abb_pi0_bridge) StdoutLine: {'line': b'writing dependency_links to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/dependency_links.txt\n'}
+[0.767468] (abb_pi0_bridge) StdoutLine: {'line': b'writing entry points to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/entry_points.txt\n'}
+[0.767579] (abb_pi0_bridge) StdoutLine: {'line': b'writing requirements to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/requires.txt\n'}
+[0.767769] (abb_pi0_bridge) StdoutLine: {'line': b'writing top-level names to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/top_level.txt\n'}
+[0.767878] (abb_pi0_bridge) StdoutLine: {'line': b"writing manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'\n"}
+[0.768613] (abb_pi0_bridge) StdoutLine: {'line': b"reading manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'\n"}
+[0.769215] (abb_pi0_bridge) StdoutLine: {'line': b"writing manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'\n"}
+[0.769598] (abb_pi0_bridge) StdoutLine: {'line': b'running build\n'}
+[0.769710] (abb_pi0_bridge) StdoutLine: {'line': b'running build_py\n'}
+[0.769816] (abb_pi0_bridge) StdoutLine: {'line': b'creating /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build\n'}
+[0.770138] (abb_pi0_bridge) StdoutLine: {'line': b'creating /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib\n'}
+[0.770252] (abb_pi0_bridge) StdoutLine: {'line': b'creating /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge\n'}
+[0.770362] (abb_pi0_bridge) StdoutLine: {'line': b'copying abb_pi0_bridge/bridge_node.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge\n'}
+[0.770617] (abb_pi0_bridge) StdoutLine: {'line': b'copying abb_pi0_bridge/bridge_core.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge\n'}
+[0.770729] (abb_pi0_bridge) StdoutLine: {'line': b'copying abb_pi0_bridge/__init__.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge\n'}
+[0.770966] (abb_pi0_bridge) StdoutLine: {'line': b'copying abb_pi0_bridge/mock_policy.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge\n'}
+[0.771182] (abb_pi0_bridge) StdoutLine: {'line': b'copying abb_pi0_bridge/control_mode.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge\n'}
+[0.771287] (abb_pi0_bridge) StdoutLine: {'line': b'running install\n'}
+[0.771387] (abb_pi0_bridge) StdoutLine: {'line': b'running install_lib\n'}
+[0.771668] (abb_pi0_bridge) StdoutLine: {'line': b'creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge\n'}
+[0.771792] (abb_pi0_bridge) StdoutLine: {'line': b'copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/bridge_node.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge\n'}
+[0.772037] (abb_pi0_bridge) StdoutLine: {'line': b'copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/bridge_core.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge\n'}
+[0.772157] (abb_pi0_bridge) StdoutLine: {'line': b'copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/__init__.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge\n'}
+[0.772265] (abb_pi0_bridge) StdoutLine: {'line': b'copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/mock_policy.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge\n'}
+[0.772373] (abb_pi0_bridge) StdoutLine: {'line': b'copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/control_mode.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge\n'}
+[0.772587] (abb_pi0_bridge) StdoutLine: {'line': b'byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/bridge_node.py to bridge_node.cpython-310.pyc\n'}
+[0.773738] (click_to_move) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.774166] (abb_pi0_bridge) StdoutLine: {'line': b'byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/bridge_core.py to bridge_core.cpython-310.pyc\n'}
+[0.775079] (abb_pi0_bridge) StdoutLine: {'line': b'byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/__init__.py to __init__.cpython-310.pyc\n'}
+[0.775314] (abb_pi0_bridge) StdoutLine: {'line': b'byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/mock_policy.py to mock_policy.cpython-310.pyc\n'}
+[0.775821] (abb_pi0_bridge) StdoutLine: {'line': b'byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/control_mode.py to control_mode.cpython-310.pyc\n'}
+[0.776245] (abb_pi0_bridge) StdoutLine: {'line': b'running install_data\n'}
+[0.776364] (abb_pi0_bridge) StdoutLine: {'line': b'creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/ament_index\n'}
+[0.776468] (abb_pi0_bridge) StdoutLine: {'line': b'creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/ament_index/resource_index\n'}
+[0.776729] (abb_pi0_bridge) StdoutLine: {'line': b'creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/ament_index/resource_index/packages\n'}
+[0.776841] (abb_pi0_bridge) StdoutLine: {'line': b'copying resource/abb_pi0_bridge -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/ament_index/resource_index/packages\n'}
+[0.777095] (abb_pi0_bridge) StdoutLine: {'line': b'copying package.xml -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge\n'}
+[0.777201] (abb_pi0_bridge) StdoutLine: {'line': b'copying README.md -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge\n'}
+[0.777317] (abb_pi0_bridge) StdoutLine: {'line': b'creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/launch\n'}
+[0.777419] (abb_pi0_bridge) StdoutLine: {'line': b'copying launch/abb_pi0_bridge.launch.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/launch\n'}
+[0.777521] (abb_pi0_bridge) StdoutLine: {'line': b'creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/config\n'}
+[0.777621] (abb_pi0_bridge) StdoutLine: {'line': b'copying config/pi0_bridge.params.yaml -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/config\n'}
+[0.777722] (abb_pi0_bridge) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.778289] (abb_pi0_bridge) StdoutLine: {'line': b'Copying ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info\n'}
+[0.778880] (abb_pi0_bridge) StdoutLine: {'line': b'running install_scripts\n'}
+[0.786637] (click_to_move) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.787121] (click_to_move) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.787835] (click_to_move) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.795404] (click_to_move) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.800624] (abb_pi0_bridge) StdoutLine: {'line': b'Installing abb_pi0_bridge_node script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge\n'}
+[0.800955] (abb_pi0_bridge) StdoutLine: {'line': b"writing list of installed files to '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log'\n"}
+[0.801079] (-) TimerEvent: {}
+[0.820939] (abb_pi0_bridge) CommandEnded: {'returncode': 0}
+[0.838971] (abb_pi0_bridge) JobEnded: {'identifier': 'abb_pi0_bridge', 'rc': 0}
+[0.901176] (-) TimerEvent: {}
+[1.001354] (-) TimerEvent: {}
+[1.101571] (-) TimerEvent: {}
+[1.201756] (-) TimerEvent: {}
+[1.256191] (click_to_move) StdoutLine: {'line': b'-- Found Python3: /home/heng/miniconda3/bin/python3 (found version "3.13.9") found components: Interpreter \n'}
+[1.301858] (-) TimerEvent: {}
+[1.383508] (click_to_move) StdoutLine: {'line': b'-- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.401941] (-) TimerEvent: {}
+[1.433455] (click_to_move) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.439007] (click_to_move) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.448853] (click_to_move) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.463523] (click_to_move) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.481428] (click_to_move) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.502026] (-) TimerEvent: {}
+[1.530847] (click_to_move) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.533878] (click_to_move) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.602128] (-) TimerEvent: {}
+[1.647750] (click_to_move) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.693283] (click_to_move) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.702219] (-) TimerEvent: {}
+[1.742561] (click_to_move) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.754402] (click_to_move) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.802303] (-) TimerEvent: {}
+[1.851237] (click_to_move) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.851543] (click_to_move) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.902441] (-) TimerEvent: {}
+[1.964699] (click_to_move) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.966768] (click_to_move) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.002573] (-) TimerEvent: {}
+[2.030629] (click_to_move) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[2.048976] (click_to_move) StdoutLine: {'line': b'-- Found tf2: 0.25.17 (/opt/ros/humble/share/tf2/cmake)\n'}
+[2.060735] (click_to_move) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.17 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[2.102649] (-) TimerEvent: {}
+[2.164453] (click_to_move) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.17 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[2.180665] (click_to_move) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[2.182257] (click_to_move) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[2.182410] (click_to_move) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[2.192594] (click_to_move) StderrLine: {'line': b'CMake Error at CMakeLists.txt:16 (find_package):\n'}
+[2.193025] (click_to_move) StderrLine: {'line': b'  By not providing "Findmoveit_ros_planning_interface.cmake" in\n'}
+[2.193160] (click_to_move) StderrLine: {'line': b'  CMAKE_MODULE_PATH this project has asked CMake to find a package\n'}
+[2.193271] (click_to_move) StderrLine: {'line': b'  configuration file provided by "moveit_ros_planning_interface", but CMake\n'}
+[2.193378] (click_to_move) StderrLine: {'line': b'  did not find one.\n'}
+[2.193483] (click_to_move) StderrLine: {'line': b'\n'}
+[2.193587] (click_to_move) StderrLine: {'line': b'  Could not find a package configuration file provided by\n'}
+[2.193690] (click_to_move) StderrLine: {'line': b'  "moveit_ros_planning_interface" with any of the following names:\n'}
+[2.193793] (click_to_move) StderrLine: {'line': b'\n'}
+[2.193909] (click_to_move) StderrLine: {'line': b'    moveit_ros_planning_interfaceConfig.cmake\n'}
+[2.194023] (click_to_move) StderrLine: {'line': b'    moveit_ros_planning_interface-config.cmake\n'}
+[2.194130] (click_to_move) StderrLine: {'line': b'\n'}
+[2.194237] (click_to_move) StderrLine: {'line': b'  Add the installation prefix of "moveit_ros_planning_interface" to\n'}
+[2.194345] (click_to_move) StderrLine: {'line': b'  CMAKE_PREFIX_PATH or set "moveit_ros_planning_interface_DIR" to a directory\n'}
+[2.194453] (click_to_move) StderrLine: {'line': b'  containing one of the above files.  If "moveit_ros_planning_interface"\n'}
+[2.194559] (click_to_move) StderrLine: {'line': b'  provides a separate development package or SDK, be sure it has been\n'}
+[2.194665] (click_to_move) StderrLine: {'line': b'  installed.\n'}
+[2.194769] (click_to_move) StderrLine: {'line': b'\n'}
+[2.194892] (click_to_move) StderrLine: {'line': b'\n'}
+[2.195009] (click_to_move) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[2.195133] (click_to_move) StdoutLine: {'line': b'See also "/home/heng/workspace/ws_RAMS/build/click_to_move/CMakeFiles/CMakeOutput.log".\n'}
+[2.201921] (click_to_move) CommandEnded: {'returncode': 1}
+[2.203006] (-) TimerEvent: {}
+[2.234239] (click_to_move) JobEnded: {'identifier': 'click_to_move', 'rc': 1}
+[2.244989] (-) EventReactorShutdown: {}

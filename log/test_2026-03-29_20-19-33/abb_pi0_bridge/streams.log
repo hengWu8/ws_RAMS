@@ -1,0 +1,15 @@
+[0.252s] Invoking command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) PYTEST_ADDOPTS=--tb=short --junit-xml=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml --junit-prefix=abb_pi0_bridge -o cache_dir=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest
+[0.580s] ============================= test session starts ==============================
+[0.580s] platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+[0.580s] cachedir: /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache
+[0.580s] rootdir: /home/heng/workspace/ws_RAMS/src/abb_pi0_bridge
+[0.580s] plugins: ament-pep257-0.12.14, launch-testing-ros-0.19.13, ament-copyright-0.12.14, ament-flake8-0.12.14, ament-xmllint-0.12.14, launch-testing-1.0.13, ament-lint-0.12.14, colcon-core-0.20.1, cov-3.0.0
+[0.580s] collected 9 items
+[0.580s] 
+[0.587s] tests/test_bridge_core.py ....                                           [ 44%]
+[0.588s] tests/test_control_mode.py ..                                            [ 66%]
+[0.591s] tests/test_policy_backends.py ...                                        [100%]
+[0.591s] 
+[0.592s] - generated xml file: /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml -
+[0.592s] ============================== 9 passed in 0.03s ===============================
+[0.654s] Invoked command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge' returned '0': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) PYTEST_ADDOPTS=--tb=short --junit-xml=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml --junit-prefix=abb_pi0_bridge -o cache_dir=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest

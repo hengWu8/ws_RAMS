@@ -130,6 +130,9 @@ def generate_launch_description():
                 "base_frame": "base",
                 "eef_link": "",  # 走默认末端
                 "clicked_point_topic": "/clicked_point",
+                "control_mode_topic": "/abb/control_mode",
+                "required_control_mode": "trajectory",
+                "default_control_mode": "trajectory",
                 "above_offset": 0.05,
                 "plan_only": False,
                 "velocity_scaling": 0.2,

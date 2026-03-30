@@ -1,0 +1,51 @@
+[0.555s] Invoking command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/abb_pi0_bridge build --build-base /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build install --record /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log --single-version-externally-managed install_data
+[0.766s] running egg_info
+[0.766s] creating ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info
+[0.766s] writing ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/PKG-INFO
+[0.766s] writing dependency_links to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/dependency_links.txt
+[0.767s] writing entry points to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/entry_points.txt
+[0.767s] writing requirements to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/requires.txt
+[0.767s] writing top-level names to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/top_level.txt
+[0.767s] writing manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'
+[0.768s] reading manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'
+[0.769s] writing manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'
+[0.769s] running build
+[0.769s] running build_py
+[0.769s] creating /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build
+[0.769s] creating /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib
+[0.769s] creating /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge
+[0.770s] copying abb_pi0_bridge/bridge_node.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge
+[0.770s] copying abb_pi0_bridge/bridge_core.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge
+[0.770s] copying abb_pi0_bridge/__init__.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge
+[0.770s] copying abb_pi0_bridge/mock_policy.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge
+[0.770s] copying abb_pi0_bridge/control_mode.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge
+[0.770s] running install
+[0.770s] running install_lib
+[0.771s] creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge
+[0.771s] copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/bridge_node.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge
+[0.771s] copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/bridge_core.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge
+[0.771s] copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/__init__.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge
+[0.771s] copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/mock_policy.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge
+[0.771s] copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/control_mode.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge
+[0.772s] byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/bridge_node.py to bridge_node.cpython-310.pyc
+[0.773s] byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/bridge_core.py to bridge_core.cpython-310.pyc
+[0.774s] byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/__init__.py to __init__.cpython-310.pyc
+[0.774s] byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/mock_policy.py to mock_policy.cpython-310.pyc
+[0.775s] byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/control_mode.py to control_mode.cpython-310.pyc
+[0.775s] running install_data
+[0.775s] creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/ament_index
+[0.776s] creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/ament_index/resource_index
+[0.776s] creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/ament_index/resource_index/packages
+[0.776s] copying resource/abb_pi0_bridge -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/ament_index/resource_index/packages
+[0.776s] copying package.xml -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge
+[0.776s] copying README.md -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge
+[0.776s] creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/launch
+[0.777s] copying launch/abb_pi0_bridge.launch.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/launch
+[0.777s] creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/config
+[0.777s] copying config/pi0_bridge.params.yaml -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/config
+[0.777s] running install_egg_info
+[0.777s] Copying ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info
+[0.778s] running install_scripts
+[0.800s] Installing abb_pi0_bridge_node script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+[0.800s] writing list of installed files to '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log'
+[0.820s] Invoked command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/abb_pi0_bridge build --build-base /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build install --record /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log --single-version-externally-managed install_data

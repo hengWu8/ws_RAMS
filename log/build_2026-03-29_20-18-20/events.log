@@ -1,0 +1,12 @@
+[0.000000] (-) TimerEvent: {}
+[0.000470] (-) JobUnselected: {'identifier': 'workcell_config'}
+[0.000649] (-) JobUnselected: {'identifier': 'workcell_description'}
+[0.000681] (abb_pi0_bridge) JobQueued: {'identifier': 'abb_pi0_bridge', 'dependencies': OrderedDict()}
+[0.000821] (click_to_move) JobQueued: {'identifier': 'click_to_move', 'dependencies': OrderedDict([('workcell_description', '/home/heng/workspace/ws_RAMS/install/workcell_description'), ('workcell_config', '/home/heng/workspace/ws_RAMS/install/workcell_config')])}
+[0.000967] (abb_pi0_bridge) JobStarted: {'identifier': 'abb_pi0_bridge'}
+[0.011322] (click_to_move) JobStarted: {'identifier': 'click_to_move'}
+[0.099052] (-) TimerEvent: {}
+[0.199345] (-) TimerEvent: {}
+[0.277201] (click_to_move) JobEnded: {'identifier': 'click_to_move', 'rc': 1}
+[0.280999] (abb_pi0_bridge) JobEnded: {'identifier': 'abb_pi0_bridge', 'rc': 'SIGINT'}
+[0.282496] (-) EventReactorShutdown: {}

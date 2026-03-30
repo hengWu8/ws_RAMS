@@ -1,0 +1,13 @@
+[0.258s] Invoking command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/home/heng/workspace/ws_RAMS/install/click_to_move:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) PYTEST_ADDOPTS=--tb=short --junit-xml=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml --junit-prefix=abb_pi0_bridge -o cache_dir=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest
+[0.571s] ============================= test session starts ==============================
+[0.571s] platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+[0.571s] cachedir: /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache
+[0.571s] rootdir: /home/heng/workspace/ws_RAMS/src/abb_pi0_bridge
+[0.571s] plugins: ament-pep257-0.12.14, launch-testing-ros-0.19.13, ament-copyright-0.12.14, ament-flake8-0.12.14, ament-xmllint-0.12.14, launch-testing-1.0.13, ament-lint-0.12.14, colcon-core-0.20.1, cov-3.0.0
+[0.572s] collected 4 items
+[0.572s] 
+[0.579s] tests/test_bridge_core.py ....                                           [100%]
+[0.579s] 
+[0.579s] - generated xml file: /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml -
+[0.579s] ============================== 4 passed in 0.02s ===============================
+[0.626s] Invoked command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge' returned '0': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/home/heng/workspace/ws_RAMS/install/click_to_move:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) PYTEST_ADDOPTS=--tb=short --junit-xml=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml --junit-prefix=abb_pi0_bridge -o cache_dir=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest

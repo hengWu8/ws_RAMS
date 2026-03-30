@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
@@ -19,6 +20,7 @@ add_executable(click_to_move_node src/click_to_move_node.cpp)
 ament_target_dependencies(click_to_move_node
   rclcpp
   geometry_msgs
+  std_msgs
   tf2
   tf2_ros
   tf2_geometry_msgs
