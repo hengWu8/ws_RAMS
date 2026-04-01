@@ -1,0 +1,26 @@
+running develop
+running egg_info
+writing abb_pi0_bridge.egg-info/PKG-INFO
+writing dependency_links to abb_pi0_bridge.egg-info/dependency_links.txt
+writing entry points to abb_pi0_bridge.egg-info/entry_points.txt
+writing requirements to abb_pi0_bridge.egg-info/requires.txt
+writing top-level names to abb_pi0_bridge.egg-info/top_level.txt
+reading manifest file 'abb_pi0_bridge.egg-info/SOURCES.txt'
+writing manifest file 'abb_pi0_bridge.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb-pi0-bridge.egg-link (link to .)
+Installing abb_pi0_bridge_node script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+Installing pi0_policy_stub_server script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+Installing robotstudio_preflight script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+
+Installed /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge
+running symlink_data
+symbolically linking /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/resource/abb_pi0_bridge -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/ament_index/resource_index/packages
+symbolically linking /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/package.xml -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge
+symbolically linking /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/README.md -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge
+symbolically linking /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/ROBOTSTUDIO_PI0_SETUP.md -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge
+symbolically linking /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/PI0_POLICY_HTTP_PROTOCOL.md -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge
+symbolically linking /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/launch/robotstudio_pi0.launch.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/launch
+symbolically linking /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/launch/abb_pi0_bridge.launch.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/launch
+symbolically linking /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/config/pi0_robotstudio_http.params.yaml -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/config
+symbolically linking /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/config/pi0_bridge.params.yaml -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/config

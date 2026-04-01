@@ -55,6 +55,19 @@ ros2 launch abb_pi0_bridge abb_pi0_bridge.launch.py \
   control_rate_hz:=20.0
 ```
 
+Left-step policy stub for a visible motion check:
+
+```bash
+ros2 launch abb_pi0_bridge robotstudio_pi0.launch.py \
+  launch_policy_stub:=true \
+  policy_stub_mode:=left \
+  policy_stub_step_rad:=0.1 \
+  policy_stub_joint_index:=0 \
+  publish_commands:=true
+```
+
+If the arm moves the wrong way, flip the sign of `policy_stub_step_rad`.
+
 Switch to streaming mode:
 
 ```bash
@@ -72,6 +85,15 @@ Return control to `click_to_move` / MoveIt:
 ```bash
 ros2 service call /abb_pi0_bridge/activate_click_to_move_mode std_srvs/srv/Trigger "{}"
 ```
+
+RobotStudio-oriented bringup from the server:
+
+```bash
+ros2 launch abb_pi0_bridge robotstudio_pi0.launch.py \
+  robotstudio_rws_ip:=<YOUR_ROBOTSTUDIO_IP>
+```
+
+For the full server-side checklist, see `ROBOTSTUDIO_PI0_SETUP.md`.
 
 ## Expected integration pattern
 

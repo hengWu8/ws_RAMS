@@ -1,0 +1,33 @@
+[0.016s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_bringup': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/click_to_move:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_bringup -- -j48 -l48
+[0.068s] [35m[1mConsolidate compiler generated dependencies of target gtest_main[0m
+[0.068s] [35m[1mConsolidate compiler generated dependencies of target gtest[0m
+[0.083s] [ 33%] Built target gtest_main
+[0.084s] [ 66%] Built target gtest
+[0.097s] [35m[1mConsolidate compiler generated dependencies of target test_command_topics[0m
+[0.117s] [100%] Built target test_command_topics
+[0.127s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_bringup' returned '0': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/click_to_move:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_bringup -- -j48 -l48
+[0.130s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_bringup': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/click_to_move:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_bringup
+[0.135s] -- Install configuration: ""
+[0.135s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/config
+[0.136s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/config/abb_controllers.yaml
+[0.136s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch
+[0.136s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch/abb_control.launch.py
+[0.136s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch/abb_rws_client.launch.py
+[0.136s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch/abb_moveit.launch.py
+[0.136s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/ament_index/resource_index/package_run_dependencies/abb_bringup
+[0.136s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/ament_index/resource_index/parent_prefix_path/abb_bringup
+[0.136s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/environment/ament_prefix_path.sh
+[0.137s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/environment/ament_prefix_path.dsv
+[0.137s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/environment/path.sh
+[0.137s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/environment/path.dsv
+[0.137s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/local_setup.bash
+[0.137s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/local_setup.sh
+[0.137s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/local_setup.zsh
+[0.137s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/local_setup.dsv
+[0.138s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/package.dsv
+[0.138s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/ament_index/resource_index/packages/abb_bringup
+[0.138s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.138s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/cmake/abb_bringupConfig.cmake
+[0.138s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/cmake/abb_bringupConfig-version.cmake
+[0.138s] -- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/package.xml
+[0.140s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_bringup' returned '0': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/click_to_move:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_bringup

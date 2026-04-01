@@ -1,0 +1,53 @@
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for C++ include pthread.h
+-- Looking for C++ include pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: regex system thread 
+-- Searching for Poco library...
+--   Found Poco!
+-- components found: Foundation, Net, Util, XML.
+-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+-- Generating protobuf C++ for: proto/robot_controller_description.proto
+-- abb_egm_rws_managers: Defaulting build type to RelWithDebInfo
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers
+[ 14%] Running cpp protocol buffer compiler on proto/robot_controller_description.proto
+[ 28%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/src/egm_manager.cpp.o
+[ 42%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/src/rws_manager.cpp.o
+[ 57%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/src/system_data_parser.cpp.o
+[ 71%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/robot_controller_description.pb.cc.o
+[ 85%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/src/utilities.cpp.o
+[100%] Linking CXX shared library libabb_egm_rws_managers.so
+[100%] Built target abb_egm_rws_managers
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/utilities.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/data_containers.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/system_data_parser.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/rws_manager.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/egm_manager.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/robot_controller_description.proto
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/robot_controller_description.pb.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/abb_egm_rws_managers_export.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersConfig.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersConfigVersion.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/package.xml
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/libabb_egm_rws_managers.so
+-- Set runtime path of "/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/libabb_egm_rws_managers.so" to ""
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersTargets.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersTargets-relwithdebinfo.cmake

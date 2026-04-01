@@ -1,0 +1,83 @@
+[0.017s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface -DPython3_EXECUTABLE=/usr/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/abb_hardware_interface
+[0.087s] -- The C compiler identification is GNU 11.4.0
+[0.156s] -- The CXX compiler identification is GNU 11.4.0
+[0.169s] -- Detecting C compiler ABI info
+[0.262s] -- Detecting C compiler ABI info - done
+[0.281s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.281s] -- Detecting C compile features
+[0.282s] -- Detecting C compile features - done
+[0.289s] -- Detecting CXX compiler ABI info
+[0.393s] -- Detecting CXX compiler ABI info - done
+[0.411s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.412s] -- Detecting CXX compile features
+[0.413s] -- Detecting CXX compile features - done
+[0.417s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.604s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.720s] -- Looking for pthread.h
+[0.820s] -- Looking for pthread.h - found
+[0.820s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.919s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.921s] -- Found Threads: TRUE  
+[0.959s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: regex system thread 
+[0.963s] -- Searching for Poco library...
+[0.982s] --   Found Poco!
+[0.982s] -- components found: Foundation, Net, Util, XML.
+[1.000s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[1.005s] -- Found hardware_interface: 2.53.1 (/opt/ros/humble/share/hardware_interface/cmake)
+[1.052s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.056s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.065s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.076s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.091s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.309s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.311s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.335s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[1.397s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.400s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[1.414s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.417s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[1.426s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[1.437s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.495s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.572s] -- Configuring done
+[1.586s] -- Generating done
+[1.591s] -- Build files have been written to: /home/heng/workspace/ws_RAMS/build/abb_hardware_interface
+[1.603s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface -DPython3_EXECUTABLE=/usr/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/abb_hardware_interface
+[1.605s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_hardware_interface -- -j48 -l48
+[1.673s] [ 33%] Building CXX object CMakeFiles/abb_hardware_interface.dir/src/abb_hardware_interface.cpp.o
+[1.676s] [ 66%] Building CXX object CMakeFiles/abb_hardware_interface.dir/src/utilities.cpp.o
+[8.213s] [100%] Linking CXX shared library libabb_hardware_interface.so
+[8.496s] [100%] Built target abb_hardware_interface
+[8.511s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_hardware_interface -- -j48 -l48
+[8.512s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_hardware_interface
+[8.523s] -- Install configuration: ""
+[8.523s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/abb_hardware_interface.xml
+[8.525s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib/libabb_hardware_interface.so
+[8.527s] -- Set runtime path of "/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib/libabb_hardware_interface.so" to ""
+[8.527s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include
+[8.527s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include/abb_hardware_interface
+[8.527s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include/abb_hardware_interface/abb_hardware_interface.hpp
+[8.527s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include/abb_hardware_interface/visibility_control.h
+[8.528s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include/abb_hardware_interface/utilities.hpp
+[8.528s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/library_path.sh
+[8.528s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/library_path.dsv
+[8.528s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/ament_index/resource_index/package_run_dependencies/abb_hardware_interface
+[8.528s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/ament_index/resource_index/parent_prefix_path/abb_hardware_interface
+[8.528s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/ament_prefix_path.sh
+[8.528s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/ament_prefix_path.dsv
+[8.529s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/path.sh
+[8.529s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/path.dsv
+[8.529s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/local_setup.bash
+[8.529s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/local_setup.sh
+[8.529s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/local_setup.zsh
+[8.529s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/local_setup.dsv
+[8.529s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.dsv
+[8.530s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/ament_index/resource_index/packages/abb_hardware_interface
+[8.530s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/abb_hardware_interface
+[8.530s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.530s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[8.530s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.531s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/abb_hardware_interfaceConfig.cmake
+[8.531s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/abb_hardware_interfaceConfig-version.cmake
+[8.531s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.xml
+[8.534s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_hardware_interface

@@ -1,0 +1,4 @@
+Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_librws': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_librws -- -j48 -l48
+Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_librws' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_librws -- -j48 -l48
+Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_librws': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_librws
+Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_librws' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_librws

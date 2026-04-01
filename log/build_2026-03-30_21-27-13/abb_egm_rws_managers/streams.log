@@ -1,0 +1,65 @@
+[0.016s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/abb_egm_rws_managers -DPython3_EXECUTABLE=/usr/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers
+[0.094s] -- The CXX compiler identification is GNU 11.4.0
+[0.104s] -- Detecting CXX compiler ABI info
+[0.201s] -- Detecting CXX compiler ABI info - done
+[0.220s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.221s] -- Detecting CXX compile features
+[0.222s] -- Detecting CXX compile features - done
+[0.226s] -- Looking for C++ include pthread.h
+[0.334s] -- Looking for C++ include pthread.h - found
+[0.334s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.435s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.437s] -- Found Threads: TRUE  
+[0.473s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: regex system thread 
+[0.477s] -- Searching for Poco library...
+[0.500s] --   Found Poco!
+[0.500s] -- components found: Foundation, Net, Util, XML.
+[0.522s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[0.522s] -- Generating protobuf C++ for: proto/robot_controller_description.proto
+[0.522s] -- abb_egm_rws_managers: Defaulting build type to RelWithDebInfo
+[0.525s] -- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY
+[0.623s] -- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success
+[0.624s] -- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+[0.718s] -- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success
+[0.719s] -- Performing Test COMPILER_HAS_DEPRECATED_ATTR
+[0.821s] -- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
+[0.832s] -- Configuring done
+[0.838s] -- Generating done
+[0.839s] CMake Warning:
+[0.839s]   Manually-specified variables were not used by the project:
+[0.839s] 
+[0.839s]     Python3_EXECUTABLE
+[0.839s] 
+[0.839s] 
+[0.842s] -- Build files have been written to: /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers
+[0.847s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/abb_egm_rws_managers -DPython3_EXECUTABLE=/usr/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers
+[0.849s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers -- -j48 -l48
+[0.898s] [ 14%] Running cpp protocol buffer compiler on proto/robot_controller_description.proto
+[0.964s] [ 28%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/src/egm_manager.cpp.o
+[0.970s] [ 42%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/src/rws_manager.cpp.o
+[0.973s] [ 57%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/src/system_data_parser.cpp.o
+[0.975s] [ 71%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/robot_controller_description.pb.cc.o
+[0.977s] [ 85%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/src/utilities.cpp.o
+[11.874s] [100%] Linking CXX shared library libabb_egm_rws_managers.so
+[12.134s] [100%] Built target abb_egm_rws_managers
+[12.150s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers -- -j48 -l48
+[12.152s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers
+[12.162s] -- Install configuration: "RelWithDebInfo"
+[12.163s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include
+[12.163s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers
+[12.163s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/utilities.h
+[12.163s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/data_containers.h
+[12.163s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/system_data_parser.h
+[12.163s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/rws_manager.h
+[12.163s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/egm_manager.h
+[12.164s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/robot_controller_description.proto
+[12.164s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/robot_controller_description.pb.h
+[12.164s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/abb_egm_rws_managers_export.h
+[12.164s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersConfig.cmake
+[12.164s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersConfigVersion.cmake
+[12.164s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/package.xml
+[12.165s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/libabb_egm_rws_managers.so
+[12.177s] -- Set runtime path of "/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/libabb_egm_rws_managers.so" to ""
+[12.177s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersTargets.cmake
+[12.177s] -- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersTargets-relwithdebinfo.cmake
+[12.179s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers

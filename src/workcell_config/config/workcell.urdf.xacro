@@ -6,8 +6,16 @@
   <xacro:property name="rws_ip"            value="$(arg rws_ip)"/>
   <xacro:arg name="rws_port"         default="80"/>
   <xacro:property name="rws_port"         value="$(arg rws_port)"/>
+  <xacro:arg name="rws_username"     default="Default User"/>
+  <xacro:property name="rws_username"     value="$(arg rws_username)"/>
+  <xacro:arg name="rws_password"     default="robotics"/>
+  <xacro:property name="rws_password"     value="$(arg rws_password)"/>
+  <xacro:arg name="robot_controller_id" default="IRB6700"/>
+  <xacro:property name="robot_controller_id" value="$(arg robot_controller_id)"/>
   <xacro:arg name="configure_via_rws" default="true"/>
   <xacro:property name="configure_via_rws" value="$(arg configure_via_rws)"/>
+  <xacro:arg name="egm_port"         default="6515"/>
+  <xacro:property name="egm_port"         value="$(arg egm_port)"/>
   <xacro:arg name="prefix" default=""/>
   <xacro:arg name="mesh_scale_visual" default="1 1 1"/>
   <xacro:arg name="mesh_scale_collision" default="1 1 1"/>
@@ -48,6 +56,10 @@
     use_fake_hardware="${use_fake_hardware}"
     rws_ip="${rws_ip}"
     rws_port="${rws_port}"
+    rws_username="${rws_username}"
+    rws_password="${rws_password}"
+    robot_controller_id="${robot_controller_id}"
     configure_via_rws="${configure_via_rws}"
+    egm_port="${egm_port}"
     initial_positions_file="$(find workcell_config)/config/initial_positions.yaml"/>
 </robot>

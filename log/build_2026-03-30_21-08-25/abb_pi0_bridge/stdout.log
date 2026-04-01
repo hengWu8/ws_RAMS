@@ -1,0 +1,26 @@
+running egg_info
+writing ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/PKG-INFO
+writing dependency_links to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/dependency_links.txt
+writing entry points to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/entry_points.txt
+writing requirements to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/requires.txt
+writing top-level names to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/top_level.txt
+reading manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'
+writing manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'
+running build
+running build_py
+copying abb_pi0_bridge/robotstudio_preflight.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge
+running install
+running install_lib
+copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/robotstudio_preflight.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge
+byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/robotstudio_preflight.py to robotstudio_preflight.cpython-310.pyc
+running install_data
+copying ROBOTSTUDIO_PI0_SETUP.md -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge
+copying launch/robotstudio_pi0.launch.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/launch
+running install_egg_info
+removing '/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info
+running install_scripts
+Installing abb_pi0_bridge_node script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+Installing pi0_policy_stub_server script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+Installing robotstudio_preflight script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+writing list of installed files to '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log'

@@ -1,0 +1,57 @@
+[0.000000] (-) TimerEvent: {}
+[0.000255] (-) JobUnselected: {'identifier': 'abb_bringup'}
+[0.000708] (-) JobUnselected: {'identifier': 'abb_egm_msgs'}
+[0.000764] (-) JobUnselected: {'identifier': 'abb_egm_rws_managers'}
+[0.000797] (-) JobUnselected: {'identifier': 'abb_hardware_interface'}
+[0.001018] (-) JobUnselected: {'identifier': 'abb_irb1200_5_90_moveit_config'}
+[0.001056] (-) JobUnselected: {'identifier': 'abb_irb1200_support'}
+[0.001078] (-) JobUnselected: {'identifier': 'abb_irb4600_support'}
+[0.001098] (-) JobUnselected: {'identifier': 'abb_libegm'}
+[0.001117] (-) JobUnselected: {'identifier': 'abb_librws'}
+[0.001138] (-) JobUnselected: {'identifier': 'abb_rapid_msgs'}
+[0.001157] (-) JobUnselected: {'identifier': 'abb_rapid_sm_addin_msgs'}
+[0.001176] (-) JobUnselected: {'identifier': 'abb_resources'}
+[0.001194] (-) JobUnselected: {'identifier': 'abb_robot_msgs'}
+[0.001213] (-) JobUnselected: {'identifier': 'abb_ros2'}
+[0.001233] (-) JobUnselected: {'identifier': 'abb_rws_client'}
+[0.001251] (-) JobUnselected: {'identifier': 'click_to_move'}
+[0.001270] (-) JobUnselected: {'identifier': 'workcell_config'}
+[0.001290] (-) JobUnselected: {'identifier': 'workcell_description'}
+[0.001318] (abb_pi0_bridge) JobQueued: {'identifier': 'abb_pi0_bridge', 'dependencies': OrderedDict()}
+[0.001346] (abb_pi0_bridge) JobStarted: {'identifier': 'abb_pi0_bridge'}
+[0.099680] (-) TimerEvent: {}
+[0.199861] (-) TimerEvent: {}
+[0.300031] (-) TimerEvent: {}
+[0.400212] (-) TimerEvent: {}
+[0.500394] (-) TimerEvent: {}
+[0.561012] (abb_pi0_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/abb_pi0_bridge', 'build', '--build-base', '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build', 'install', '--record', '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/heng', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'HTTPS_PROXY': 'http://127.0.0.1:27897', 'CODEX_CI': '1', 'USER': 'heng', 'SSH_CLIENT': '192.168.1.105 64419 22', 'LC_TIME': 'zh_CN.UTF-8', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'DEBUG': 'release', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/heng', 'CONDA_SHLVL': '1', 'OLDPWD': '/home/heng/workspace/ws_RAMS', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-520606c8-9e0f-49a9-965e-256d605dc302.sock', 'ROS_PYTHON_VERSION': '3', 'PAGER': 'cat', 'LC_MONETARY': 'zh_CN.UTF-8', 'LC_CTYPE': 'C.UTF-8', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': '', 'https_proxy': 'http://127.0.0.1:27897', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'heng', 'VSCODE_HANDLES_SIGPIPE': 'true', 'http_proxy': 'http://127.0.0.1:27897', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'RUST_LOG': 'warn', 'TERM': 'dumb', 'XDG_SESSION_ID': '6264', 'VSCODE_CLI_REQUIRE_TOKEN': '2c633855-0a9d-4e7f-8667-781f85ab06bb', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin:/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0t0H7Fy:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64', 'VSCODE_AGENT_FOLDER': '/home/heng/.vscode-server', 'LC_ADDRESS': 'zh_CN.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'C.UTF-8', 'LC_TELEPHONE': 'zh_CN.UTF-8', 'GH_PAGER': 'cat', 'LS_COLORS': '', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'zh_CN.UTF-8', 'ELECTRON_RUN_AS_NODE': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019d3906-f335-7b11-8e6c-544764b4b3e2', 'LC_MEASUREMENT': 'zh_CN.UTF-8', 'LC_IDENTIFICATION': 'zh_CN.UTF-8', 'GIT_PAGER': 'cat', 'PWD': '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge', 'LC_ALL': 'C.UTF-8', 'SSH_CONNECTION': '192.168.1.105 64419 192.168.1.102 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'HTTP_PROXY': 'http://127.0.0.1:27897', 'LC_NUMERIC': 'zh_CN.UTF-8', 'LC_PAPER': 'zh_CN.UTF-8', 'COLCON': '1'}, 'shell': False}
+[0.600510] (-) TimerEvent: {}
+[0.700689] (-) TimerEvent: {}
+[0.775019] (abb_pi0_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[0.775492] (abb_pi0_bridge) StdoutLine: {'line': b'writing ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/PKG-INFO\n'}
+[0.775866] (abb_pi0_bridge) StdoutLine: {'line': b'writing dependency_links to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/dependency_links.txt\n'}
+[0.776117] (abb_pi0_bridge) StdoutLine: {'line': b'writing entry points to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/entry_points.txt\n'}
+[0.776229] (abb_pi0_bridge) StdoutLine: {'line': b'writing requirements to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/requires.txt\n'}
+[0.776335] (abb_pi0_bridge) StdoutLine: {'line': b'writing top-level names to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/top_level.txt\n'}
+[0.777185] (abb_pi0_bridge) StdoutLine: {'line': b"reading manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'\n"}
+[0.779695] (abb_pi0_bridge) StdoutLine: {'line': b"writing manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'\n"}
+[0.779902] (abb_pi0_bridge) StdoutLine: {'line': b'running build\n'}
+[0.780192] (abb_pi0_bridge) StdoutLine: {'line': b'running build_py\n'}
+[0.780304] (abb_pi0_bridge) StdoutLine: {'line': b'copying abb_pi0_bridge/robotstudio_preflight.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge\n'}
+[0.780941] (abb_pi0_bridge) StdoutLine: {'line': b'running install\n'}
+[0.781231] (abb_pi0_bridge) StdoutLine: {'line': b'running install_lib\n'}
+[0.781845] (abb_pi0_bridge) StdoutLine: {'line': b'copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/robotstudio_preflight.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge\n'}
+[0.782271] (abb_pi0_bridge) StdoutLine: {'line': b'byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/robotstudio_preflight.py to robotstudio_preflight.cpython-310.pyc\n'}
+[0.782926] (abb_pi0_bridge) StdoutLine: {'line': b'running install_data\n'}
+[0.783174] (abb_pi0_bridge) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.784547] (abb_pi0_bridge) StdoutLine: {'line': b"removing '/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info' (and everything under it)\n"}
+[0.784798] (abb_pi0_bridge) StdoutLine: {'line': b'Copying ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info\n'}
+[0.785447] (abb_pi0_bridge) StdoutLine: {'line': b'running install_scripts\n'}
+[0.800800] (-) TimerEvent: {}
+[0.802490] (abb_pi0_bridge) StdoutLine: {'line': b'Installing abb_pi0_bridge_node script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge\n'}
+[0.802684] (abb_pi0_bridge) StdoutLine: {'line': b'Installing pi0_policy_stub_server script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge\n'}
+[0.802832] (abb_pi0_bridge) StdoutLine: {'line': b'Installing robotstudio_preflight script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge\n'}
+[0.803137] (abb_pi0_bridge) StdoutLine: {'line': b"writing list of installed files to '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log'\n"}
+[0.821659] (abb_pi0_bridge) CommandEnded: {'returncode': 0}
+[0.839555] (abb_pi0_bridge) JobEnded: {'identifier': 'abb_pi0_bridge', 'rc': 0}
+[0.840412] (-) EventReactorShutdown: {}

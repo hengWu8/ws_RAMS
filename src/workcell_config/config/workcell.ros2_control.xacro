@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:macro name="workcell_ros2_control" params="name use_fake_hardware:=true rws_ip rws_port configure_via_rws:=true initial_positions_file">
+    <xacro:macro name="workcell_ros2_control" params="name use_fake_hardware:=true rws_ip rws_port rws_username:='Default User' rws_password:='robotics' robot_controller_id:='IRB6700' configure_via_rws:=true egm_port:=6515 initial_positions_file">
         <xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions']}"/>
 
         <ros2_control name="${name}" type="system">
@@ -14,12 +14,13 @@
               <!-- Real hardware via ABB controller -->
               <xacro:unless value="${use_fake_hardware}">
                 <plugin>abb_hardware_interface/ABBSystemHardware</plugin>
-                <param name="rws_ip">192.168.1.1</param>
-                <param name="rws_port">80</param>
-                <param name="rws_username">Default User</param>
-                <param name="rws_password">robotics</param>
-                <param name="configure_via_rws">true</param>
-                <param name="egm_port">6515</param>
+                <param name="rws_ip">${rws_ip}</param>
+                <param name="rws_port">${rws_port}</param>
+                <param name="rws_username">${rws_username}</param>
+                <param name="rws_password">${rws_password}</param>
+                <param name="robot_controller_id">${robot_controller_id}</param>
+                <param name="configure_via_rws">${configure_via_rws}</param>
+                <param name="egm_port">${egm_port}</param>
               </xacro:unless>
             </hardware>
             <joint name="joint_1">

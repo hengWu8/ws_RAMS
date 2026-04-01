@@ -1,0 +1,18 @@
+[0.240s] Invoking command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_hardware_interface:/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/abb_bringup:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) PYTEST_ADDOPTS=--tb=short --junit-xml=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml --junit-prefix=abb_pi0_bridge -o cache_dir=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest
+[0.522s] ============================= test session starts ==============================
+[0.522s] platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+[0.522s] cachedir: /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache
+[0.522s] rootdir: /home/heng/workspace/ws_RAMS/src/abb_pi0_bridge
+[0.522s] plugins: ament-pep257-0.12.14, launch-testing-ros-0.19.13, ament-copyright-0.12.14, ament-flake8-0.12.14, ament-xmllint-0.12.14, launch-testing-1.0.13, ament-lint-0.12.14, colcon-core-0.20.1, cov-3.0.0
+[0.523s] collected 13 items
+[0.523s] 
+[0.529s] tests/test_bridge_core.py ....                                           [ 30%]
+[0.530s] tests/test_control_mode.py ..                                            [ 46%]
+[0.532s] tests/test_policy_backends.py ...                                        [ 69%]
+[0.533s] tests/test_policy_stub_server.py .                                       [ 76%]
+[0.534s] tests/test_protocol.py ..                                                [ 92%]
+[0.536s] tests/test_robotstudio_preflight.py .                                    [100%]
+[0.536s] 
+[0.536s] - generated xml file: /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml -
+[0.536s] ============================== 13 passed in 0.04s ==============================
+[0.574s] Invoked command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge' returned '0': AMENT_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_hardware_interface:/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/abb_bringup:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) PYTEST_ADDOPTS=--tb=short --junit-xml=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml --junit-prefix=abb_pi0_bridge -o cache_dir=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -m pytest

@@ -4,6 +4,7 @@ import urllib.error
 import urllib.request
 
 from .bridge_core import PolicyObservation
+from .protocol import build_policy_request, extract_joint_positions
 
 
 class MockHoldPolicy:
@@ -32,7 +33,7 @@ class HttpPolicyServerClient:
         if self.timeout_sec <= 0.0:
             raise ValueError("policy_request_timeout_sec must be positive.")
 
-        payload = json.dumps({"observation": observation.as_policy_input()}).encode("utf-8")
+        payload = json.dumps(build_policy_request(observation)).encode("utf-8")
         request = urllib.request.Request(
             self.server_url,
             data=payload,
@@ -52,34 +53,6 @@ class HttpPolicyServerClient:
             raise ValueError("Policy server returned invalid JSON.") from exc
 
         return extract_joint_positions(response_payload, observation.joint_names)
-
-
-def extract_joint_positions(
-    response_payload: dict[str, Any],
-    expected_joint_names: tuple[str, ...],
-) -> tuple[float, ...]:
-    joint_positions = response_payload.get("joint_positions")
-    if joint_positions is None and isinstance(response_payload.get("action"), dict):
-        joint_positions = response_payload["action"].get("joint_positions")
-    if joint_positions is None:
-        joint_positions = response_payload.get("target_joint_positions")
-
-    if isinstance(joint_positions, dict):
-        missing = [name for name in expected_joint_names if name not in joint_positions]
-        if missing:
-            raise ValueError(f"Policy response is missing joint positions for: {missing}")
-        return tuple(float(joint_positions[name]) for name in expected_joint_names)
-
-    if isinstance(joint_positions, list):
-        if len(joint_positions) != len(expected_joint_names):
-            raise ValueError(
-                "Policy response joint_positions length does not match the expected ABB joint vector."
-            )
-        return tuple(float(value) for value in joint_positions)
-
-    raise ValueError("Policy response does not contain a supported joint_positions field.")
-
-
 def build_policy_backend(
     policy_backend: str,
     policy_server_url: str = "",

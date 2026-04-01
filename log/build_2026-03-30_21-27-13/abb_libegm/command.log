@@ -1,0 +1,6 @@
+Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_libegm': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/abb_libegm -DPython3_EXECUTABLE=/usr/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/abb_libegm
+Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_libegm' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/abb_libegm -DPython3_EXECUTABLE=/usr/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/abb_libegm
+Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_libegm': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_libegm -- -j48 -l48
+Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_libegm' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_libegm -- -j48 -l48
+Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_libegm': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_libegm
+Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_libegm' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_libegm

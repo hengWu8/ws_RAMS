@@ -1,0 +1,24 @@
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/heng/workspace/ws_RAMS/build/abb_resources
+-- Install configuration: ""
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/ament_index/resource_index/package_run_dependencies/abb_resources
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/ament_index/resource_index/parent_prefix_path/abb_resources
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/environment/ament_prefix_path.sh
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/environment/ament_prefix_path.dsv
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/environment/path.sh
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/environment/path.dsv
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/local_setup.bash
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/local_setup.sh
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/local_setup.zsh
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/local_setup.dsv
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/package.dsv
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/ament_index/resource_index/packages/abb_resources
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/cmake/abb_resourcesConfig.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/cmake/abb_resourcesConfig-version.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/package.xml
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/urdf
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/urdf/common_colours.xacro
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/urdf/common_materials.xacro

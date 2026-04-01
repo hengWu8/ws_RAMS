@@ -1,0 +1,26 @@
+[0.586s] Invoking command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge': PYTHONPATH=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/abb_pi0_bridge build --build-base /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build install --record /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log --single-version-externally-managed install_data
+[0.801s] running egg_info
+[0.802s] writing ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/PKG-INFO
+[0.802s] writing dependency_links to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/dependency_links.txt
+[0.802s] writing entry points to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/entry_points.txt
+[0.802s] writing requirements to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/requires.txt
+[0.802s] writing top-level names to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/top_level.txt
+[0.804s] reading manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'
+[0.805s] writing manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'
+[0.805s] running build
+[0.805s] running build_py
+[0.805s] copying abb_pi0_bridge/bridge_node.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge
+[0.806s] running install
+[0.806s] running install_lib
+[0.806s] copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/bridge_node.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge
+[0.807s] byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/bridge_node.py to bridge_node.cpython-310.pyc
+[0.809s] running install_data
+[0.809s] running install_egg_info
+[0.810s] removing '/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info' (and everything under it)
+[0.811s] Copying ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info
+[0.811s] running install_scripts
+[0.828s] Installing abb_pi0_bridge_node script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+[0.828s] Installing pi0_policy_stub_server script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+[0.829s] Installing robotstudio_preflight script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+[0.829s] writing list of installed files to '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log'
+[0.847s] Invoked command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge' returned '0': PYTHONPATH=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/abb_pi0_bridge build --build-base /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build install --record /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log --single-version-externally-managed install_data

@@ -1,0 +1,29 @@
+[0.024s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_librws': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/abb_librws -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/abb_librws
+[0.147s] -- The CXX compiler identification is GNU 11.4.0
+[0.159s] -- Detecting CXX compiler ABI info
+[0.245s] -- Detecting CXX compiler ABI info - done
+[0.253s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.254s] -- Detecting CXX compile features
+[0.254s] -- Detecting CXX compile features - done
+[0.257s] -- Searching for Poco library...
+[0.269s] --   Found Poco!
+[0.269s] -- components found: Foundation, Net, Util, XML.
+[0.272s] -- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY
+[0.366s] -- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success
+[0.367s] -- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+[0.463s] -- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success
+[0.464s] -- Performing Test COMPILER_HAS_DEPRECATED_ATTR
+[0.565s] -- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
+[0.569s] -- Configuring done
+[0.576s] -- Generating done
+[0.579s] -- Build files have been written to: /home/heng/workspace/ws_RAMS/build/abb_librws
+[0.585s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_librws' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/heng/workspace/ws_RAMS/src/abb_librws -DCMAKE_INSTALL_PREFIX=/home/heng/workspace/ws_RAMS/install/abb_librws
+[0.588s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_librws': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_librws -- -j48 -l48
+[0.641s] [ 14%] [32mBuilding CXX object CMakeFiles/abb_librws.dir/src/rws_poco_client.cpp.o[0m
+[0.641s] [ 28%] [32mBuilding CXX object CMakeFiles/abb_librws.dir/src/rws_common.cpp.o[0m
+[0.641s] [ 42%] [32mBuilding CXX object CMakeFiles/abb_librws.dir/src/rws_client.cpp.o[0m
+[0.641s] [ 57%] [32mBuilding CXX object CMakeFiles/abb_librws.dir/src/rws_rapid.cpp.o[0m
+[0.642s] [ 71%] [32mBuilding CXX object CMakeFiles/abb_librws.dir/src/rws_interface.cpp.o[0m
+[0.644s] [ 85%] [32mBuilding CXX object CMakeFiles/abb_librws.dir/src/rws_state_machine_interface.cpp.o[0m
+[1.999s] [100%] [32m[1mLinking CXX shared library libabb_librws.so[0m
+[2.134s] [100%] Built target abb_librws

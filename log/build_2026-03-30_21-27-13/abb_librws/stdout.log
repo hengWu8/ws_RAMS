@@ -1,0 +1,28 @@
+-- Searching for Poco library...
+--   Found Poco!
+-- components found: Foundation, Net, Util, XML.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/heng/workspace/ws_RAMS/build/abb_librws
+Consolidate compiler generated dependencies of target abb_librws
+[100%] Built target abb_librws
+-- Install configuration: ""
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include/abb_librws
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include/abb_librws/rws_common.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include/abb_librws/rws_interface.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include/abb_librws/rws_poco_client.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include/abb_librws/rws_state_machine_interface.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include/abb_librws/rws_client.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include/abb_librws/rws_rapid.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include/abb_librws/rws_cfg.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/include/abb_librws/abb_librws_export.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake/README.md
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake/FindPoco.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/lib/libabb_librws.so
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/abb_librwsConfig.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/abb_librwsConfigVersion.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/package.xml
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/abb_librwsTargets.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/abb_librwsTargets-noconfig.cmake

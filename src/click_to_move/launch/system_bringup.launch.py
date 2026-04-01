@@ -13,6 +13,22 @@ from launch.substitutions import Command
 
 
 def generate_launch_description():
+    rws_ip = DeclareLaunchArgument(
+        "rws_ip",
+        default_value="192.168.1.1",
+        description="RWS IP reachable from the ROS2 machine.",
+    )
+    rws_port = DeclareLaunchArgument(
+        "rws_port",
+        default_value="80",
+        description="RWS TCP port reachable from the ROS2 machine.",
+    )
+    egm_port = DeclareLaunchArgument(
+        "egm_port",
+        default_value="6515",
+        description="EGM UDP port exposed by the ABB controller or RobotStudio VC.",
+    )
+
     fixed_serial = DeclareLaunchArgument(
         "fixed_serial", default_value="_109522062115",  # 注意：去掉了你命令里的下划线 "_"
         description="Serial number of the fixed RealSense camera"
@@ -92,8 +108,9 @@ def generate_launch_description():
             "description_package": "workcell_description",
             "description_file": "workcell.urdf.xacro",
             "use_fake_hardware": "false",
-            "rws_ip": "192.168.1.1",
-            "egm_port": "6515",
+            "rws_ip": LaunchConfiguration("rws_ip"),
+            "rws_port": LaunchConfiguration("rws_port"),
+            "egm_port": LaunchConfiguration("egm_port"),
             "launch_rviz": "false",
         }.items(),
     )
@@ -144,6 +161,9 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        rws_ip,
+        rws_port,
+        egm_port,
         fixed_serial,
         wrist_serial,
         fixed_cam,

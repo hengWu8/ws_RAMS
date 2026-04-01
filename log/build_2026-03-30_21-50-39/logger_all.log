@@ -1,0 +1,556 @@
+[0.094s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--cmake-args', '-DPython3_EXECUTABLE=/usr/bin/python3', '--packages-select', 'abb_librws', 'abb_egm_rws_managers', 'abb_hardware_interface']
+[0.094s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=48, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['abb_librws', 'abb_egm_rws_managers', 'abb_hardware_interface'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=['-DPython3_EXECUTABLE=/usr/bin/python3'], cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x76ad96465e70>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x76ad96566e60>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x76ad96566e60>>, mixin_verb=('build',))
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.246s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.246s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/heng/workspace/ws_RAMS'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_egm_rws_managers) by extensions ['ignore', 'ignore_ament_install']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_egm_rws_managers) by extension 'ignore'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_egm_rws_managers) by extension 'ignore_ament_install'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_egm_rws_managers) by extensions ['colcon_pkg']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_egm_rws_managers) by extension 'colcon_pkg'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_egm_rws_managers) by extensions ['colcon_meta']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_egm_rws_managers) by extension 'colcon_meta'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_egm_rws_managers) by extensions ['ros']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_egm_rws_managers) by extension 'ros'
+[0.260s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_egm_rws_managers' with type 'ros.cmake' and name 'abb_egm_rws_managers'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_libegm) by extensions ['ignore', 'ignore_ament_install']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_libegm) by extension 'ignore'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_libegm) by extension 'ignore_ament_install'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_libegm) by extensions ['colcon_pkg']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_libegm) by extension 'colcon_pkg'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_libegm) by extensions ['colcon_meta']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_libegm) by extension 'colcon_meta'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_libegm) by extensions ['ros']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_libegm) by extension 'ros'
+[0.261s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_libegm' with type 'ros.cmake' and name 'abb_libegm'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_librws) by extensions ['ignore', 'ignore_ament_install']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_librws) by extension 'ignore'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_librws) by extension 'ignore_ament_install'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_librws) by extensions ['colcon_pkg']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_librws) by extension 'colcon_pkg'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_librws) by extensions ['colcon_meta']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_librws) by extension 'colcon_meta'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_librws) by extensions ['ros']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_librws) by extension 'ros'
+[0.262s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_librws' with type 'ros.cmake' and name 'abb_librws'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_pi0_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_pi0_bridge) by extension 'ignore'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_pi0_bridge) by extension 'ignore_ament_install'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_pi0_bridge) by extensions ['colcon_pkg']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_pi0_bridge) by extension 'colcon_pkg'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_pi0_bridge) by extensions ['colcon_meta']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_pi0_bridge) by extension 'colcon_meta'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_pi0_bridge) by extensions ['ros']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_pi0_bridge) by extension 'ros'
+[0.263s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_pi0_bridge' with type 'ros.ament_python' and name 'abb_pi0_bridge'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extension 'ignore'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extension 'ignore_ament_install'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extensions ['colcon_pkg']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extension 'colcon_pkg'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extensions ['colcon_meta']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extension 'colcon_meta'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extensions ['ros']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extension 'ros'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extensions ['cmake', 'python']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extension 'cmake'
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extension 'python'
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extensions ['python_setup_py']
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs) by extension 'python_setup_py'
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_egm_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_egm_msgs) by extension 'ignore'
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_egm_msgs) by extension 'ignore_ament_install'
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_egm_msgs) by extensions ['colcon_pkg']
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_egm_msgs) by extension 'colcon_pkg'
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_egm_msgs) by extensions ['colcon_meta']
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_egm_msgs) by extension 'colcon_meta'
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_egm_msgs) by extensions ['ros']
+[0.264s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_egm_msgs) by extension 'ros'
+[0.265s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_msgs/abb_egm_msgs' with type 'ros.ament_cmake' and name 'abb_egm_msgs'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_msgs) by extension 'ignore'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_msgs) by extension 'ignore_ament_install'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_msgs) by extensions ['colcon_pkg']
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_msgs) by extension 'colcon_pkg'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_msgs) by extensions ['colcon_meta']
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_msgs) by extension 'colcon_meta'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_msgs) by extensions ['ros']
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_msgs) by extension 'ros'
+[0.265s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_msgs/abb_rapid_msgs' with type 'ros.ament_cmake' and name 'abb_rapid_msgs'
+[0.265s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_sm_addin_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_sm_addin_msgs) by extension 'ignore'
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_sm_addin_msgs) by extension 'ignore_ament_install'
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_sm_addin_msgs) by extensions ['colcon_pkg']
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_sm_addin_msgs) by extension 'colcon_pkg'
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_sm_addin_msgs) by extensions ['colcon_meta']
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_sm_addin_msgs) by extension 'colcon_meta'
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_sm_addin_msgs) by extensions ['ros']
+[0.266s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_rapid_sm_addin_msgs) by extension 'ros'
+[0.266s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_msgs/abb_rapid_sm_addin_msgs' with type 'ros.ament_cmake' and name 'abb_rapid_sm_addin_msgs'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_robot_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_robot_msgs) by extension 'ignore'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_robot_msgs) by extension 'ignore_ament_install'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_robot_msgs) by extensions ['colcon_pkg']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_robot_msgs) by extension 'colcon_pkg'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_robot_msgs) by extensions ['colcon_meta']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_robot_msgs) by extension 'colcon_meta'
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_robot_msgs) by extensions ['ros']
+[0.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_msgs/abb_robot_msgs) by extension 'ros'
+[0.267s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_msgs/abb_robot_msgs' with type 'ros.ament_cmake' and name 'abb_robot_msgs'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extensions ['ignore', 'ignore_ament_install']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extension 'ignore'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extension 'ignore_ament_install'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extensions ['colcon_pkg']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extension 'colcon_pkg'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extensions ['colcon_meta']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extension 'colcon_meta'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extensions ['ros']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extension 'ros'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extensions ['cmake', 'python']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extension 'cmake'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extension 'python'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extensions ['python_setup_py']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream) by extension 'python_setup_py'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_bringup) by extension 'ignore'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_bringup) by extension 'ignore_ament_install'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_bringup) by extensions ['colcon_pkg']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_bringup) by extension 'colcon_pkg'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_bringup) by extensions ['colcon_meta']
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_bringup) by extension 'colcon_meta'
+[0.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_bringup) by extensions ['ros']
+[0.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_bringup) by extension 'ros'
+[0.269s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_upstream/abb_bringup' with type 'ros.ament_cmake' and name 'abb_bringup'
+[0.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_hardware_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_hardware_interface) by extension 'ignore'
+[0.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_hardware_interface) by extension 'ignore_ament_install'
+[0.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_hardware_interface) by extensions ['colcon_pkg']
+[0.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_hardware_interface) by extension 'colcon_pkg'
+[0.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_hardware_interface) by extensions ['colcon_meta']
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_hardware_interface) by extension 'colcon_meta'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_hardware_interface) by extensions ['ros']
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_hardware_interface) by extension 'ros'
+[0.270s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_upstream/abb_hardware_interface' with type 'ros.ament_cmake' and name 'abb_hardware_interface'
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_resources) by extensions ['ignore', 'ignore_ament_install']
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_resources) by extension 'ignore'
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_resources) by extension 'ignore_ament_install'
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_resources) by extensions ['colcon_pkg']
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_resources) by extension 'colcon_pkg'
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_resources) by extensions ['colcon_meta']
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_resources) by extension 'colcon_meta'
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_resources) by extensions ['ros']
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_resources) by extension 'ros'
+[0.271s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_upstream/abb_resources' with type 'ros.ament_cmake' and name 'abb_resources'
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_ros2) by extension 'ignore'
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_ros2) by extension 'ignore_ament_install'
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_ros2) by extensions ['colcon_pkg']
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_ros2) by extension 'colcon_pkg'
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_ros2) by extensions ['colcon_meta']
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_ros2) by extension 'colcon_meta'
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_ros2) by extensions ['ros']
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_ros2) by extension 'ros'
+[0.272s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_upstream/abb_ros2' with type 'ros.ament_cmake' and name 'abb_ros2'
+[0.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_rws_client) by extensions ['ignore', 'ignore_ament_install']
+[0.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_rws_client) by extension 'ignore'
+[0.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_rws_client) by extension 'ignore_ament_install'
+[0.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_rws_client) by extensions ['colcon_pkg']
+[0.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_rws_client) by extension 'colcon_pkg'
+[0.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_rws_client) by extensions ['colcon_meta']
+[0.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_rws_client) by extension 'colcon_meta'
+[0.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_rws_client) by extensions ['ros']
+[0.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/abb_rws_client) by extension 'ros'
+[0.274s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_upstream/abb_rws_client' with type 'ros.ament_cmake' and name 'abb_rws_client'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extensions ['ignore', 'ignore_ament_install']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extension 'ignore'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extension 'ignore_ament_install'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extensions ['colcon_pkg']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extension 'colcon_pkg'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extensions ['colcon_meta']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extension 'colcon_meta'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extensions ['ros']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extension 'ros'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extensions ['cmake', 'python']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extension 'cmake'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extension 'python'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extensions ['python_setup_py']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs) by extension 'python_setup_py'
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extensions ['ignore', 'ignore_ament_install']
+[0.274s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extension 'ignore'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extension 'ignore_ament_install'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extensions ['colcon_pkg']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extension 'colcon_pkg'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extensions ['colcon_meta']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extension 'colcon_meta'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extensions ['ros']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extension 'ros'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extensions ['cmake', 'python']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extension 'cmake'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extension 'python'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extensions ['python_setup_py']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/docs/images) by extension 'python_setup_py'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extensions ['ignore', 'ignore_ament_install']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extension 'ignore'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extension 'ignore_ament_install'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extensions ['colcon_pkg']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extension 'colcon_pkg'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extensions ['colcon_meta']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extension 'colcon_meta'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extensions ['ros']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extension 'ros'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extensions ['cmake', 'python']
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extension 'cmake'
+[0.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extension 'python'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extensions ['python_setup_py']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config) by extension 'python_setup_py'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config) by extensions ['ignore', 'ignore_ament_install']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config) by extension 'ignore'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config) by extension 'ignore_ament_install'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config) by extensions ['colcon_pkg']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config) by extension 'colcon_pkg'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config) by extensions ['colcon_meta']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config) by extension 'colcon_meta'
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config) by extensions ['ros']
+[0.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config) by extension 'ros'
+[0.277s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config' with type 'ros.ament_cmake' and name 'abb_irb1200_5_90_moveit_config'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support) by extensions ['ignore', 'ignore_ament_install']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support) by extension 'ignore'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support) by extension 'ignore_ament_install'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support) by extensions ['colcon_pkg']
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support) by extension 'colcon_pkg'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support) by extensions ['colcon_meta']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support) by extension 'colcon_meta'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support) by extensions ['ros']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support) by extension 'ros'
+[0.278s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support' with type 'ros.ament_cmake' and name 'abb_irb1200_support'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support) by extensions ['ignore', 'ignore_ament_install']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support) by extension 'ignore'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support) by extension 'ignore_ament_install'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support) by extensions ['colcon_pkg']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support) by extension 'colcon_pkg'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support) by extensions ['colcon_meta']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support) by extension 'colcon_meta'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support) by extensions ['ros']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support) by extension 'ros'
+[0.279s] DEBUG:colcon.colcon_core.package_identification:Package 'src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support' with type 'ros.ament_cmake' and name 'abb_irb4600_support'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extensions ['ignore', 'ignore_ament_install']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extension 'ignore'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extension 'ignore_ament_install'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extensions ['colcon_pkg']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extension 'colcon_pkg'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extensions ['colcon_meta']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extension 'colcon_meta'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extensions ['ros']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extension 'ros'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extensions ['cmake', 'python']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extension 'cmake'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extension 'python'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extensions ['python_setup_py']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources) by extension 'python_setup_py'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extensions ['ignore', 'ignore_ament_install']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extension 'ignore'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extension 'ignore_ament_install'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extensions ['colcon_pkg']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extension 'colcon_pkg'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extensions ['colcon_meta']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extension 'colcon_meta'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extensions ['ros']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extension 'ros'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extensions ['cmake', 'python']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extension 'cmake'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extension 'python'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extensions ['python_setup_py']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/abb_ros2_upstream/robot_studio_resources/velocity_control_example) by extension 'python_setup_py'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extensions ['ignore', 'ignore_ament_install']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'ignore'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'ignore_ament_install'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extensions ['colcon_pkg']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'colcon_pkg'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extensions ['colcon_meta']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'colcon_meta'
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extensions ['ros']
+[0.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/click_to_move) by extension 'ros'
+[0.282s] DEBUG:colcon.colcon_core.package_identification:Package 'src/click_to_move' with type 'ros.ament_cmake' and name 'click_to_move'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extensions ['ignore', 'ignore_ament_install']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'ignore'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'ignore_ament_install'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extensions ['colcon_pkg']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'colcon_pkg'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extensions ['colcon_meta']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'colcon_meta'
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extensions ['ros']
+[0.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_config) by extension 'ros'
+[0.290s] DEBUG:colcon.colcon_core.package_identification:Package 'src/workcell_config' with type 'ros.ament_cmake' and name 'workcell_config'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extensions ['ignore', 'ignore_ament_install']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'ignore'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'ignore_ament_install'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extensions ['colcon_pkg']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'colcon_pkg'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extensions ['colcon_meta']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'colcon_meta'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extensions ['ros']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/workcell_description) by extension 'ros'
+[0.291s] DEBUG:colcon.colcon_core.package_identification:Package 'src/workcell_description' with type 'ros.ament_cmake' and name 'workcell_description'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extensions ['ignore', 'ignore_ament_install']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extension 'ignore'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extension 'ignore_ament_install'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extensions ['colcon_pkg']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extension 'colcon_pkg'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extensions ['colcon_meta']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extension 'colcon_meta'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extensions ['ros']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extension 'ros'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extensions ['cmake', 'python']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extension 'cmake'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extension 'python'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extensions ['python_setup_py']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(tools) by extension 'python_setup_py'
+[0.292s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.292s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.292s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.292s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.292s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_egm_msgs' in 'src/abb_ros2_msgs/abb_egm_msgs'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_irb1200_support' in 'src/abb_ros2_upstream/robot_specific_config/abb_irb1200_support'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_irb4600_support' in 'src/abb_ros2_upstream/robot_specific_config/abb_irb4600_support'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_libegm' in 'src/abb_libegm'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_pi0_bridge' in 'src/abb_pi0_bridge'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_rapid_msgs' in 'src/abb_ros2_msgs/abb_rapid_msgs'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_resources' in 'src/abb_ros2_upstream/abb_resources'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_robot_msgs' in 'src/abb_ros2_msgs/abb_robot_msgs'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_ros2' in 'src/abb_ros2_upstream/abb_ros2'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'workcell_description' in 'src/workcell_description'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_irb1200_5_90_moveit_config' in 'src/abb_ros2_upstream/robot_specific_config/abb_irb1200_5_90_moveit_config'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_rapid_sm_addin_msgs' in 'src/abb_ros2_msgs/abb_rapid_sm_addin_msgs'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'workcell_config' in 'src/workcell_config'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_bringup' in 'src/abb_ros2_upstream/abb_bringup'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'abb_rws_client' in 'src/abb_ros2_upstream/abb_rws_client'
+[0.312s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'click_to_move' in 'src/click_to_move'
+[0.313s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.313s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.315s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 322 installed packages in /opt/ros/humble
+[0.317s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_librws' build argument 'cmake_args' from command line to '['-DPython3_EXECUTABLE=/usr/bin/python3']'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_librws' build argument 'cmake_target' from command line to 'None'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_librws' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_librws' build argument 'cmake_clean_cache' from command line to 'False'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_librws' build argument 'cmake_clean_first' from command line to 'False'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_librws' build argument 'cmake_force_configure' from command line to 'False'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_librws' build argument 'ament_cmake_args' from command line to 'None'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_librws' build argument 'catkin_cmake_args' from command line to 'None'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_librws' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.355s] DEBUG:colcon.colcon_core.verb:Building package 'abb_librws' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/heng/workspace/ws_RAMS/build/abb_librws', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DPython3_EXECUTABLE=/usr/bin/python3'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/heng/workspace/ws_RAMS/install/abb_librws', 'merge_install': False, 'path': '/home/heng/workspace/ws_RAMS/src/abb_librws', 'symlink_install': False, 'test_result_base': None}
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_egm_rws_managers' build argument 'cmake_args' from command line to '['-DPython3_EXECUTABLE=/usr/bin/python3']'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_egm_rws_managers' build argument 'cmake_target' from command line to 'None'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_egm_rws_managers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_egm_rws_managers' build argument 'cmake_clean_cache' from command line to 'False'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_egm_rws_managers' build argument 'cmake_clean_first' from command line to 'False'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_egm_rws_managers' build argument 'cmake_force_configure' from command line to 'False'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_egm_rws_managers' build argument 'ament_cmake_args' from command line to 'None'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_egm_rws_managers' build argument 'catkin_cmake_args' from command line to 'None'
+[0.355s] Level 5:colcon.colcon_core.verb:set package 'abb_egm_rws_managers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.355s] DEBUG:colcon.colcon_core.verb:Building package 'abb_egm_rws_managers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DPython3_EXECUTABLE=/usr/bin/python3'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers', 'merge_install': False, 'path': '/home/heng/workspace/ws_RAMS/src/abb_egm_rws_managers', 'symlink_install': False, 'test_result_base': None}
+[0.356s] Level 5:colcon.colcon_core.verb:set package 'abb_hardware_interface' build argument 'cmake_args' from command line to '['-DPython3_EXECUTABLE=/usr/bin/python3']'
+[0.356s] Level 5:colcon.colcon_core.verb:set package 'abb_hardware_interface' build argument 'cmake_target' from command line to 'None'
+[0.356s] Level 5:colcon.colcon_core.verb:set package 'abb_hardware_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.356s] Level 5:colcon.colcon_core.verb:set package 'abb_hardware_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.356s] Level 5:colcon.colcon_core.verb:set package 'abb_hardware_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.356s] Level 5:colcon.colcon_core.verb:set package 'abb_hardware_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.356s] Level 5:colcon.colcon_core.verb:set package 'abb_hardware_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.356s] Level 5:colcon.colcon_core.verb:set package 'abb_hardware_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.356s] Level 5:colcon.colcon_core.verb:set package 'abb_hardware_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.356s] DEBUG:colcon.colcon_core.verb:Building package 'abb_hardware_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': ['-DPython3_EXECUTABLE=/usr/bin/python3'], 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface', 'merge_install': False, 'path': '/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface', 'symlink_install': False, 'test_result_base': None}
+[0.356s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.357s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.357s] INFO:colcon.colcon_ros.task.cmake.build:Building ROS package in '/home/heng/workspace/ws_RAMS/src/abb_librws' with build type 'cmake'
+[0.357s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/heng/workspace/ws_RAMS/src/abb_librws'
+[0.359s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.360s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.360s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.368s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_librws': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_librws -- -j48 -l48
+[1.161s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_librws' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_librws -- -j48 -l48
+[1.174s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_librws': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_librws
+[1.188s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_librws' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_librws
+[1.188s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_librws', 'pkg_config_path')
+[1.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/pkg_config_path.ps1'
+[1.190s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/pkg_config_path.dsv'
+[1.191s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/pkg_config_path.sh'
+[1.193s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_librws', 'pkg_config_path_multiarch')
+[1.194s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/pkg_config_path_multiarch.ps1'
+[1.195s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/pkg_config_path_multiarch.dsv'
+[1.195s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/pkg_config_path_multiarch.sh'
+[1.196s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(abb_librws)
+[1.200s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_librws' for CMake module files
+[1.201s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_librws', 'cmake_module_path')
+[1.201s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/cmake_module_path.ps1'
+[1.202s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/cmake_module_path.dsv'
+[1.202s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/cmake_module_path.sh'
+[1.203s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_librws' for CMake config files
+[1.203s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_librws', 'cmake_prefix_path')
+[1.204s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/cmake_prefix_path.ps1'
+[1.204s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/cmake_prefix_path.dsv'
+[1.205s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/cmake_prefix_path.sh'
+[1.206s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_librws/lib'
+[1.207s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_librws', 'ld_library_path_lib')
+[1.207s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/ld_library_path_lib.ps1'
+[1.208s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/ld_library_path_lib.dsv'
+[1.208s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/hook/ld_library_path_lib.sh'
+[1.209s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_librws/bin'
+[1.209s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig/abb_librws.pc'
+[1.209s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_librws/lib/python3.10/site-packages'
+[1.210s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_librws/bin'
+[1.211s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/package.ps1'
+[1.213s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/package.dsv'
+[1.214s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/package.sh'
+[1.216s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/package.bash'
+[1.217s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/package.zsh'
+[1.218s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/heng/workspace/ws_RAMS/install/abb_librws/share/colcon-core/packages/abb_librws)
+[1.219s] INFO:colcon.colcon_ros.task.cmake.build:Building ROS package in '/home/heng/workspace/ws_RAMS/src/abb_egm_rws_managers' with build type 'cmake'
+[1.219s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/heng/workspace/ws_RAMS/src/abb_egm_rws_managers'
+[1.220s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.220s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.237s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers -- -j48 -l48
+[1.609s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers -- -j48 -l48
+[1.611s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers
+[1.638s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers
+[1.639s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_egm_rws_managers', 'pkg_config_path')
+[1.639s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/pkg_config_path.ps1'
+[1.640s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/pkg_config_path.dsv'
+[1.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/pkg_config_path.sh'
+[1.641s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_egm_rws_managers', 'pkg_config_path_multiarch')
+[1.642s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/pkg_config_path_multiarch.ps1'
+[1.642s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/pkg_config_path_multiarch.dsv'
+[1.643s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/pkg_config_path_multiarch.sh'
+[1.643s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(abb_egm_rws_managers)
+[1.644s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers' for CMake module files
+[1.645s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers' for CMake config files
+[1.645s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_egm_rws_managers', 'cmake_prefix_path')
+[1.645s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/cmake_prefix_path.ps1'
+[1.646s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/cmake_prefix_path.dsv'
+[1.646s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/cmake_prefix_path.sh'
+[1.647s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib'
+[1.647s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_egm_rws_managers', 'ld_library_path_lib')
+[1.648s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/ld_library_path_lib.ps1'
+[1.648s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/ld_library_path_lib.dsv'
+[1.649s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/hook/ld_library_path_lib.sh'
+[1.649s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/bin'
+[1.650s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig/abb_egm_rws_managers.pc'
+[1.650s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/python3.10/site-packages'
+[1.651s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/bin'
+[1.651s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/package.ps1'
+[1.652s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/package.dsv'
+[1.653s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/package.sh'
+[1.654s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/package.bash'
+[1.655s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/package.zsh'
+[1.655s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/colcon-core/packages/abb_egm_rws_managers)
+[1.656s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface' with build type 'ament_cmake'
+[1.656s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface'
+[1.656s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.656s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.675s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_hardware_interface -- -j48 -l48
+[2.031s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_hardware_interface -- -j48 -l48
+[2.033s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_hardware_interface
+[2.048s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(abb_hardware_interface)
+[2.049s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface' for CMake module files
+[2.049s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface' returned '0': CMAKE_MODULE_PATH=/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig /usr/bin/cmake --install /home/heng/workspace/ws_RAMS/build/abb_hardware_interface
+[2.050s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface' for CMake config files
+[2.050s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_hardware_interface', 'cmake_prefix_path')
+[2.050s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/cmake_prefix_path.ps1'
+[2.051s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/cmake_prefix_path.dsv'
+[2.051s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/cmake_prefix_path.sh'
+[2.052s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib'
+[2.052s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_hardware_interface', 'ld_library_path_lib')
+[2.052s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/ld_library_path_lib.ps1'
+[2.053s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/ld_library_path_lib.dsv'
+[2.053s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/ld_library_path_lib.sh'
+[2.054s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/bin'
+[2.054s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib/pkgconfig/abb_hardware_interface.pc'
+[2.054s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib/python3.10/site-packages'
+[2.055s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/bin'
+[2.055s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.ps1'
+[2.056s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.dsv'
+[2.056s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.sh'
+[2.057s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.bash'
+[2.057s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.zsh'
+[2.058s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/colcon-core/packages/abb_hardware_interface)
+[2.058s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(abb_hardware_interface)
+[2.059s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface' for CMake module files
+[2.059s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface' for CMake config files
+[2.059s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_hardware_interface', 'cmake_prefix_path')
+[2.059s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/cmake_prefix_path.ps1'
+[2.060s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/cmake_prefix_path.dsv'
+[2.060s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/cmake_prefix_path.sh'
+[2.061s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib'
+[2.061s] Level 1:colcon.colcon_core.shell:create_environment_hook('abb_hardware_interface', 'ld_library_path_lib')
+[2.061s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/ld_library_path_lib.ps1'
+[2.062s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/ld_library_path_lib.dsv'
+[2.062s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/hook/ld_library_path_lib.sh'
+[2.063s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/bin'
+[2.063s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib/pkgconfig/abb_hardware_interface.pc'
+[2.063s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib/python3.10/site-packages'
+[2.064s] Level 1:colcon.colcon_core.environment:checking '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/bin'
+[2.064s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.ps1'
+[2.065s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.dsv'
+[2.065s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.sh'
+[2.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.bash'
+[2.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.zsh'
+[2.067s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/colcon-core/packages/abb_hardware_interface)
+[2.067s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.067s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.067s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.068s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.077s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.077s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.077s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.094s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.094s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/heng/workspace/ws_RAMS/install/local_setup.ps1'
+[2.096s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/heng/workspace/ws_RAMS/install/_local_setup_util_ps1.py'
+[2.098s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/heng/workspace/ws_RAMS/install/setup.ps1'
+[2.100s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/heng/workspace/ws_RAMS/install/local_setup.sh'
+[2.101s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/heng/workspace/ws_RAMS/install/_local_setup_util_sh.py'
+[2.102s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/heng/workspace/ws_RAMS/install/setup.sh'
+[2.103s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/heng/workspace/ws_RAMS/install/local_setup.bash'
+[2.104s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/heng/workspace/ws_RAMS/install/setup.bash'
+[2.106s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/heng/workspace/ws_RAMS/install/local_setup.zsh'
+[2.107s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/heng/workspace/ws_RAMS/install/setup.zsh'

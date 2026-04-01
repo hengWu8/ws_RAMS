@@ -1,0 +1,36 @@
+-- Generating protobuf C++ for: proto/egm.proto;proto/egm_wrapper.proto;proto/egm_wrapper_trajectory.proto
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/heng/workspace/ws_RAMS/build/abb_libegm
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    Python3_EXECUTABLE
+
+
+Consolidate compiler generated dependencies of target abb_libegm
+[100%] Built target abb_libegm
+-- Install configuration: ""
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_interpolator.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_common.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_base_interface.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_logger.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_trajectory_interface.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_controller_interface.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_udp_server.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_common_auxiliary.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm.proto
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_wrapper.proto
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_wrapper_trajectory.proto
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm.pb.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_wrapper.pb.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/egm_wrapper_trajectory.pb.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/include/abb_libegm/abb_libegm_export.h
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/lib/libabb_libegm.so
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/share/abb_libegm/abb_libegmConfig.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/share/abb_libegm/abb_libegmConfigVersion.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/share/abb_libegm/package.xml
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/share/abb_libegm/abb_libegmTargets.cmake
+-- Installing: /home/heng/workspace/ws_RAMS/install/abb_libegm/share/abb_libegm/abb_libegmTargets-noconfig.cmake

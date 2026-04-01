@@ -1,0 +1,17 @@
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/ament_index/resource_index/package_run_dependencies/abb_resources
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/ament_index/resource_index/parent_prefix_path/abb_resources
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/environment/ament_prefix_path.sh
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/environment/ament_prefix_path.dsv
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/environment/path.sh
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/environment/path.dsv
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/local_setup.bash
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/local_setup.sh
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/local_setup.zsh
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/local_setup.dsv
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/package.dsv
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/ament_index/resource_index/packages/abb_resources
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/cmake/abb_resourcesConfig.cmake
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/cmake/abb_resourcesConfig-version.cmake
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/package.xml
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/urdf/common_colours.xacro
+/home/heng/workspace/ws_RAMS/install/abb_resources/share/abb_resources/urdf/common_materials.xacro

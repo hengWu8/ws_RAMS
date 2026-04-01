@@ -1,0 +1,27 @@
+[0.626s] Invoking command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/abb_pi0_bridge build --build-base /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build install --record /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log --single-version-externally-managed install_data
+[0.841s] running egg_info
+[0.842s] writing ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/PKG-INFO
+[0.842s] writing dependency_links to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/dependency_links.txt
+[0.842s] writing entry points to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/entry_points.txt
+[0.842s] writing requirements to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/requires.txt
+[0.842s] writing top-level names to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/top_level.txt
+[0.843s] reading manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'
+[0.846s] writing manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'
+[0.846s] running build
+[0.846s] running build_py
+[0.847s] running install
+[0.847s] running install_lib
+[0.848s] running install_data
+[0.849s] copying README.md -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge
+[0.849s] copying ROBOTSTUDIO_PI0_SETUP.md -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge
+[0.849s] copying launch/robotstudio_pi0.launch.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/launch
+[0.849s] copying config/pi0_robotstudio_http.params.yaml -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/config
+[0.849s] running install_egg_info
+[0.850s] removing '/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info' (and everything under it)
+[0.850s] Copying ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info
+[0.851s] running install_scripts
+[0.868s] Installing abb_pi0_bridge_node script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+[0.869s] Installing pi0_policy_stub_server script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+[0.869s] Installing robotstudio_preflight script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge
+[0.869s] writing list of installed files to '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log'
+[0.889s] Invoked command in '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/abb_pi0_bridge build --build-base /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build install --record /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log --single-version-externally-managed install_data

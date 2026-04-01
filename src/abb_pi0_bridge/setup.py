@@ -13,7 +13,15 @@ setup(
     packages=find_packages(exclude=["tests"]),
     data_files=[
         ("share/ament_index/resource_index/packages", [f"resource/{package_name}"]),
-        (f"share/{package_name}", ["package.xml", "README.md"]),
+        (
+            f"share/{package_name}",
+            [
+                "package.xml",
+                "README.md",
+                "ROBOTSTUDIO_PI0_SETUP.md",
+                "PI0_POLICY_HTTP_PROTOCOL.md",
+            ],
+        ),
         (os.path.join("share", package_name, "launch"), glob("launch/*.launch.py")),
         (os.path.join("share", package_name, "config"), glob("config/*.yaml")),
     ],
@@ -27,6 +35,8 @@ setup(
     entry_points={
         "console_scripts": [
             "abb_pi0_bridge_node = abb_pi0_bridge.bridge_node:main",
+            "pi0_policy_stub_server = abb_pi0_bridge.policy_stub_server:main",
+            "robotstudio_preflight = abb_pi0_bridge.robotstudio_preflight:main",
         ],
     },
 )

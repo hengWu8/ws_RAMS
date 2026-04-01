@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+cachedir: /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/.pytest_cache
+rootdir: /home/heng/workspace/ws_RAMS/src/abb_pi0_bridge
+plugins: ament-pep257-0.12.14, launch-testing-ros-0.19.13, ament-copyright-0.12.14, ament-flake8-0.12.14, ament-xmllint-0.12.14, launch-testing-1.0.13, ament-lint-0.12.14, colcon-core-0.20.1, cov-3.0.0
+collected 14 items
+
+tests/test_bridge_core.py ....                                           [ 28%]
+tests/test_control_mode.py ..                                            [ 42%]
+tests/test_policy_backends.py ...                                        [ 64%]
+tests/test_policy_stub_server.py ..                                      [ 78%]
+tests/test_protocol.py ..                                                [ 92%]
+tests/test_robotstudio_preflight.py .                                    [100%]
+
+- generated xml file: /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/pytest.xml -
+============================== 14 passed in 0.04s ==============================

@@ -1,0 +1,302 @@
+[0.000000] (-) TimerEvent: {}
+[0.000244] (-) JobUnselected: {'identifier': 'abb_egm_msgs'}
+[0.000506] (-) JobUnselected: {'identifier': 'abb_irb1200_5_90_moveit_config'}
+[0.000754] (-) JobUnselected: {'identifier': 'abb_irb1200_support'}
+[0.000784] (-) JobUnselected: {'identifier': 'abb_irb4600_support'}
+[0.000806] (-) JobUnselected: {'identifier': 'abb_libegm'}
+[0.000828] (-) JobUnselected: {'identifier': 'abb_librws'}
+[0.000849] (-) JobUnselected: {'identifier': 'abb_rapid_msgs'}
+[0.000870] (-) JobUnselected: {'identifier': 'abb_rapid_sm_addin_msgs'}
+[0.000890] (-) JobUnselected: {'identifier': 'abb_resources'}
+[0.000910] (-) JobUnselected: {'identifier': 'abb_robot_msgs'}
+[0.000929] (-) JobUnselected: {'identifier': 'abb_ros2'}
+[0.000950] (-) JobUnselected: {'identifier': 'abb_rws_client'}
+[0.000969] (-) JobUnselected: {'identifier': 'click_to_move'}
+[0.000989] (-) JobUnselected: {'identifier': 'workcell_config'}
+[0.001008] (-) JobUnselected: {'identifier': 'workcell_description'}
+[0.001034] (abb_pi0_bridge) JobQueued: {'identifier': 'abb_pi0_bridge', 'dependencies': OrderedDict()}
+[0.001059] (abb_egm_rws_managers) JobQueued: {'identifier': 'abb_egm_rws_managers', 'dependencies': OrderedDict([('abb_libegm', '/home/heng/workspace/ws_RAMS/install/abb_libegm'), ('abb_librws', '/home/heng/workspace/ws_RAMS/install/abb_librws')])}
+[0.001090] (abb_bringup) JobQueued: {'identifier': 'abb_bringup', 'dependencies': OrderedDict([('abb_irb1200_support', '/home/heng/workspace/ws_RAMS/install/abb_irb1200_support'), ('abb_resources', '/home/heng/workspace/ws_RAMS/install/abb_resources'), ('abb_irb1200_5_90_moveit_config', '/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config')])}
+[0.001120] (abb_hardware_interface) JobQueued: {'identifier': 'abb_hardware_interface', 'dependencies': OrderedDict([('abb_libegm', '/home/heng/workspace/ws_RAMS/install/abb_libegm'), ('abb_librws', '/home/heng/workspace/ws_RAMS/install/abb_librws'), ('abb_egm_rws_managers', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers')])}
+[0.001154] (abb_egm_rws_managers) JobStarted: {'identifier': 'abb_egm_rws_managers'}
+[0.005797] (abb_pi0_bridge) JobStarted: {'identifier': 'abb_pi0_bridge'}
+[0.009999] (abb_bringup) JobStarted: {'identifier': 'abb_bringup'}
+[0.099668] (-) TimerEvent: {}
+[0.200043] (-) TimerEvent: {}
+[0.236818] (abb_egm_rws_managers) JobProgress: {'identifier': 'abb_egm_rws_managers', 'progress': 'cmake'}
+[0.237884] (abb_egm_rws_managers) JobProgress: {'identifier': 'abb_egm_rws_managers', 'progress': 'build'}
+[0.238564] (abb_egm_rws_managers) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers', '--', '-j48', '-l48'], 'cwd': '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/heng'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('HTTPS_PROXY', 'http://127.0.0.1:27897'), ('CODEX_CI', '1'), ('USER', 'heng'), ('SSH_CLIENT', '192.168.1.103 64856 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/heng'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/heng/workspace/ws_RAMS'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1002/vscode-ipc-f3a1ae5f-d270-4b32-9633-b7cc4658fb53.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', ''), ('https_proxy', 'http://127.0.0.1:27897'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'heng'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('http_proxy', 'http://127.0.0.1:27897'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('PKG_CONFIG_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '5892'), ('VSCODE_CLI_REQUIRE_TOKEN', '91e4665b-c98e-4552-a06e-ece7968d0944'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/bin:/bin:/usr/sbin:/sbin:/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0tvLnE1:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64'), ('VSCODE_AGENT_FOLDER', '/home/heng/.vscode-server'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019d3906-f335-7b11-8e6c-544764b4b3e2'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CMAKE_MODULE_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('PWD', '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.103 64856 192.168.1.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:27897'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble')]), 'shell': False}
+[0.241074] (abb_bringup) JobProgress: {'identifier': 'abb_bringup', 'progress': 'cmake'}
+[0.241585] (abb_bringup) JobProgress: {'identifier': 'abb_bringup', 'progress': 'build'}
+[0.241864] (abb_bringup) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/heng/workspace/ws_RAMS/build/abb_bringup', '--', '-j48', '-l48'], 'cwd': '/home/heng/workspace/ws_RAMS/build/abb_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/heng'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('HTTPS_PROXY', 'http://127.0.0.1:27897'), ('CODEX_CI', '1'), ('USER', 'heng'), ('SSH_CLIENT', '192.168.1.103 64856 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/heng'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/heng/workspace/ws_RAMS'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1002/vscode-ipc-f3a1ae5f-d270-4b32-9633-b7cc4658fb53.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', ''), ('https_proxy', 'http://127.0.0.1:27897'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'heng'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('http_proxy', 'http://127.0.0.1:27897'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '5892'), ('VSCODE_CLI_REQUIRE_TOKEN', '91e4665b-c98e-4552-a06e-ece7968d0944'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/bin:/bin:/usr/sbin:/sbin:/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0tvLnE1:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64'), ('VSCODE_AGENT_FOLDER', '/home/heng/.vscode-server'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019d3906-f335-7b11-8e6c-544764b4b3e2'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('PWD', '/home/heng/workspace/ws_RAMS/build/abb_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.103 64856 192.168.1.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:27897'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/opt/ros/humble')]), 'shell': False}
+[0.300169] (-) TimerEvent: {}
+[0.310092] (abb_bringup) StdoutLine: {'line': b'[ 33%] Built target gtest\n'}
+[0.311944] (abb_bringup) StdoutLine: {'line': b'[ 66%] Built target gtest_main\n'}
+[0.332061] (abb_egm_rws_managers) StdoutLine: {'line': b'[ 14%] Building CXX object CMakeFiles/abb_egm_rws_managers.dir/src/rws_manager.cpp.o\n'}
+[0.344393] (abb_bringup) StdoutLine: {'line': b'[100%] Built target test_command_topics\n'}
+[0.357556] (abb_bringup) CommandEnded: {'returncode': 0}
+[0.358680] (abb_bringup) JobProgress: {'identifier': 'abb_bringup', 'progress': 'install'}
+[0.369474] (abb_bringup) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/heng/workspace/ws_RAMS/build/abb_bringup'], 'cwd': '/home/heng/workspace/ws_RAMS/build/abb_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/heng'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('HTTPS_PROXY', 'http://127.0.0.1:27897'), ('CODEX_CI', '1'), ('USER', 'heng'), ('SSH_CLIENT', '192.168.1.103 64856 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/heng'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/heng/workspace/ws_RAMS'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1002/vscode-ipc-f3a1ae5f-d270-4b32-9633-b7cc4658fb53.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', ''), ('https_proxy', 'http://127.0.0.1:27897'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'heng'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('http_proxy', 'http://127.0.0.1:27897'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '5892'), ('VSCODE_CLI_REQUIRE_TOKEN', '91e4665b-c98e-4552-a06e-ece7968d0944'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/bin:/bin:/usr/sbin:/sbin:/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0tvLnE1:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64'), ('VSCODE_AGENT_FOLDER', '/home/heng/.vscode-server'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019d3906-f335-7b11-8e6c-544764b4b3e2'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('PWD', '/home/heng/workspace/ws_RAMS/build/abb_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.103 64856 192.168.1.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:27897'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/opt/ros/humble')]), 'shell': False}
+[0.375606] (abb_bringup) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.376491] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/config\n'}
+[0.376798] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/config/abb_controllers.yaml\n'}
+[0.376905] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch\n'}
+[0.377005] (abb_bringup) StdoutLine: {'line': b'-- Installing: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch/abb_control.launch.py\n'}
+[0.377105] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch/abb_rws_client.launch.py\n'}
+[0.377218] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch/abb_moveit.launch.py\n'}
+[0.377319] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch/__pycache__\n'}
+[0.377439] (abb_bringup) StdoutLine: {'line': b'-- Installing: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/launch/__pycache__/abb_control.launch.cpython-313.pyc\n'}
+[0.377743] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/ament_index/resource_index/package_run_dependencies/abb_bringup\n'}
+[0.377856] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/ament_index/resource_index/parent_prefix_path/abb_bringup\n'}
+[0.377964] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/environment/ament_prefix_path.sh\n'}
+[0.378071] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/environment/ament_prefix_path.dsv\n'}
+[0.378176] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/environment/path.sh\n'}
+[0.378372] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/environment/path.dsv\n'}
+[0.378940] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/local_setup.bash\n'}
+[0.379334] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/local_setup.sh\n'}
+[0.379563] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/local_setup.zsh\n'}
+[0.379675] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/local_setup.dsv\n'}
+[0.379780] (abb_bringup) StdoutLine: {'line': b'-- Installing: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/package.dsv\n'}
+[0.380004] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/ament_index/resource_index/packages/abb_bringup\n'}
+[0.380118] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.380224] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/cmake/abb_bringupConfig.cmake\n'}
+[0.380329] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/cmake/abb_bringupConfig-version.cmake\n'}
+[0.380458] (abb_bringup) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_bringup/share/abb_bringup/package.xml\n'}
+[0.380572] (abb_bringup) CommandEnded: {'returncode': 0}
+[0.400278] (-) TimerEvent: {}
+[0.406978] (abb_bringup) JobEnded: {'identifier': 'abb_bringup', 'rc': 0}
+[0.500393] (-) TimerEvent: {}
+[0.554370] (abb_pi0_bridge) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/abb_pi0_bridge', 'build', '--build-base', '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build', 'install', '--record', '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/heng', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'HTTPS_PROXY': 'http://127.0.0.1:27897', 'CODEX_CI': '1', 'USER': 'heng', 'SSH_CLIENT': '192.168.1.103 64856 22', 'LC_TIME': 'zh_CN.UTF-8', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'tty', 'DEBUG': 'release', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh', 'MOTD_SHOWN': 'pam', 'HOME': '/home/heng', 'CONDA_SHLVL': '1', 'OLDPWD': '/home/heng/workspace/ws_RAMS', 'VSCODE_RECONNECTION_GRACE_TIME': '10800000', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-f3a1ae5f-d270-4b32-9633-b7cc4658fb53.sock', 'ROS_PYTHON_VERSION': '3', 'PAGER': 'cat', 'LC_MONETARY': 'zh_CN.UTF-8', 'LC_CTYPE': 'C.UTF-8', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': '', 'https_proxy': 'http://127.0.0.1:27897', 'APPLICATION_INSIGHTS_NO_STATSBEAT': 'true', 'ROS_DISTRO': 'humble', 'LOGNAME': 'heng', 'VSCODE_HANDLES_SIGPIPE': 'true', 'http_proxy': 'http://127.0.0.1:27897', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'RUST_LOG': 'warn', 'TERM': 'dumb', 'XDG_SESSION_ID': '5892', 'VSCODE_CLI_REQUIRE_TOKEN': '91e4665b-c98e-4552-a06e-ece7968d0944', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin:/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0tvLnE1:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64', 'VSCODE_AGENT_FOLDER': '/home/heng/.vscode-server', 'LC_ADDRESS': 'zh_CN.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1002', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'zh_CN.UTF-8', 'GH_PAGER': 'cat', 'LS_COLORS': '', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'zh_CN.UTF-8', 'ELECTRON_RUN_AS_NODE': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019d3906-f335-7b11-8e6c-544764b4b3e2', 'LC_MEASUREMENT': 'zh_CN.UTF-8', 'LC_IDENTIFICATION': 'zh_CN.UTF-8', 'GIT_PAGER': 'cat', 'PWD': '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.1.103 64856 192.168.1.102 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'HTTP_PROXY': 'http://127.0.0.1:27897', 'LC_NUMERIC': 'zh_CN.UTF-8', 'LC_PAPER': 'zh_CN.UTF-8', 'COLCON': '1'}, 'shell': False}
+[0.600509] (-) TimerEvent: {}
+[0.700685] (-) TimerEvent: {}
+[0.771818] (abb_pi0_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[0.772246] (abb_pi0_bridge) StdoutLine: {'line': b'writing ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/PKG-INFO\n'}
+[0.772530] (abb_pi0_bridge) StdoutLine: {'line': b'writing dependency_links to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/dependency_links.txt\n'}
+[0.772850] (abb_pi0_bridge) StdoutLine: {'line': b'writing entry points to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/entry_points.txt\n'}
+[0.772976] (abb_pi0_bridge) StdoutLine: {'line': b'writing requirements to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/requires.txt\n'}
+[0.773087] (abb_pi0_bridge) StdoutLine: {'line': b'writing top-level names to ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/top_level.txt\n'}
+[0.774030] (abb_pi0_bridge) StdoutLine: {'line': b"reading manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'\n"}
+[0.774943] (abb_pi0_bridge) StdoutLine: {'line': b"writing manifest file '../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info/SOURCES.txt'\n"}
+[0.775244] (abb_pi0_bridge) StdoutLine: {'line': b'running build\n'}
+[0.775382] (abb_pi0_bridge) StdoutLine: {'line': b'running build_py\n'}
+[0.775502] (abb_pi0_bridge) StdoutLine: {'line': b'copying abb_pi0_bridge/bridge_node.py -> /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge\n'}
+[0.776162] (abb_pi0_bridge) StdoutLine: {'line': b'running install\n'}
+[0.776430] (abb_pi0_bridge) StdoutLine: {'line': b'running install_lib\n'}
+[0.776949] (abb_pi0_bridge) StdoutLine: {'line': b'copying /home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/build/lib/abb_pi0_bridge/bridge_node.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge\n'}
+[0.777498] (abb_pi0_bridge) StdoutLine: {'line': b'byte-compiling /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge/bridge_node.py to bridge_node.cpython-310.pyc\n'}
+[0.779301] (abb_pi0_bridge) StdoutLine: {'line': b'running install_data\n'}
+[0.779542] (abb_pi0_bridge) StdoutLine: {'line': b'copying launch/robotstudio_pi0.launch.py -> /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/share/abb_pi0_bridge/launch\n'}
+[0.779820] (abb_pi0_bridge) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.781087] (abb_pi0_bridge) StdoutLine: {'line': b"removing '/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info' (and everything under it)\n"}
+[0.781340] (abb_pi0_bridge) StdoutLine: {'line': b'Copying ../../build/abb_pi0_bridge/abb_pi0_bridge.egg-info to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages/abb_pi0_bridge-0.1.0-py3.10.egg-info\n'}
+[0.781916] (abb_pi0_bridge) StdoutLine: {'line': b'running install_scripts\n'}
+[0.799154] (abb_pi0_bridge) StdoutLine: {'line': b'Installing abb_pi0_bridge_node script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge\n'}
+[0.799358] (abb_pi0_bridge) StdoutLine: {'line': b'Installing pi0_policy_stub_server script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge\n'}
+[0.799505] (abb_pi0_bridge) StdoutLine: {'line': b'Installing robotstudio_preflight script to /home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/abb_pi0_bridge\n'}
+[0.799795] (abb_pi0_bridge) StdoutLine: {'line': b"writing list of installed files to '/home/heng/workspace/ws_RAMS/build/abb_pi0_bridge/install.log'\n"}
+[0.800753] (-) TimerEvent: {}
+[0.818621] (abb_pi0_bridge) CommandEnded: {'returncode': 0}
+[0.829970] (abb_pi0_bridge) JobEnded: {'identifier': 'abb_pi0_bridge', 'rc': 0}
+[0.900872] (-) TimerEvent: {}
+[1.001073] (-) TimerEvent: {}
+[1.101271] (-) TimerEvent: {}
+[1.201448] (-) TimerEvent: {}
+[1.301625] (-) TimerEvent: {}
+[1.401801] (-) TimerEvent: {}
+[1.501978] (-) TimerEvent: {}
+[1.602154] (-) TimerEvent: {}
+[1.702331] (-) TimerEvent: {}
+[1.802526] (-) TimerEvent: {}
+[1.902701] (-) TimerEvent: {}
+[2.002874] (-) TimerEvent: {}
+[2.103049] (-) TimerEvent: {}
+[2.203223] (-) TimerEvent: {}
+[2.303395] (-) TimerEvent: {}
+[2.403571] (-) TimerEvent: {}
+[2.503746] (-) TimerEvent: {}
+[2.603922] (-) TimerEvent: {}
+[2.704096] (-) TimerEvent: {}
+[2.804269] (-) TimerEvent: {}
+[2.904443] (-) TimerEvent: {}
+[3.004616] (-) TimerEvent: {}
+[3.104790] (-) TimerEvent: {}
+[3.204964] (-) TimerEvent: {}
+[3.305137] (-) TimerEvent: {}
+[3.405312] (-) TimerEvent: {}
+[3.505576] (-) TimerEvent: {}
+[3.605750] (-) TimerEvent: {}
+[3.705924] (-) TimerEvent: {}
+[3.806101] (-) TimerEvent: {}
+[3.906261] (-) TimerEvent: {}
+[4.006383] (-) TimerEvent: {}
+[4.106533] (-) TimerEvent: {}
+[4.206682] (-) TimerEvent: {}
+[4.306857] (-) TimerEvent: {}
+[4.407037] (-) TimerEvent: {}
+[4.507212] (-) TimerEvent: {}
+[4.607388] (-) TimerEvent: {}
+[4.707563] (-) TimerEvent: {}
+[4.807739] (-) TimerEvent: {}
+[4.907914] (-) TimerEvent: {}
+[5.008089] (-) TimerEvent: {}
+[5.108278] (-) TimerEvent: {}
+[5.208450] (-) TimerEvent: {}
+[5.308626] (-) TimerEvent: {}
+[5.408810] (-) TimerEvent: {}
+[5.508985] (-) TimerEvent: {}
+[5.609160] (-) TimerEvent: {}
+[5.709338] (-) TimerEvent: {}
+[5.809532] (-) TimerEvent: {}
+[5.909708] (-) TimerEvent: {}
+[6.009882] (-) TimerEvent: {}
+[6.110058] (-) TimerEvent: {}
+[6.210233] (-) TimerEvent: {}
+[6.310409] (-) TimerEvent: {}
+[6.410590] (-) TimerEvent: {}
+[6.510776] (-) TimerEvent: {}
+[6.610950] (-) TimerEvent: {}
+[6.711100] (-) TimerEvent: {}
+[6.811248] (-) TimerEvent: {}
+[6.911393] (-) TimerEvent: {}
+[7.011679] (-) TimerEvent: {}
+[7.111879] (-) TimerEvent: {}
+[7.212051] (-) TimerEvent: {}
+[7.311837] (abb_egm_rws_managers) StdoutLine: {'line': b'[ 28%] Linking CXX shared library libabb_egm_rws_managers.so\n'}
+[7.312098] (-) TimerEvent: {}
+[7.412226] (-) TimerEvent: {}
+[7.512406] (-) TimerEvent: {}
+[7.578114] (abb_egm_rws_managers) StdoutLine: {'line': b'[100%] Built target abb_egm_rws_managers\n'}
+[7.592814] (abb_egm_rws_managers) CommandEnded: {'returncode': 0}
+[7.594103] (abb_egm_rws_managers) JobProgress: {'identifier': 'abb_egm_rws_managers', 'progress': 'install'}
+[7.595129] (abb_egm_rws_managers) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers'], 'cwd': '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/heng'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('HTTPS_PROXY', 'http://127.0.0.1:27897'), ('CODEX_CI', '1'), ('USER', 'heng'), ('SSH_CLIENT', '192.168.1.103 64856 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/heng'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/heng/workspace/ws_RAMS'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1002/vscode-ipc-f3a1ae5f-d270-4b32-9633-b7cc4658fb53.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', ''), ('https_proxy', 'http://127.0.0.1:27897'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'heng'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('http_proxy', 'http://127.0.0.1:27897'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('PKG_CONFIG_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '5892'), ('VSCODE_CLI_REQUIRE_TOKEN', '91e4665b-c98e-4552-a06e-ece7968d0944'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/bin:/bin:/usr/sbin:/sbin:/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0tvLnE1:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64'), ('VSCODE_AGENT_FOLDER', '/home/heng/.vscode-server'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019d3906-f335-7b11-8e6c-544764b4b3e2'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CMAKE_MODULE_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('PWD', '/home/heng/workspace/ws_RAMS/build/abb_egm_rws_managers'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.103 64856 192.168.1.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:27897'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble')]), 'shell': False}
+[7.603831] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Install configuration: "RelWithDebInfo"\n'}
+[7.604066] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include\n'}
+[7.604570] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers\n'}
+[7.604765] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/utilities.h\n'}
+[7.604891] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/data_containers.h\n'}
+[7.605002] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/system_data_parser.h\n'}
+[7.605110] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/rws_manager.h\n'}
+[7.605216] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/egm_manager.h\n'}
+[7.605321] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/robot_controller_description.proto\n'}
+[7.605451] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/robot_controller_description.pb.h\n'}
+[7.605561] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/include/abb_egm_rws_managers/abb_egm_rws_managers_export.h\n'}
+[7.605667] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersConfig.cmake\n'}
+[7.605793] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersConfigVersion.cmake\n'}
+[7.605901] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/package.xml\n'}
+[7.606010] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Installing: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/libabb_egm_rws_managers.so\n'}
+[7.612494] (-) TimerEvent: {}
+[7.619055] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Set runtime path of "/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/libabb_egm_rws_managers.so" to ""\n'}
+[7.619306] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersTargets.cmake\n'}
+[7.619450] (abb_egm_rws_managers) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/share/abb_egm_rws_managers/abb_egm_rws_managersTargets-relwithdebinfo.cmake\n'}
+[7.621021] (abb_egm_rws_managers) CommandEnded: {'returncode': 0}
+[7.643448] (abb_egm_rws_managers) JobEnded: {'identifier': 'abb_egm_rws_managers', 'rc': 0}
+[7.644912] (abb_hardware_interface) JobStarted: {'identifier': 'abb_hardware_interface'}
+[7.658818] (abb_hardware_interface) JobProgress: {'identifier': 'abb_hardware_interface', 'progress': 'cmake'}
+[7.659987] (abb_hardware_interface) JobProgress: {'identifier': 'abb_hardware_interface', 'progress': 'build'}
+[7.660585] (abb_hardware_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface', '--', '-j48', '-l48'], 'cwd': '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/heng'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('HTTPS_PROXY', 'http://127.0.0.1:27897'), ('CODEX_CI', '1'), ('USER', 'heng'), ('SSH_CLIENT', '192.168.1.103 64856 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/heng'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/heng/workspace/ws_RAMS'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1002/vscode-ipc-f3a1ae5f-d270-4b32-9633-b7cc4658fb53.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', ''), ('https_proxy', 'http://127.0.0.1:27897'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'heng'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('http_proxy', 'http://127.0.0.1:27897'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('PKG_CONFIG_PATH', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '5892'), ('VSCODE_CLI_REQUIRE_TOKEN', '91e4665b-c98e-4552-a06e-ece7968d0944'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/bin:/bin:/usr/sbin:/sbin:/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0tvLnE1:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64'), ('VSCODE_AGENT_FOLDER', '/home/heng/.vscode-server'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019d3906-f335-7b11-8e6c-544764b4b3e2'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CMAKE_MODULE_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('PWD', '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.103 64856 192.168.1.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:27897'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble')]), 'shell': False}
+[7.712611] (-) TimerEvent: {}
+[7.763736] (abb_hardware_interface) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/abb_hardware_interface.dir/src/abb_hardware_interface.cpp.o\n'}
+[7.812723] (-) TimerEvent: {}
+[7.912899] (-) TimerEvent: {}
+[8.013049] (-) TimerEvent: {}
+[8.113197] (-) TimerEvent: {}
+[8.213390] (-) TimerEvent: {}
+[8.313567] (-) TimerEvent: {}
+[8.413743] (-) TimerEvent: {}
+[8.513920] (-) TimerEvent: {}
+[8.614094] (-) TimerEvent: {}
+[8.714269] (-) TimerEvent: {}
+[8.814447] (-) TimerEvent: {}
+[8.914630] (-) TimerEvent: {}
+[9.014805] (-) TimerEvent: {}
+[9.114979] (-) TimerEvent: {}
+[9.215155] (-) TimerEvent: {}
+[9.315330] (-) TimerEvent: {}
+[9.415506] (-) TimerEvent: {}
+[9.515655] (-) TimerEvent: {}
+[9.615836] (-) TimerEvent: {}
+[9.716023] (-) TimerEvent: {}
+[9.816197] (-) TimerEvent: {}
+[9.916390] (-) TimerEvent: {}
+[10.016555] (-) TimerEvent: {}
+[10.116720] (-) TimerEvent: {}
+[10.216896] (-) TimerEvent: {}
+[10.317071] (-) TimerEvent: {}
+[10.417246] (-) TimerEvent: {}
+[10.517390] (-) TimerEvent: {}
+[10.617550] (-) TimerEvent: {}
+[10.717729] (-) TimerEvent: {}
+[10.817905] (-) TimerEvent: {}
+[10.918057] (-) TimerEvent: {}
+[11.018205] (-) TimerEvent: {}
+[11.118383] (-) TimerEvent: {}
+[11.218559] (-) TimerEvent: {}
+[11.318735] (-) TimerEvent: {}
+[11.418909] (-) TimerEvent: {}
+[11.519057] (-) TimerEvent: {}
+[11.619204] (-) TimerEvent: {}
+[11.719401] (-) TimerEvent: {}
+[11.819582] (-) TimerEvent: {}
+[11.919760] (-) TimerEvent: {}
+[12.019935] (-) TimerEvent: {}
+[12.120111] (-) TimerEvent: {}
+[12.220286] (-) TimerEvent: {}
+[12.320479] (-) TimerEvent: {}
+[12.420627] (-) TimerEvent: {}
+[12.520802] (-) TimerEvent: {}
+[12.620982] (-) TimerEvent: {}
+[12.721157] (-) TimerEvent: {}
+[12.821333] (-) TimerEvent: {}
+[12.921527] (-) TimerEvent: {}
+[13.021678] (-) TimerEvent: {}
+[13.121856] (-) TimerEvent: {}
+[13.222128] (-) TimerEvent: {}
+[13.322309] (-) TimerEvent: {}
+[13.422523] (-) TimerEvent: {}
+[13.522707] (-) TimerEvent: {}
+[13.622888] (-) TimerEvent: {}
+[13.723040] (-) TimerEvent: {}
+[13.823193] (-) TimerEvent: {}
+[13.923392] (-) TimerEvent: {}
+[14.023558] (-) TimerEvent: {}
+[14.098009] (abb_hardware_interface) StdoutLine: {'line': b'[ 66%] Linking CXX shared library libabb_hardware_interface.so\n'}
+[14.123673] (-) TimerEvent: {}
+[14.223849] (-) TimerEvent: {}
+[14.324024] (-) TimerEvent: {}
+[14.340744] (abb_hardware_interface) StdoutLine: {'line': b'[100%] Built target abb_hardware_interface\n'}
+[14.355898] (abb_hardware_interface) CommandEnded: {'returncode': 0}
+[14.357164] (abb_hardware_interface) JobProgress: {'identifier': 'abb_hardware_interface', 'progress': 'install'}
+[14.357804] (abb_hardware_interface) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface'], 'cwd': '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/heng'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('HTTPS_PROXY', 'http://127.0.0.1:27897'), ('CODEX_CI', '1'), ('USER', 'heng'), ('SSH_CLIENT', '192.168.1.103 64856 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/heng'), ('CONDA_SHLVL', '1'), ('OLDPWD', '/home/heng/workspace/ws_RAMS'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1002/vscode-ipc-f3a1ae5f-d270-4b32-9633-b7cc4658fb53.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', ''), ('https_proxy', 'http://127.0.0.1:27897'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'heng'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('http_proxy', 'http://127.0.0.1:27897'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('PKG_CONFIG_PATH', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '5892'), ('VSCODE_CLI_REQUIRE_TOKEN', '91e4665b-c98e-4552-a06e-ece7968d0944'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/bin:/bin:/usr/sbin:/sbin:/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0tvLnE1:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64'), ('VSCODE_AGENT_FOLDER', '/home/heng/.vscode-server'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019d3906-f335-7b11-8e6c-544764b4b3e2'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CMAKE_MODULE_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('PWD', '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.1.103 64856 192.168.1.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:27897'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/opt/ros/humble')]), 'shell': False}
+[14.367831] (abb_hardware_interface) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[14.368211] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/abb_hardware_interface.xml\n'}
+[14.368339] (abb_hardware_interface) StdoutLine: {'line': b'-- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib/libabb_hardware_interface.so\n'}
+[14.370869] (abb_hardware_interface) StdoutLine: {'line': b'-- Set runtime path of "/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib/libabb_hardware_interface.so" to ""\n'}
+[14.371068] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include\n'}
+[14.371533] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include/abb_hardware_interface\n'}
+[14.371673] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include/abb_hardware_interface/abb_hardware_interface.hpp\n'}
+[14.371786] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include/abb_hardware_interface/visibility_control.h\n'}
+[14.371893] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/include/abb_hardware_interface/utilities.hpp\n'}
+[14.371998] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/library_path.sh\n'}
+[14.372103] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/library_path.dsv\n'}
+[14.372209] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/ament_index/resource_index/package_run_dependencies/abb_hardware_interface\n'}
+[14.372314] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/ament_index/resource_index/parent_prefix_path/abb_hardware_interface\n'}
+[14.372441] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/ament_prefix_path.sh\n'}
+[14.372552] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/ament_prefix_path.dsv\n'}
+[14.372661] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/path.sh\n'}
+[14.372775] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/environment/path.dsv\n'}
+[14.372891] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/local_setup.bash\n'}
+[14.373004] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/local_setup.sh\n'}
+[14.373119] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/local_setup.zsh\n'}
+[14.374289] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/local_setup.dsv\n'}
+[14.375085] (abb_hardware_interface) StdoutLine: {'line': b'-- Installing: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.dsv\n'}
+[14.375215] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/ament_index/resource_index/packages/abb_hardware_interface\n'}
+[14.375328] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/abb_hardware_interface\n'}
+[14.375922] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[14.376047] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[14.376163] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[14.376276] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/abb_hardware_interfaceConfig.cmake\n'}
+[14.376409] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/cmake/abb_hardware_interfaceConfig-version.cmake\n'}
+[14.376528] (abb_hardware_interface) StdoutLine: {'line': b'-- Up-to-date: /home/heng/workspace/ws_RAMS/install/abb_hardware_interface/share/abb_hardware_interface/package.xml\n'}
+[14.376642] (abb_hardware_interface) CommandEnded: {'returncode': 0}
+[14.402430] (abb_hardware_interface) JobEnded: {'identifier': 'abb_hardware_interface', 'rc': 0}
+[14.403535] (-) EventReactorShutdown: {}
