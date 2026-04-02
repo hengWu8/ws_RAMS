@@ -1,0 +1,69 @@
+[0.043s] Invoking command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface': CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/home/heng/workspace/ws_RAMS/install/click_to_move:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_hardware_interface:/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/abb_bringup:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/heng/miniconda3/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_hardware_interface -- -j48 -l48
+[0.247s] Consolidate compiler generated dependencies of target abb_hardware_interface
+[0.281s] [ 33%] Building CXX object CMakeFiles/abb_hardware_interface.dir/src/abb_hardware_interface.cpp.o
+[5.194s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:38: error: ‘egm’ in namespace ‘::’ does not name a type
+[5.194s]    41 | const char* motor_state_name(const ::egm::wrapper::Status::MotorState state)
+[5.194s]       |                                      ^~~
+[5.194s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:50: error: expected unqualified-id before ‘::’ token
+[5.194s]    41 | const char* motor_state_name(const ::egm::wrapper::Status::MotorState state)
+[5.194s]       |                                                  ^~
+[5.194s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:50: error: expected ‘)’ before ‘::’ token
+[5.194s]    41 | const char* motor_state_name(const ::egm::wrapper::Status::MotorState state)
+[5.195s]       |                             ~                    ^~
+[5.195s]       |                                                  )
+[5.195s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:50: error: expected initializer before ‘::’ token
+[5.195s]    41 | const char* motor_state_name(const ::egm::wrapper::Status::MotorState state)
+[5.195s]       |                                                  ^~
+[5.195s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:38: error: ‘egm’ in namespace ‘::’ does not name a type
+[5.195s]    54 | const char* rapid_state_name(const ::egm::wrapper::Status::RAPIDExecutionState state)
+[5.196s]       |                                      ^~~
+[5.196s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:50: error: expected unqualified-id before ‘::’ token
+[5.196s]    54 | const char* rapid_state_name(const ::egm::wrapper::Status::RAPIDExecutionState state)
+[5.196s]       |                                                  ^~
+[5.196s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:50: error: expected ‘)’ before ‘::’ token
+[5.196s]    54 | const char* rapid_state_name(const ::egm::wrapper::Status::RAPIDExecutionState state)
+[5.196s]       |                             ~                    ^~
+[5.196s]       |                                                  )
+[5.196s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:50: error: expected initializer before ‘::’ token
+[5.197s]    54 | const char* rapid_state_name(const ::egm::wrapper::Status::RAPIDExecutionState state)
+[5.197s]       |                                                  ^~
+[5.197s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:36: error: ‘egm’ in namespace ‘::’ does not name a type
+[5.197s]    67 | const char* egm_state_name(const ::egm::wrapper::Status::EGMState state)
+[5.197s]       |                                    ^~~
+[5.197s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:48: error: expected unqualified-id before ‘::’ token
+[5.198s]    67 | const char* egm_state_name(const ::egm::wrapper::Status::EGMState state)
+[5.198s]       |                                                ^~
+[5.198s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:48: error: expected ‘)’ before ‘::’ token
+[5.198s]    67 | const char* egm_state_name(const ::egm::wrapper::Status::EGMState state)
+[5.198s]       |                           ~                    ^~
+[5.198s]       |                                                )
+[5.198s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:48: error: expected initializer before ‘::’ token
+[5.198s]    67 | const char* egm_state_name(const ::egm::wrapper::Status::EGMState state)
+[5.198s]       |                                                ^~
+[5.236s] In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+[5.236s]                  from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+[5.236s]                  from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+[5.237s]                  from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+[5.237s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+[5.237s]                  from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+[5.237s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+[5.237s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+[5.237s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+[5.237s]                  from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+[5.237s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+[5.237s]                  from /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/include/abb_hardware_interface/abb_hardware_interface.hpp:36,
+[5.238s]                  from /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:16:
+[5.238s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp: In member function ‘virtual hardware_interface::return_type abb_hardware_interface::ABBSystemHardware::read(const rclcpp::Time&, const rclcpp::Duration&)’:
+[5.238s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:319:9: error: ‘egm_state_name’ was not declared in this scope
+[5.238s]   319 |         egm_state_name(channel.input.status().egm_state()),
+[5.238s]       |         ^~~~~~~~~~~~~~
+[5.253s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:320:9: error: ‘rapid_state_name’ was not declared in this scope
+[5.253s]   320 |         rapid_state_name(channel.input.status().rapid_execution_state()),
+[5.253s]       |         ^~~~~~~~~~~~~~~~
+[5.270s] /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:321:9: error: ‘motor_state_name’ was not declared in this scope
+[5.270s]   321 |         motor_state_name(channel.input.status().motor_state()),
+[5.270s]       |         ^~~~~~~~~~~~~~~~
+[6.291s] gmake[2]: *** [CMakeFiles/abb_hardware_interface.dir/build.make:76: CMakeFiles/abb_hardware_interface.dir/src/abb_hardware_interface.cpp.o] Error 1
+[6.291s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/abb_hardware_interface.dir/all] Error 2
+[6.292s] gmake: *** [Makefile:146: all] Error 2
+[6.295s] Invoked command in '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface' returned '2': CMAKE_PREFIX_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/home/heng/workspace/ws_RAMS/install/click_to_move:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_hardware_interface:/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/abb_bringup:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) LD_LIBRARY_PATH=/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /home/heng/miniconda3/bin/cmake --build /home/heng/workspace/ws_RAMS/build/abb_hardware_interface -- -j48 -l48

@@ -1,0 +1,70 @@
+Consolidate compiler generated dependencies of target abb_hardware_interface
+[ 33%] Building CXX object CMakeFiles/abb_hardware_interface.dir/src/abb_hardware_interface.cpp.o
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:36: error: ‘egm’ does not name a type
+   41 | const char* motor_state_name(const egm::wrapper::Status::MotorState state)
+      |                                    ^~~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:48: error: expected unqualified-id before ‘::’ token
+   41 | const char* motor_state_name(const egm::wrapper::Status::MotorState state)
+      |                                                ^~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:48: error: expected ‘)’ before ‘::’ token
+   41 | const char* motor_state_name(const egm::wrapper::Status::MotorState state)
+      |                             ~                  ^~
+      |                                                )
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:48: error: expected initializer before ‘::’ token
+   41 | const char* motor_state_name(const egm::wrapper::Status::MotorState state)
+      |                                                ^~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:36: error: ‘egm’ does not name a type
+   54 | const char* rapid_state_name(const egm::wrapper::Status::RAPIDExecutionState state)
+      |                                    ^~~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:48: error: expected unqualified-id before ‘::’ token
+   54 | const char* rapid_state_name(const egm::wrapper::Status::RAPIDExecutionState state)
+      |                                                ^~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:48: error: expected ‘)’ before ‘::’ token
+   54 | const char* rapid_state_name(const egm::wrapper::Status::RAPIDExecutionState state)
+      |                             ~                  ^~
+      |                                                )
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:48: error: expected initializer before ‘::’ token
+   54 | const char* rapid_state_name(const egm::wrapper::Status::RAPIDExecutionState state)
+      |                                                ^~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:34: error: ‘egm’ does not name a type
+   67 | const char* egm_state_name(const egm::wrapper::Status::EGMState state)
+      |                                  ^~~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:46: error: expected unqualified-id before ‘::’ token
+   67 | const char* egm_state_name(const egm::wrapper::Status::EGMState state)
+      |                                              ^~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:46: error: expected ‘)’ before ‘::’ token
+   67 | const char* egm_state_name(const egm::wrapper::Status::EGMState state)
+      |                           ~                  ^~
+      |                                              )
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:46: error: expected initializer before ‘::’ token
+   67 | const char* egm_state_name(const egm::wrapper::Status::EGMState state)
+      |                                              ^~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/include/abb_hardware_interface/abb_hardware_interface.hpp:36,
+                 from /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:16:
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp: In member function ‘virtual hardware_interface::return_type abb_hardware_interface::ABBSystemHardware::read(const rclcpp::Time&, const rclcpp::Duration&)’:
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:317:19: error: no match for call to ‘(const string {aka const std::__cxx11::basic_string<char>}) ()’
+  317 |         group.name().c_str(),
+      |         ~~~~~~~~~~^~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:319:9: error: ‘egm_state_name’ was not declared in this scope
+  319 |         egm_state_name(channel.input.status().egm_state()),
+      |         ^~~~~~~~~~~~~~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:320:9: error: ‘rapid_state_name’ was not declared in this scope
+  320 |         rapid_state_name(channel.input.status().rapid_execution_state()),
+      |         ^~~~~~~~~~~~~~~~
+/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:321:9: error: ‘motor_state_name’ was not declared in this scope
+  321 |         motor_state_name(channel.input.status().motor_state()),
+      |         ^~~~~~~~~~~~~~~~
+gmake[2]: *** [CMakeFiles/abb_hardware_interface.dir/build.make:76: CMakeFiles/abb_hardware_interface.dir/src/abb_hardware_interface.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/abb_hardware_interface.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

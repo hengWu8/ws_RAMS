@@ -1,0 +1,157 @@
+[0.000000] (-) TimerEvent: {}
+[0.000800] (-) JobUnselected: {'identifier': 'abb_bringup'}
+[0.001210] (-) JobUnselected: {'identifier': 'abb_egm_msgs'}
+[0.001492] (-) JobUnselected: {'identifier': 'abb_egm_rws_managers'}
+[0.001563] (-) JobUnselected: {'identifier': 'abb_irb1200_5_90_moveit_config'}
+[0.001598] (-) JobUnselected: {'identifier': 'abb_irb1200_support'}
+[0.001700] (-) JobUnselected: {'identifier': 'abb_irb4600_support'}
+[0.001739] (-) JobUnselected: {'identifier': 'abb_libegm'}
+[0.001761] (-) JobUnselected: {'identifier': 'abb_librws'}
+[0.001782] (-) JobUnselected: {'identifier': 'abb_pi0_bridge'}
+[0.001806] (-) JobUnselected: {'identifier': 'abb_rapid_msgs'}
+[0.001827] (-) JobUnselected: {'identifier': 'abb_rapid_sm_addin_msgs'}
+[0.001853] (-) JobUnselected: {'identifier': 'abb_resources'}
+[0.001916] (-) JobUnselected: {'identifier': 'abb_robot_msgs'}
+[0.001945] (-) JobUnselected: {'identifier': 'abb_ros2'}
+[0.001968] (-) JobUnselected: {'identifier': 'abb_rws_client'}
+[0.001989] (-) JobUnselected: {'identifier': 'click_to_move'}
+[0.002010] (-) JobUnselected: {'identifier': 'workcell_config'}
+[0.002031] (-) JobUnselected: {'identifier': 'workcell_description'}
+[0.002070] (abb_hardware_interface) JobQueued: {'identifier': 'abb_hardware_interface', 'dependencies': OrderedDict([('abb_libegm', '/home/heng/workspace/ws_RAMS/install/abb_libegm'), ('abb_librws', '/home/heng/workspace/ws_RAMS/install/abb_librws'), ('abb_egm_rws_managers', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers')])}
+[0.002189] (abb_hardware_interface) JobStarted: {'identifier': 'abb_hardware_interface'}
+[0.038677] (abb_hardware_interface) JobProgress: {'identifier': 'abb_hardware_interface', 'progress': 'cmake'}
+[0.040993] (abb_hardware_interface) JobProgress: {'identifier': 'abb_hardware_interface', 'progress': 'build'}
+[0.042459] (abb_hardware_interface) Command: {'cmd': ['/home/heng/miniconda3/bin/cmake', '--build', '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface', '--', '-j48', '-l48'], 'cwd': '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/heng'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('HTTPS_PROXY', 'http://127.0.0.1:27897'), ('CODEX_CI', '1'), ('USER', 'heng'), ('SSH_CLIENT', '192.168.1.105 62694 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('DEBUG', 'release'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib:/home/heng/workspace/ws_RAMS/install/abb_librws/lib:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib:/home/heng/workspace/ws_RAMS/install/abb_hardware_interface/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('BROWSER', '/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/heng'), ('CONDA_SHLVL', '1'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1002/vscode-ipc-3f667768-5c6a-45e5-8448-571250013f47.sock'), ('ROS_PYTHON_VERSION', '3'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('LC_CTYPE', 'C.UTF-8'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1002/bus'), ('COLORTERM', ''), ('_CE_M', ''), ('_CONDA_ROOT', '/home/heng/miniconda3'), ('https_proxy', 'http://127.0.0.1:27897'), ('COLCON_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'heng'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('http_proxy', 'http://127.0.0.1:27897'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_librws/lib/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/x86_64-linux-gnu/pkgconfig:/home/heng/workspace/ws_RAMS/install/abb_libegm/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('RUST_LOG', 'warn'), ('TERM', 'dumb'), ('XDG_SESSION_ID', '6467'), ('VSCODE_CLI_REQUIRE_TOKEN', '5872e26c-b92c-416b-972f-6100ae713be6'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/heng/.local/bin:/home/heng/.codex/tmp/arg0/codex-arg0lzeTDn:/home/heng/.vscode-server/cli/servers/Stable-cfbea10c5ffb233ea9177d34726e6056e89913dc/server/bin/remote-cli:/home/heng/.local/bin:/opt/ros/humble/bin:/home/heng/.local/bin:/home/heng/miniconda3/bin:/home/heng/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/heng/.vscode-server/extensions/openai.chatgpt-26.325.31654-linux-x64/bin/linux-x86_64'), ('VSCODE_AGENT_FOLDER', '/home/heng/.vscode-server'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1002'), ('LANG', 'C.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('GH_PAGER', 'cat'), ('LS_COLORS', ''), ('AMENT_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/home/heng/workspace/ws_RAMS/install/abb_hardware_interface:/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/abb_bringup:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/heng/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ELECTRON_RUN_AS_NODE', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('CMAKE_MODULE_PATH', '/home/heng/workspace/ws_RAMS/install/abb_librws/share/abb_librws/cmake'), ('CODEX_THREAD_ID', '019d434a-4267-7960-9853-e3ef0c2294b7'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('_CONDA_EXE', '/home/heng/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('PWD', '/home/heng/workspace/ws_RAMS/build/abb_hardware_interface'), ('LC_ALL', 'C.UTF-8'), ('CONDA_EXE', '/home/heng/miniconda3/bin/conda'), ('SSH_CONNECTION', '192.168.1.105 62694 192.168.1.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:27897'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('CONDA_PREFIX', '/home/heng/miniconda3'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/heng/workspace/ws_RAMS/install/abb_egm_rws_managers:/home/heng/workspace/ws_RAMS/install/abb_librws:/home/heng/workspace/ws_RAMS/install/abb_libegm:/home/heng/workspace/ws_RAMS/install/click_to_move:/home/heng/workspace/ws_RAMS/install/workcell_config:/home/heng/workspace/ws_RAMS/install/workcell_description:/home/heng/workspace/ws_RAMS/install/abb_resources:/home/heng/workspace/ws_RAMS/install/abb_hardware_interface:/home/heng/workspace/ws_RAMS/install/abb_irb1200_5_90_moveit_config:/home/heng/workspace/ws_RAMS/install/abb_irb1200_support:/home/heng/workspace/ws_RAMS/install/abb_bringup:/home/heng/workspace/ws_RAMS/install/abb_pi0_bridge:/opt/ros/humble')]), 'shell': False}
+[0.097828] (-) TimerEvent: {}
+[0.198016] (-) TimerEvent: {}
+[0.249329] (abb_hardware_interface) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target abb_hardware_interface\n'}
+[0.282851] (abb_hardware_interface) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/abb_hardware_interface.dir/src/abb_hardware_interface.cpp.o\n'}
+[0.298121] (-) TimerEvent: {}
+[0.398300] (-) TimerEvent: {}
+[0.498480] (-) TimerEvent: {}
+[0.598656] (-) TimerEvent: {}
+[0.698832] (-) TimerEvent: {}
+[0.799036] (-) TimerEvent: {}
+[0.899497] (-) TimerEvent: {}
+[0.999675] (-) TimerEvent: {}
+[1.099849] (-) TimerEvent: {}
+[1.200019] (-) TimerEvent: {}
+[1.300169] (-) TimerEvent: {}
+[1.400346] (-) TimerEvent: {}
+[1.500524] (-) TimerEvent: {}
+[1.600700] (-) TimerEvent: {}
+[1.700896] (-) TimerEvent: {}
+[1.801074] (-) TimerEvent: {}
+[1.901251] (-) TimerEvent: {}
+[2.001429] (-) TimerEvent: {}
+[2.101607] (-) TimerEvent: {}
+[2.201786] (-) TimerEvent: {}
+[2.301900] (-) TimerEvent: {}
+[2.402057] (-) TimerEvent: {}
+[2.502209] (-) TimerEvent: {}
+[2.602397] (-) TimerEvent: {}
+[2.702574] (-) TimerEvent: {}
+[2.802751] (-) TimerEvent: {}
+[2.902927] (-) TimerEvent: {}
+[3.003080] (-) TimerEvent: {}
+[3.103238] (-) TimerEvent: {}
+[3.203415] (-) TimerEvent: {}
+[3.303592] (-) TimerEvent: {}
+[3.403770] (-) TimerEvent: {}
+[3.503903] (-) TimerEvent: {}
+[3.604054] (-) TimerEvent: {}
+[3.704231] (-) TimerEvent: {}
+[3.804409] (-) TimerEvent: {}
+[3.904587] (-) TimerEvent: {}
+[4.004765] (-) TimerEvent: {}
+[4.104943] (-) TimerEvent: {}
+[4.205119] (-) TimerEvent: {}
+[4.305298] (-) TimerEvent: {}
+[4.405522] (-) TimerEvent: {}
+[4.505771] (-) TimerEvent: {}
+[4.606003] (-) TimerEvent: {}
+[4.706177] (-) TimerEvent: {}
+[4.806353] (-) TimerEvent: {}
+[4.906529] (-) TimerEvent: {}
+[5.006705] (-) TimerEvent: {}
+[5.106909] (-) TimerEvent: {}
+[5.195593] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:38: error: \xe2\x80\x98egm\xe2\x80\x99 in namespace \xe2\x80\x98::\xe2\x80\x99 does not name a type\n'}
+[5.195890] (abb_hardware_interface) StderrLine: {'line': b'   41 | const char* motor_state_name(const ::egm::wrapper::Status::MotorState state)\n'}
+[5.196023] (abb_hardware_interface) StderrLine: {'line': b'      |                                      ^~~\n'}
+[5.196130] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:50: error: expected unqualified-id before \xe2\x80\x98::\xe2\x80\x99 token\n'}
+[5.196236] (abb_hardware_interface) StderrLine: {'line': b'   41 | const char* motor_state_name(const ::egm::wrapper::Status::MotorState state)\n'}
+[5.196336] (abb_hardware_interface) StderrLine: {'line': b'      |                                                  ^~\n'}
+[5.196439] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:50: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98::\xe2\x80\x99 token\n'}
+[5.196542] (abb_hardware_interface) StderrLine: {'line': b'   41 | const char* motor_state_name(const ::egm::wrapper::Status::MotorState state)\n'}
+[5.196643] (abb_hardware_interface) StderrLine: {'line': b'      |                             ~                    ^~\n'}
+[5.196742] (abb_hardware_interface) StderrLine: {'line': b'      |                                                  )\n'}
+[5.196841] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:41:50: error: expected initializer before \xe2\x80\x98::\xe2\x80\x99 token\n'}
+[5.196960] (abb_hardware_interface) StderrLine: {'line': b'   41 | const char* motor_state_name(const ::egm::wrapper::Status::MotorState state)\n'}
+[5.197074] (abb_hardware_interface) StderrLine: {'line': b'      |                                                  ^~\n'}
+[5.197385] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:38: error: \xe2\x80\x98egm\xe2\x80\x99 in namespace \xe2\x80\x98::\xe2\x80\x99 does not name a type\n'}
+[5.197569] (abb_hardware_interface) StderrLine: {'line': b'   54 | const char* rapid_state_name(const ::egm::wrapper::Status::RAPIDExecutionState state)\n'}
+[5.197706] (abb_hardware_interface) StderrLine: {'line': b'      |                                      ^~~\n'}
+[5.197817] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:50: error: expected unqualified-id before \xe2\x80\x98::\xe2\x80\x99 token\n'}
+[5.197949] (abb_hardware_interface) StderrLine: {'line': b'   54 | const char* rapid_state_name(const ::egm::wrapper::Status::RAPIDExecutionState state)\n'}
+[5.198060] (abb_hardware_interface) StderrLine: {'line': b'      |                                                  ^~\n'}
+[5.198167] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:50: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98::\xe2\x80\x99 token\n'}
+[5.198276] (abb_hardware_interface) StderrLine: {'line': b'   54 | const char* rapid_state_name(const ::egm::wrapper::Status::RAPIDExecutionState state)\n'}
+[5.198382] (abb_hardware_interface) StderrLine: {'line': b'      |                             ~                    ^~\n'}
+[5.198487] (abb_hardware_interface) StderrLine: {'line': b'      |                                                  )\n'}
+[5.198592] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:54:50: error: expected initializer before \xe2\x80\x98::\xe2\x80\x99 token\n'}
+[5.198711] (abb_hardware_interface) StderrLine: {'line': b'   54 | const char* rapid_state_name(const ::egm::wrapper::Status::RAPIDExecutionState state)\n'}
+[5.198827] (abb_hardware_interface) StderrLine: {'line': b'      |                                                  ^~\n'}
+[5.199151] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:36: error: \xe2\x80\x98egm\xe2\x80\x99 in namespace \xe2\x80\x98::\xe2\x80\x99 does not name a type\n'}
+[5.199340] (abb_hardware_interface) StderrLine: {'line': b'   67 | const char* egm_state_name(const ::egm::wrapper::Status::EGMState state)\n'}
+[5.199465] (abb_hardware_interface) StderrLine: {'line': b'      |                                    ^~~\n'}
+[5.199574] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:48: error: expected unqualified-id before \xe2\x80\x98::\xe2\x80\x99 token\n'}
+[5.199685] (abb_hardware_interface) StderrLine: {'line': b'   67 | const char* egm_state_name(const ::egm::wrapper::Status::EGMState state)\n'}
+[5.199792] (abb_hardware_interface) StderrLine: {'line': b'      |                                                ^~\n'}
+[5.199913] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:48: error: expected \xe2\x80\x98)\xe2\x80\x99 before \xe2\x80\x98::\xe2\x80\x99 token\n'}
+[5.200029] (abb_hardware_interface) StderrLine: {'line': b'   67 | const char* egm_state_name(const ::egm::wrapper::Status::EGMState state)\n'}
+[5.200135] (abb_hardware_interface) StderrLine: {'line': b'      |                           ~                    ^~\n'}
+[5.200239] (abb_hardware_interface) StderrLine: {'line': b'      |                                                )\n'}
+[5.200345] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:67:48: error: expected initializer before \xe2\x80\x98::\xe2\x80\x99 token\n'}
+[5.200451] (abb_hardware_interface) StderrLine: {'line': b'   67 | const char* egm_state_name(const ::egm::wrapper::Status::EGMState state)\n'}
+[5.200555] (abb_hardware_interface) StderrLine: {'line': b'      |                                                ^~\n'}
+[5.207018] (-) TimerEvent: {}
+[5.238241] (abb_hardware_interface) StderrLine: {'line': b'In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,\n'}
+[5.238450] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,\n'}
+[5.238573] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,\n'}
+[5.238695] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,\n'}
+[5.238804] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,\n'}
+[5.238941] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,\n'}
+[5.239053] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,\n'}
+[5.239159] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,\n'}
+[5.239265] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,\n'}
+[5.239371] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,\n'}
+[5.239476] (abb_hardware_interface) StderrLine: {'line': b'                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,\n'}
+[5.239581] (abb_hardware_interface) StderrLine: {'line': b'                 from /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/include/abb_hardware_interface/abb_hardware_interface.hpp:36,\n'}
+[5.239688] (abb_hardware_interface) StderrLine: {'line': b'                 from /home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:16:\n'}
+[5.239794] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp: In member function \xe2\x80\x98virtual hardware_interface::return_type abb_hardware_interface::ABBSystemHardware::read(const rclcpp::Time&, const rclcpp::Duration&)\xe2\x80\x99:\n'}
+[5.239921] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:319:9: error: \xe2\x80\x98egm_state_name\xe2\x80\x99 was not declared in this scope\n'}
+[5.240034] (abb_hardware_interface) StderrLine: {'line': b'  319 |         egm_state_name(channel.input.status().egm_state()),\n'}
+[5.240140] (abb_hardware_interface) StderrLine: {'line': b'      |         ^~~~~~~~~~~~~~\n'}
+[5.255281] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:320:9: error: \xe2\x80\x98rapid_state_name\xe2\x80\x99 was not declared in this scope\n'}
+[5.255475] (abb_hardware_interface) StderrLine: {'line': b'  320 |         rapid_state_name(channel.input.status().rapid_execution_state()),\n'}
+[5.255598] (abb_hardware_interface) StderrLine: {'line': b'      |         ^~~~~~~~~~~~~~~~\n'}
+[5.271980] (abb_hardware_interface) StderrLine: {'line': b'/home/heng/workspace/ws_RAMS/src/abb_ros2_upstream/abb_hardware_interface/src/abb_hardware_interface.cpp:321:9: error: \xe2\x80\x98motor_state_name\xe2\x80\x99 was not declared in this scope\n'}
+[5.272177] (abb_hardware_interface) StderrLine: {'line': b'  321 |         motor_state_name(channel.input.status().motor_state()),\n'}
+[5.272299] (abb_hardware_interface) StderrLine: {'line': b'      |         ^~~~~~~~~~~~~~~~\n'}
+[5.307129] (-) TimerEvent: {}
+[5.407351] (-) TimerEvent: {}
+[5.507568] (-) TimerEvent: {}
+[5.607725] (-) TimerEvent: {}
+[5.707961] (-) TimerEvent: {}
+[5.808208] (-) TimerEvent: {}
+[5.908391] (-) TimerEvent: {}
+[6.008541] (-) TimerEvent: {}
+[6.108736] (-) TimerEvent: {}
+[6.208912] (-) TimerEvent: {}
+[6.292744] (abb_hardware_interface) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/abb_hardware_interface.dir/build.make:76: CMakeFiles/abb_hardware_interface.dir/src/abb_hardware_interface.cpp.o] Error 1\n'}
+[6.293336] (abb_hardware_interface) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/abb_hardware_interface.dir/all] Error 2\n'}
+[6.293957] (abb_hardware_interface) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[6.296694] (abb_hardware_interface) CommandEnded: {'returncode': 2}
+[6.309038] (-) TimerEvent: {}
+[6.319768] (abb_hardware_interface) JobEnded: {'identifier': 'abb_hardware_interface', 'rc': 2}
+[6.330237] (-) EventReactorShutdown: {}

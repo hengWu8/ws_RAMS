@@ -26,6 +26,7 @@ import sys
 import threading
 from typing import Any
 
+import cv2
 import numpy as np
 
 
@@ -53,6 +54,21 @@ class JointSpec:
     origin_xyz: np.ndarray
     origin_rpy: np.ndarray
     axis: np.ndarray
+
+
+@dataclasses.dataclass(frozen=True)
+class KinematicSnapshot:
+    tcp_transform: np.ndarray
+    movable_points_world: tuple[np.ndarray, ...]
+    base_position_world: np.ndarray
+
+
+@dataclasses.dataclass(frozen=True)
+class SceneObject:
+    name: str
+    offset_xyz: np.ndarray
+    half_extents_xyz: np.ndarray
+    color_bgr: tuple[int, int, int]
 
 
 def _rotation_matrix_from_rpy(roll: float, pitch: float, yaw: float) -> np.ndarray:
@@ -165,9 +181,9 @@ class AbbLiberoMapper:
         self._chain = self._load_chain()
 
     def state_from_joint_positions(self, current_positions: np.ndarray, *, state_dim: int) -> np.ndarray:
-        tcp_transform, _ = self._forward_kinematics_and_jacobian(current_positions)
-        tcp_position = tcp_transform[:3, 3]
-        tcp_axis_angle = _rotation_matrix_to_axis_angle(tcp_transform[:3, :3])
+        snapshot, _ = self._forward_kinematics_and_jacobian(current_positions)
+        tcp_position = snapshot.tcp_transform[:3, 3]
+        tcp_axis_angle = _rotation_matrix_to_axis_angle(snapshot.tcp_transform[:3, :3])
 
         state = np.zeros(state_dim, dtype=np.float32)
         packed = np.concatenate(
@@ -187,8 +203,7 @@ class AbbLiberoMapper:
                 f"openpi action dimension {first_action.size} is too small for ABB cartesian mapping."
             )
 
-        tcp_transform, jacobian = self._forward_kinematics_and_jacobian(current_positions)
-        del tcp_transform  # Jacobian already captures the current differential geometry.
+        _snapshot, jacobian = self._forward_kinematics_and_jacobian(current_positions)
 
         translation_delta = np.tanh(first_action[:3].astype(np.float64)) * self.translation_scale_m
         rotation_delta = np.tanh(first_action[3:6].astype(np.float64)) * self.rotation_scale_rad
@@ -200,6 +215,10 @@ class AbbLiberoMapper:
         joint_delta = np.clip(joint_delta, -self.max_joint_step_rad, self.max_joint_step_rad)
 
         return (current_positions[: len(self.joint_names)] + joint_delta).astype(float).tolist()
+
+    def snapshot(self, current_positions: np.ndarray) -> KinematicSnapshot:
+        snapshot, _ = self._forward_kinematics_and_jacobian(current_positions)
+        return snapshot
 
     def _load_chain(self) -> list[JointSpec]:
         urdf_xml = self._expand_xacro()
@@ -280,13 +299,14 @@ class AbbLiberoMapper:
         )
         return result.stdout
 
-    def _forward_kinematics_and_jacobian(self, current_positions: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    def _forward_kinematics_and_jacobian(self, current_positions: np.ndarray) -> tuple[KinematicSnapshot, np.ndarray]:
         if current_positions.size < len(self.joint_names):
             raise ValueError("joint_positions must contain ABB joint values for the configured chain.")
 
         transform = np.eye(4, dtype=np.float64)
         joint_origins: list[np.ndarray] = []
         joint_axes: list[np.ndarray] = []
+        movable_points_world: list[np.ndarray] = [transform[:3, 3].copy()]
         joint_values = iter(current_positions[: len(self.joint_names)])
         for spec in self._chain:
             transform = transform @ _transform_from_xyz_rpy(spec.origin_xyz, spec.origin_rpy)
@@ -295,24 +315,196 @@ class AbbLiberoMapper:
                 joint_origins.append(transform[:3, 3].copy())
                 joint_axes.append(transform[:3, :3] @ spec.axis)
                 transform = transform @ _rotation_about_axis(spec.axis, joint_value)
+                movable_points_world.append(transform[:3, 3].copy())
             elif spec.joint_type == "fixed":
                 continue
             else:
                 raise ValueError(f"Unsupported joint type '{spec.joint_type}' in ABB mapper.")
 
         tcp_position = transform[:3, 3]
+        movable_points_world.append(tcp_position.copy())
         jacobian = np.zeros((6, len(joint_axes)), dtype=np.float64)
         for index, (origin, axis_world) in enumerate(zip(joint_origins, joint_axes, strict=True)):
             jacobian[:3, index] = np.cross(axis_world, tcp_position - origin)
             jacobian[3:, index] = axis_world
 
-        return transform, jacobian
+        snapshot = KinematicSnapshot(
+            tcp_transform=transform,
+            movable_points_world=tuple(movable_points_world),
+            base_position_world=movable_points_world[0],
+        )
+        return snapshot, jacobian
+
+
+class SyntheticVisionRenderer:
+    def __init__(
+        self,
+        *,
+        image_size: int,
+        enabled: bool,
+        table_extent_xy: tuple[float, float],
+        object_offsets: tuple[np.ndarray, ...],
+    ) -> None:
+        self.image_size = image_size
+        self.enabled = enabled
+        self.table_extent_xy = table_extent_xy
+        self._anchor_lock = threading.Lock()
+        self._anchor_tcp_position: np.ndarray | None = None
+        self._scene_objects = tuple(
+            SceneObject(
+                name=f"cube_{index}",
+                offset_xyz=offset.astype(np.float64),
+                half_extents_xyz=np.array([0.035, 0.035, 0.035], dtype=np.float64),
+                color_bgr=color,
+            )
+            for index, (offset, color) in enumerate(
+                zip(
+                    object_offsets,
+                    (
+                        (40, 90, 220),
+                        (60, 180, 100),
+                        (200, 160, 40),
+                    ),
+                    strict=False,
+                )
+            )
+        )
+
+    def render(
+        self,
+        *,
+        snapshot: KinematicSnapshot | None,
+        prompt: str,
+    ) -> tuple[np.ndarray, np.ndarray]:
+        if not self.enabled or snapshot is None:
+            zeros = np.zeros((self.image_size, self.image_size, 3), dtype=np.uint8)
+            return zeros, zeros
+
+        anchor = self._get_or_init_anchor(snapshot.tcp_transform[:3, 3])
+        object_positions = [anchor + scene_object.offset_xyz for scene_object in self._scene_objects]
+        front_image = self._render_workspace_view(snapshot, object_positions, prompt)
+        wrist_image = self._render_wrist_view(snapshot, object_positions, prompt)
+        return front_image, wrist_image
+
+    def _get_or_init_anchor(self, tcp_position: np.ndarray) -> np.ndarray:
+        with self._anchor_lock:
+            if self._anchor_tcp_position is None:
+                self._anchor_tcp_position = tcp_position.astype(np.float64).copy()
+            return self._anchor_tcp_position.copy()
+
+    def _render_workspace_view(
+        self,
+        snapshot: KinematicSnapshot,
+        object_positions: list[np.ndarray],
+        prompt: str,
+    ) -> np.ndarray:
+        image = np.full((self.image_size, self.image_size, 3), (236, 240, 242), dtype=np.uint8)
+        image[: int(self.image_size * 0.35), :] = (214, 228, 238)
+
+        tcp_position = snapshot.tcp_transform[:3, 3]
+        world_center_xy = np.array([tcp_position[0], tcp_position[1]], dtype=np.float64)
+        extent_x, extent_y = self.table_extent_xy
+        min_xy = world_center_xy - np.array([extent_x * 0.5, extent_y * 0.5], dtype=np.float64)
+        max_xy = world_center_xy + np.array([extent_x * 0.5, extent_y * 0.5], dtype=np.float64)
+
+        def project_xy(point_xyz: np.ndarray) -> tuple[int, int]:
+            px = int(np.clip((point_xyz[0] - min_xy[0]) / max(extent_x, 1e-6) * (self.image_size - 1), 0, self.image_size - 1))
+            py = int(
+                np.clip(
+                    (1.0 - (point_xyz[1] - min_xy[1]) / max(extent_y, 1e-6)) * (self.image_size - 1),
+                    0,
+                    self.image_size - 1,
+                )
+            )
+            return px, py
+
+        grid_color = (210, 214, 218)
+        for grid_index in range(6):
+            x = int(grid_index * (self.image_size - 1) / 5)
+            y = int(grid_index * (self.image_size - 1) / 5)
+            cv2.line(image, (x, 0), (x, self.image_size - 1), grid_color, 1, cv2.LINE_AA)
+            cv2.line(image, (0, y), (self.image_size - 1, y), grid_color, 1, cv2.LINE_AA)
+
+        for scene_object, object_position in zip(self._scene_objects, object_positions, strict=True):
+            center = project_xy(object_position)
+            half_size_px = max(8, int(0.04 / max(extent_x, 1e-6) * self.image_size))
+            top_left = (center[0] - half_size_px, center[1] - half_size_px)
+            bottom_right = (center[0] + half_size_px, center[1] + half_size_px)
+            cv2.rectangle(image, top_left, bottom_right, scene_object.color_bgr, -1, cv2.LINE_AA)
+            cv2.rectangle(image, top_left, bottom_right, (40, 40, 40), 2, cv2.LINE_AA)
+
+        projected_points = [project_xy(point) for point in snapshot.movable_points_world]
+        for start, end in zip(projected_points[:-1], projected_points[1:], strict=True):
+            cv2.line(image, start, end, (42, 50, 64), 6, cv2.LINE_AA)
+        for projected_point in projected_points[:-1]:
+            cv2.circle(image, projected_point, 6, (240, 244, 248), -1, cv2.LINE_AA)
+            cv2.circle(image, projected_point, 2, (42, 50, 64), -1, cv2.LINE_AA)
+        cv2.circle(image, projected_points[-1], 8, (24, 90, 220), -1, cv2.LINE_AA)
+
+        self._draw_prompt_banner(image, prompt, header="front")
+        return image
+
+    def _render_wrist_view(
+        self,
+        snapshot: KinematicSnapshot,
+        object_positions: list[np.ndarray],
+        prompt: str,
+    ) -> np.ndarray:
+        image = np.full((self.image_size, self.image_size, 3), (28, 34, 40), dtype=np.uint8)
+        tcp_transform = snapshot.tcp_transform
+        tcp_position = tcp_transform[:3, 3]
+        rotation_world_tcp = tcp_transform[:3, :3]
+        rotation_tcp_world = rotation_world_tcp.T
+
+        visible_objects: list[tuple[SceneObject, np.ndarray]] = []
+        for scene_object, object_position in zip(self._scene_objects, object_positions, strict=True):
+            relative_tcp = rotation_tcp_world @ (object_position - tcp_position)
+            visible_objects.append((scene_object, relative_tcp))
+
+        visible_objects.sort(key=lambda item: item[1][0], reverse=True)
+        for scene_object, relative_tcp in visible_objects:
+            depth = float(relative_tcp[0] + 0.35)
+            lateral = float(relative_tcp[1])
+            vertical = float(relative_tcp[2])
+            if depth <= 0.03:
+                continue
+            x_px = int(self.image_size * 0.5 + lateral / max(depth, 1e-6) * self.image_size * 0.7)
+            y_px = int(self.image_size * 0.62 - vertical / max(depth, 1e-6) * self.image_size * 0.7)
+            size_px = int(np.clip(26.0 / depth, 12, self.image_size * 0.35))
+            if x_px + size_px < 0 or x_px - size_px >= self.image_size or y_px + size_px < 0 or y_px - size_px >= self.image_size:
+                continue
+            top_left = (x_px - size_px, y_px - size_px)
+            bottom_right = (x_px + size_px, y_px + size_px)
+            cv2.rectangle(image, top_left, bottom_right, scene_object.color_bgr, -1, cv2.LINE_AA)
+            cv2.rectangle(image, top_left, bottom_right, (235, 240, 245), 2, cv2.LINE_AA)
+
+        center = self.image_size // 2
+        cv2.line(image, (center - 10, center), (center + 10, center), (245, 245, 245), 1, cv2.LINE_AA)
+        cv2.line(image, (center, center - 10), (center, center + 10), (245, 245, 245), 1, cv2.LINE_AA)
+        cv2.circle(image, (center, center), 3, (245, 245, 245), -1, cv2.LINE_AA)
+        self._draw_prompt_banner(image, prompt, header="wrist")
+        return image
+
+    def _draw_prompt_banner(self, image: np.ndarray, prompt: str, *, header: str) -> None:
+        cv2.rectangle(image, (0, 0), (self.image_size - 1, 26), (245, 248, 250), -1, cv2.LINE_AA)
+        label = f"{header}: {prompt[:28]}"
+        cv2.putText(
+            image,
+            label,
+            (8, 18),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.45,
+            (30, 36, 44),
+            1,
+            cv2.LINE_AA,
+        )
 
 
 def build_openpi_observation(
     request_payload: dict[str, Any],
     *,
     mapper: AbbLiberoMapper | None,
+    renderer: SyntheticVisionRenderer | None,
     state_dim: int,
     image_size: int,
     prompt: str,
@@ -322,19 +514,28 @@ def build_openpi_observation(
     if current_positions.ndim != 1 or current_positions.size == 0:
         raise ValueError("observation.joint_positions must be a non-empty 1D vector.")
 
+    snapshot: KinematicSnapshot | None = None
     if mapper is None:
         state = np.zeros(state_dim, dtype=np.float32)
         copy_count = min(state_dim, current_positions.size)
         state[:copy_count] = current_positions[:copy_count]
     else:
+        snapshot = mapper.snapshot(current_positions)
         state = mapper.state_from_joint_positions(current_positions, state_dim=state_dim)
 
-    zeros_image = np.zeros((image_size, image_size, 3), dtype=np.uint8)
+    request_prompt = str(request_payload.get("prompt", prompt))
+    if renderer is None:
+        zeros_image = np.zeros((image_size, image_size, 3), dtype=np.uint8)
+        image = zeros_image
+        wrist_image = zeros_image
+    else:
+        image, wrist_image = renderer.render(snapshot=snapshot, prompt=request_prompt)
+
     openpi_observation = {
         "observation/state": state,
-        "observation/image": zeros_image,
-        "observation/wrist_image": zeros_image,
-        "prompt": str(request_payload.get("prompt", prompt)),
+        "observation/image": image,
+        "observation/wrist_image": wrist_image,
+        "prompt": request_prompt,
     }
     return openpi_observation, current_positions
 
@@ -386,6 +587,9 @@ class OpenPiPolicyAdapter:
         rotation_scale_rad: float,
         ik_damping: float,
         max_joint_step_rad: float,
+        use_synthetic_vision: bool,
+        table_extent_xy: tuple[float, float],
+        object_offsets: tuple[np.ndarray, ...],
     ) -> None:
         self.config_name = config_name
         self.checkpoint_dir = checkpoint_dir
@@ -410,6 +614,12 @@ class OpenPiPolicyAdapter:
             if mapping_mode == "abb_libero"
             else None
         )
+        self.renderer = SyntheticVisionRenderer(
+            image_size=image_size,
+            enabled=use_synthetic_vision,
+            table_extent_xy=table_extent_xy,
+            object_offsets=object_offsets,
+        )
 
         self._policy = None
         self._policy_lock = threading.Lock()
@@ -430,6 +640,7 @@ class OpenPiPolicyAdapter:
             "pytorch_device": self.pytorch_device,
             "mapping_mode": self.mapping_mode,
             "tcp_tip_link": self.mapper.tip_link if self.mapper is not None else None,
+            "synthetic_vision": self.renderer.enabled,
         }
 
     def infer(self, request_payload: dict[str, Any]) -> dict[str, Any]:
@@ -437,6 +648,7 @@ class OpenPiPolicyAdapter:
         openpi_observation, current_positions = build_openpi_observation(
             request_payload,
             mapper=self.mapper,
+            renderer=self.renderer,
             state_dim=self.state_dim,
             image_size=self.image_size,
             prompt=self.prompt,
@@ -607,6 +819,24 @@ def _resolve_pytorch_device(requested_device: str, torch_module) -> str:
     return best_device
 
 
+def _parse_object_offsets(raw_value: str) -> tuple[np.ndarray, ...]:
+    offsets: list[np.ndarray] = []
+    for item in raw_value.split(";"):
+        stripped = item.strip()
+        if not stripped:
+            continue
+        values = np.fromstring(stripped, sep=",", dtype=np.float64)
+        if values.size != 3:
+            raise ValueError(
+                "Each synthetic object offset must contain exactly 3 comma-separated values, "
+                f"got '{stripped}'."
+            )
+        offsets.append(values)
+    if not offsets:
+        raise ValueError("At least one synthetic object offset must be provided.")
+    return tuple(offsets)
+
+
 def main(args: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
         description="Minimal ABB HTTP to openpi adapter for safe dry-run testing."
@@ -702,9 +932,31 @@ def main(args: list[str] | None = None) -> None:
         default=0.10,
         help="Maximum per-step ABB joint delta produced by the adapter IK layer.",
     )
+    parser.add_argument(
+        "--use-synthetic-vision",
+        action="store_true",
+        help="Render two synthetic RGB views from ABB state instead of zero-image placeholders.",
+    )
+    parser.add_argument(
+        "--table-extent-xy",
+        default="0.9,0.9",
+        help="Workspace view extent in meters for the synthetic front image, formatted as x_extent,y_extent.",
+    )
+    parser.add_argument(
+        "--synthetic-object-offsets",
+        default="0.18,0.12,-0.03;0.26,-0.08,-0.03",
+        help=(
+            "Semicolon-separated object offsets relative to the first observed TCP position, "
+            "each formatted as x,y,z in meters."
+        ),
+    )
     parsed = parser.parse_args(args=args)
 
     logging.basicConfig(level=logging.INFO, force=True)
+    table_extent_xy = np.fromstring(parsed.table_extent_xy, sep=",", dtype=np.float64)
+    if table_extent_xy.size != 2:
+        raise ValueError("--table-extent-xy must contain exactly 2 comma-separated values.")
+    object_offsets = _parse_object_offsets(parsed.synthetic_object_offsets)
 
     adapter = OpenPiPolicyAdapter(
         config_name=parsed.config_name,
@@ -723,6 +975,9 @@ def main(args: list[str] | None = None) -> None:
         rotation_scale_rad=parsed.rotation_scale_rad,
         ik_damping=parsed.ik_damping,
         max_joint_step_rad=parsed.max_joint_step_rad,
+        use_synthetic_vision=parsed.use_synthetic_vision,
+        table_extent_xy=(float(table_extent_xy[0]), float(table_extent_xy[1])),
+        object_offsets=object_offsets,
     )
     server = ThreadingHTTPServer((parsed.host, parsed.port), _AdapterHandler)
     server.adapter = adapter

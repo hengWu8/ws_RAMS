@@ -118,6 +118,43 @@ For RWS on the ROS2 side:
 - `robotstudio_rws_port` should be the TCP port the server can actually reach, usually `80`.
 - This is not necessarily `192.168.1.102`. `192.168.1.102` is the server IP from your SSH example, while `robotstudio_rws_ip` should point at the RobotStudio virtual controller or the Windows host address that exposes it.
 
+## Known recovery case: direct commands stop moving until RAPID is restarted
+
+Observed behavior during RobotStudio testing:
+
+- RWS remained reachable.
+- EGM UDP traffic on port `6515` remained bi-directional.
+- ROS2 controllers stayed active and `/forward_command_controller_position/commands` continued to receive non-zero targets.
+- Even direct test commands such as `[0.5, 0, 0, 0, 0, 0]` no longer produced motion.
+- Restarting the RobotStudio RAPID program restored motion immediately.
+
+What this most likely means:
+
+- The failure is not necessarily a raw TCP/UDP connectivity problem.
+- The virtual controller can remain "connected" while the current EGM motion session is no longer consuming incoming references.
+- After repeated stop/start cycles, `41830` errors, or mismatched launch timing between ROS2 bringup and `EGMRunJoint`, the controller can end up in a stale EGM execution state.
+- Restarting RAPID re-runs `EGMGetId -> EGMSetupUC -> EGMActJoint -> EGMRunJoint`, which effectively refreshes the EGM session and restores motion execution.
+
+Practical interpretation:
+
+- If RWS is up and UDP packets are still flowing but both `pi0` commands and direct controller commands stop moving the robot, do not assume the policy output is the root cause.
+- First suspect that the active RAPID/EGM session is stale and needs to be restarted from the RobotStudio side.
+
+Recommended recovery order:
+
+1. Stop ROS2 streaming output or set `command_output_armed=false`.
+2. In RobotStudio, stop the RAPID program.
+3. Perform `PP to Main`.
+4. Start the RAPID program again so it re-enters `EGMRunJoint`.
+5. Re-run a direct controller command baseline before blaming `pi0`.
+
+This recovery step is especially important before any A/B comparison between:
+
+- direct `/forward_command_controller_position/commands` publishing, and
+- `pi0 -> HTTP adapter -> abb_pi0_bridge -> controller`
+
+Without resetting RAPID first, the comparison can be misleading because both paths may fail for the same stale-session reason.
+
 Example launch if your virtual controller is reachable at `192.168.1.50`:
 
 ```bash
@@ -202,3 +239,20 @@ Notes:
 - It does **not** mean the selected checkpoint is semantically aligned with the ABB IRB6700.
 - Real camera inputs and an ABB-specific observation/action mapping are still needed before meaningful closed-loop robot control with pi0.
 - If your machine has an NVIDIA GPU, prefer `--pytorch-device auto` or an explicit `cuda:N` device. CPU loading can be very slow and may exhaust host memory on large checkpoints.
+
+## Automation idea for later
+
+The observed RAPID restart requirement suggests a small recovery helper would be valuable. A future automation utility could:
+
+1. Query RWS for `ctrlstate` and RAPID execution state.
+2. Confirm the ROS2 side is listening on the expected EGM port.
+3. Send a short direct controller baseline command and observe whether `/joint_states` changes.
+4. If commands are being published but joint feedback stays flat, warn that the EGM session is likely stale.
+5. Optionally drive a scripted recovery sequence:
+   - disarm `abb_pi0_bridge`
+   - request RAPID stop through RWS
+   - request `PP to Main`
+   - request RAPID start
+   - re-run the direct-command baseline
+
+In other words, the useful automation target is not just "launch pi0", but "verify motion execution and recover stale RAPID/EGM sessions before enabling pi0 output".
