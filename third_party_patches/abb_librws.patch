@@ -1,0 +1,293 @@
+diff --git a/src/rws_client.cpp b/src/rws_client.cpp
+index 256caf7..063b87b 100644
+--- a/src/rws_client.cpp
++++ b/src/rws_client.cpp
+@@ -44,6 +44,15 @@
+ namespace
+ {
+ static const char EXCEPTION_CREATE_STRING[]{"Failed to create string"};
++
++std::string clipText(const std::string& text, const size_t max_len = 240)
++{
++  if (text.size() <= max_len)
++  {
++    return text;
++  }
++  return text.substr(0, max_len) + "...(truncated)";
++}
+ }
+ 
+ namespace abb
+@@ -266,7 +275,7 @@ RWSClient::RWSResult RWSClient::getRAPIDTasks()
+ 
+ RWSClient::RWSResult RWSClient::getRobotWareSystem()
+ {
+-  std::string uri = Resources::RW_SYSTEM;
++  std::string uri = Resources::RW_SYSTEM + "/";
+ 
+   EvaluationConditions evaluation_conditions;
+   evaluation_conditions.parse_message_into_xml = true;
+@@ -700,9 +709,32 @@ void RWSClient::checkAcceptedOutcomes(RWSResult* result,
+ 
+       if (!result->success)
+       {
+-        result->error_message = "checkAcceptedOutcomes(...): RWS response status not accepted";
++        std::stringstream ss;
++        ss << "checkAcceptedOutcomes(...): RWS response status not accepted"
++           << " (request: " << poco_result.poco_info.http.request.method
++           << " " << poco_result.poco_info.http.request.uri
++           << ", response: " << poco_result.poco_info.http.response.status
++           << " - " << HTTPResponse::getReasonForStatus(poco_result.poco_info.http.response.status) << ")";
++
++        if (!poco_result.poco_info.http.response.content.empty())
++        {
++          ss << ", response_content=\"" << clipText(poco_result.poco_info.http.response.content) << "\"";
++        }
++
++        result->error_message = ss.str();
+       }
+     }
++    else
++    {
++      std::stringstream ss;
++      ss << "checkAcceptedOutcomes(...): POCO call failed with status="
++         << poco_result.mapGeneralStatus();
++      if (!poco_result.exception_message.empty())
++      {
++        ss << ", exception=\"" << poco_result.exception_message << "\"";
++      }
++      result->error_message = ss.str();
++    }
+   }
+ }
+ 
+@@ -739,6 +771,11 @@ void RWSClient::parseMessage(RWSResult* result, const POCOResult& poco_result)
+         // XML parsing: Failed
+         result->success = false;
+         result->error_message = "parseMessage(...): XML parser failed to parse RWS response";
++        if (!poco_result.poco_info.http.response.content.empty())
++        {
++          result->error_message += ", response_content=\"" +
++                                   clipText(poco_result.poco_info.http.response.content) + "\"";
++        }
+       }
+     }
+   }
+diff --git a/src/rws_interface.cpp b/src/rws_interface.cpp
+index b964aee..18d761c 100644
+--- a/src/rws_interface.cpp
++++ b/src/rws_interface.cpp
+@@ -45,6 +45,15 @@ namespace
+ {
+ static const char EXCEPTION_GET_CFG[]{"Failed to get configuration instances"};
+ static const char EXCEPTION_PARSE_CFG[]{"Failed to parse configuration instances"};
++
++std::string clipText(const std::string& text, const size_t max_len = 600)
++{
++  if (text.size() <= max_len)
++  {
++    return text;
++  }
++  return text.substr(0, max_len) + "...(truncated)";
++}
+ }
+ 
+ namespace abb
+@@ -909,8 +918,24 @@ RWSInterface::SystemInfo RWSInterface::getSystemInfo()
+   SystemInfo result;
+ 
+   RWSClient::RWSResult rws_result = rws_client_.getRobotWareSystem();
++  if(!rws_result.success)
++  {
++    std::stringstream ss;
++    ss << "Failed to get RobotWare system via RWS";
++    if(!rws_result.error_message.empty())
++    {
++      ss << ": " << rws_result.error_message;
++    }
++    const auto log_text = rws_client_.getLogTextLatestEvent(true);
++    if(!log_text.empty())
++    {
++      ss << ". Last RWS log: " << log_text;
++    }
++    throw std::runtime_error(ss.str());
++  }
+ 
+   std::vector<Poco::XML::Node*> node_list = xmlFindNodes(rws_result.p_xml_document, XMLAttributes::CLASS_SYS_SYSTEM_LI);
++  const size_t system_node_count = node_list.size();
+   for (size_t i = 0; i < node_list.size(); ++i)
+   {
+     result.system_name = xmlFindTextContent(node_list.at(i), XMLAttributes::CLASS_NAME);
+@@ -923,8 +948,51 @@ RWSInterface::SystemInfo RWSInterface::getSystemInfo()
+     result.system_options.push_back(xmlFindTextContent(node_list.at(i), XMLAttributes::CLASS_OPTION));
+   }
+ 
+-  result.system_type = xmlFindTextContent(rws_client_.getContollerService().p_xml_document,
+-                                          XMLAttributes::CLASS_CTRL_TYPE);
++  if (result.system_name.empty() || result.robot_ware_version.empty())
++  {
++    std::stringstream ss;
++    ss << "Failed to parse RobotWare system via RWS"
++       << " (parsed system_name=\"" << result.system_name
++       << "\", robot_ware_version=\"" << result.robot_ware_version
++       << "\", system_nodes=" << system_node_count << ")";
++
++    const auto latest_log = rws_client_.getLogTextLatestEvent(true);
++    if (!latest_log.empty())
++    {
++      ss << ". Last RWS event: " << clipText(latest_log);
++    }
++    throw std::runtime_error(ss.str());
++  }
++
++  rws_result = rws_client_.getContollerService();
++  if(!rws_result.success)
++  {
++    std::stringstream ss;
++    ss << "Failed to get controller service via RWS";
++    if(!rws_result.error_message.empty())
++    {
++      ss << ": " << rws_result.error_message;
++    }
++    const auto log_text = rws_client_.getLogTextLatestEvent(true);
++    if(!log_text.empty())
++    {
++      ss << ". Last RWS log: " << log_text;
++    }
++    throw std::runtime_error(ss.str());
++  }
++
++  result.system_type = xmlFindTextContent(rws_result.p_xml_document, XMLAttributes::CLASS_CTRL_TYPE);
++  if (result.system_type.empty())
++  {
++    std::stringstream ss;
++    ss << "Failed to parse controller service via RWS (system_type empty)";
++    const auto latest_log = rws_client_.getLogTextLatestEvent(true);
++    if (!latest_log.empty())
++    {
++      ss << ". Last RWS event: " << clipText(latest_log);
++    }
++    throw std::runtime_error(ss.str());
++  }
+ 
+   return result;
+ }
+diff --git a/src/rws_poco_client.cpp b/src/rws_poco_client.cpp
+index 2314571..6e499a8 100644
+--- a/src/rws_poco_client.cpp
++++ b/src/rws_poco_client.cpp
+@@ -38,6 +38,7 @@
+ 
+ #include "Poco/Net/HTTPRequest.h"
+ #include "Poco/Net/NetException.h"
++#include "Poco/URI.h"
+ #include "Poco/StreamCopier.h"
+ 
+ #include "abb_librws/rws_poco_client.h"
+@@ -49,6 +50,39 @@ namespace abb
+ {
+ namespace rws
+ {
++namespace
++{
++bool isRedirectStatus(const HTTPResponse::HTTPStatus status)
++{
++  return status == HTTPResponse::HTTP_MOVED_PERMANENTLY ||
++         status == HTTPResponse::HTTP_FOUND ||
++         status == HTTPResponse::HTTP_TEMPORARY_REDIRECT ||
++         status == HTTPResponse::HTTP_PERMANENT_REDIRECT;
++}
++
++std::string normalizeRedirectURI(const std::string& location)
++{
++  if (location.empty())
++  {
++    return location;
++  }
++
++  if (location.rfind("http://", 0) == 0 || location.rfind("https://", 0) == 0)
++  {
++    try
++    {
++      return Poco::URI(location).getPathEtc();
++    }
++    catch (...)
++    {
++      return location;
++    }
++  }
++
++  return location;
++}
++}  // namespace
++
+ /***********************************************************************************************************************
+  * Struct definitions: POCOClient::POCOResult
+  */
+@@ -190,6 +224,7 @@ std::string POCOClient::POCOResult::toString(const bool verbose, const size_t in
+ 
+       if (verbose)
+       {
++        ss << seperator << "HTTP Response Headers: " << poco_info.http.response.header_info;
+         ss << seperator << "HTTP Response Content: " << poco_info.http.response.content;
+       }
+     }
+@@ -273,18 +308,53 @@ POCOClient::POCOResult POCOClient::makeHTTPRequest(const std::string& method,
+       }
+     }
+ 
++    // Check if the request was unauthorized, if so add credentials.
++    if (response.getStatus() == HTTPResponse::HTTP_UNAUTHORIZED)
++    {
++      authenticate(result, request, response, content);
++    }
++
++    for (size_t redirect_attempt = 0;
++         redirect_attempt < 3 && isRedirectStatus(response.getStatus());
++         ++redirect_attempt)
++    {
++      const auto redirect_uri = normalizeRedirectURI(response.get("Location", ""));
++      if (redirect_uri.empty())
++      {
++        break;
++      }
++
++      request.setURI(redirect_uri);
++      request.setCookies(cookies_);
++      sendAndReceive(result, request, response, content);
++
++      std::vector<HTTPCookie> redirect_cookies;
++      response.getCookies(redirect_cookies);
++      for (size_t i = 0; i < redirect_cookies.size(); ++i)
++      {
++        if (cookies_.find(redirect_cookies[i].getName()) != cookies_.end())
++        {
++          cookies_.set(redirect_cookies[i].getName(), redirect_cookies[i].getValue());
++        }
++        else
++        {
++          cookies_.add(redirect_cookies[i].getName(), redirect_cookies[i].getValue());
++        }
++      }
++    }
++
+     // Check if there was a server error, if so, make another attempt with a clean sheet.
+     if (response.getStatus() >= HTTPResponse::HTTP_INTERNAL_SERVER_ERROR)
+     {
+       http_client_session_.reset();
+       request.erase(HTTPRequest::COOKIE);
+       sendAndReceive(result, request, response, content);
+-    }
+ 
+-    // Check if the request was unauthorized, if so add credentials.
+-    if (response.getStatus() == HTTPResponse::HTTP_UNAUTHORIZED)
+-    {
+-      authenticate(result, request, response, content);
++      // The retry may get challenged with 401, so authenticate once more if needed.
++      if (response.getStatus() == HTTPResponse::HTTP_UNAUTHORIZED)
++      {
++        authenticate(result, request, response, content);
++      }
+     }
+ 
+     result.status = POCOResult::OK;

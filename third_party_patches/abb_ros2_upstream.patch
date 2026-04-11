@@ -1,0 +1,208 @@
+diff --git a/abb_bringup/launch/abb_control.launch.py b/abb_bringup/launch/abb_control.launch.py
+index e192122..453db70 100644
+--- a/abb_bringup/launch/abb_control.launch.py
++++ b/abb_bringup/launch/abb_control.launch.py
+@@ -83,6 +83,35 @@ def generate_launch_description():
+             Used only if 'use_fake_hardware' parameter is false.",
+         )
+     )
++    declared_arguments.append(
++        DeclareLaunchArgument(
++            "egm_port",
++            default_value="6515",
++            description="EGM UDP port exposed by the ABB controller or RobotStudio VC. \
++            Used only if 'use_fake_hardware' parameter is false.",
++        )
++    )
++    declared_arguments.append(
++        DeclareLaunchArgument(
++            "rws_username",
++            default_value="Default User",
++            description="RWS username used when connecting to the ABB controller.",
++        )
++    )
++    declared_arguments.append(
++        DeclareLaunchArgument(
++            "rws_password",
++            default_value="robotics",
++            description="RWS password used when connecting to the ABB controller.",
++        )
++    )
++    declared_arguments.append(
++        DeclareLaunchArgument(
++            "robot_controller_id",
++            default_value="IRB6700",
++            description="Controller id prefix used when parsing ABB controller metadata.",
++        )
++    )
+     declared_arguments.append(
+         DeclareLaunchArgument(
+             "fake_sensor_commands",
+@@ -115,6 +144,10 @@ def generate_launch_description():
+     fake_sensor_commands = LaunchConfiguration("fake_sensor_commands")
+     rws_ip = LaunchConfiguration("rws_ip")
+     rws_port = LaunchConfiguration("rws_port")
++    egm_port = LaunchConfiguration("egm_port")
++    rws_username = LaunchConfiguration("rws_username")
++    rws_password = LaunchConfiguration("rws_password")
++    robot_controller_id = LaunchConfiguration("robot_controller_id")
+     initial_joint_controller = LaunchConfiguration("initial_joint_controller")
+     launch_rviz = LaunchConfiguration("launch_rviz")
+ 
+@@ -141,6 +174,18 @@ def generate_launch_description():
+             "rws_port:=",
+             rws_port,
+             " ",
++            "rws_username:='",
++            rws_username,
++            "' ",
++            "rws_password:='",
++            rws_password,
++            "' ",
++            "robot_controller_id:='",
++            robot_controller_id,
++            "' ",
++            "egm_port:=",
++            egm_port,
++            " ",
+         ]
+     )
+     robot_description = {"robot_description": robot_description_content}
+@@ -158,6 +203,14 @@ def generate_launch_description():
+         executable="ros2_control_node",
+         parameters=[robot_description, robot_controllers],
+         output="both",
++        additional_env={
++            "HTTP_PROXY": "",
++            "http_proxy": "",
++            "HTTPS_PROXY": "",
++            "https_proxy": "",
++            "ALL_PROXY": "",
++            "all_proxy": "",
++        },
+     )
+ 
+     robot_state_publisher_node = Node(
+diff --git a/abb_hardware_interface/include/abb_hardware_interface/abb_hardware_interface.hpp b/abb_hardware_interface/include/abb_hardware_interface/abb_hardware_interface.hpp
+index 3feb674..300b18b 100644
+--- a/abb_hardware_interface/include/abb_hardware_interface/abb_hardware_interface.hpp
++++ b/abb_hardware_interface/include/abb_hardware_interface/abb_hardware_interface.hpp
+@@ -19,12 +19,12 @@
+ #include <abb_egm_rws_managers/rws_manager.h>
+ #include <abb_hardware_interface/visibility_control.h>
+ 
+-#include <chrono>
+ #include <cmath>
+ #include <limits>
+ #include <memory>
+ #include <string>
+ #include <vector>
++#include <chrono>
+ 
+ #include <hardware_interface/handle.hpp>
+ #include <hardware_interface/hardware_info.hpp>
+@@ -71,6 +71,7 @@ private:
+ 
+   // Store the state and commands for the robot(s)
+   abb::robot::MotionData motion_data_;
++
+ };
+ 
+ }  // namespace abb_hardware_interface
+diff --git a/abb_hardware_interface/src/abb_hardware_interface.cpp b/abb_hardware_interface/src/abb_hardware_interface.cpp
+index 43ef979..d69f498 100644
+--- a/abb_hardware_interface/src/abb_hardware_interface.cpp
++++ b/abb_hardware_interface/src/abb_hardware_interface.cpp
+@@ -23,6 +23,22 @@ namespace abb_hardware_interface
+ static constexpr size_t NUM_CONNECTION_TRIES = 100;
+ static const rclcpp::Logger LOGGER = rclcpp::get_logger("ABBSystemHardware");
+ 
++namespace
++{
++std::string hardware_param_or(
++  const hardware_interface::HardwareInfo& info,
++  const std::string& key,
++  const std::string& fallback)
++{
++  const auto it = info.hardware_parameters.find(key);
++  if (it == info.hardware_parameters.end() || it->second.empty())
++  {
++    return fallback;
++  }
++  return it->second;
++}
++}  // namespace
++
+ CallbackReturn ABBSystemHardware::on_init(const hardware_interface::HardwareInfo& info)
+ {
+   if (hardware_interface::SystemInterface::on_init(info) != CallbackReturn::SUCCESS)
+@@ -40,9 +56,12 @@ CallbackReturn ABBSystemHardware::on_init(const hardware_interface::HardwareInfo
+   }
+ 
+   // Get robot controller description from RWS
+-  abb::robot::RWSManager rws_manager(rws_ip, rws_port, "Default User", "robotics");
++  const auto rws_username = hardware_param_or(info_, "rws_username", "Default User");
++  const auto rws_password = hardware_param_or(info_, "rws_password", "robotics");
++  const auto robot_controller_id = hardware_param_or(info_, "robot_controller_id", "ABB");
++  abb::robot::RWSManager rws_manager(rws_ip, rws_port, rws_username, rws_password);
+   const auto robot_controller_description_ =
+-      abb::robot::utilities::establishRWSConnection(rws_manager, "IRB1200", true);
++      abb::robot::utilities::establishRWSConnection(rws_manager, robot_controller_id, true);
+   RCLCPP_INFO_STREAM(LOGGER, "Robot controller description:\n"
+                                  << abb::robot::summaryText(robot_controller_description_));
+ 
+@@ -111,7 +130,8 @@ CallbackReturn ABBSystemHardware::on_init(const hardware_interface::HardwareInfo
+   {
+     try
+     {
+-      const auto egm_port = stoi(info_.hardware_parameters[group.name() + "egm_port"]);
++      const auto group_port_key = group.name() + "egm_port";
++      const auto egm_port = stoi(hardware_param_or(info_, group_port_key, hardware_param_or(info_, "egm_port", "")));
+       const auto channel_configuration =
+           abb::robot::EGMManager::ChannelConfiguration{ static_cast<uint16_t>(egm_port), group };
+       channel_configurations.emplace_back(channel_configuration);
+@@ -121,7 +141,9 @@ CallbackReturn ABBSystemHardware::on_init(const hardware_interface::HardwareInfo
+     catch (std::invalid_argument& e)
+     {
+       RCLCPP_FATAL_STREAM(LOGGER, "EGM port for mechanical unit group \"" << group.name()
+-                                                                          << "\" not specified in hardware parameters");
++                                                                          << "\" not specified in hardware parameters. "
++                                                                          << "Expected either \"" << group.name()
++                                                                          << "egm_port\" or \"egm_port\".");
+       return CallbackReturn::ERROR;
+     }
+   }
+@@ -188,6 +210,7 @@ std::vector<hardware_interface::CommandInterface> ABBSystemHardware::export_comm
+ CallbackReturn ABBSystemHardware::on_activate(const rclcpp_lifecycle::State& /* previous_state */)
+ {
+   size_t counter = 0;
++  bool connected = false;
+   RCLCPP_INFO(LOGGER, "Connecting to robot...");
+   while (rclcpp::ok() && ++counter < NUM_CONNECTION_TRIES)
+   {
+@@ -195,18 +218,20 @@ CallbackReturn ABBSystemHardware::on_activate(const rclcpp_lifecycle::State& /*
+     if (egm_manager_->waitForMessage(500))
+     {
+       RCLCPP_INFO(LOGGER, "Connected to robot");
++      connected = true;
+       break;
+     }
+ 
+     RCLCPP_INFO(LOGGER, "Not connected to robot...");
+-    if (counter == NUM_CONNECTION_TRIES)
+-    {
+-      RCLCPP_ERROR(LOGGER, "Failed to connect to robot");
+-      return CallbackReturn::ERROR;
+-    }
+     rclcpp::sleep_for(500ms);
+   }
+ 
++  if (!connected)
++  {
++    RCLCPP_ERROR(LOGGER, "Failed to connect to robot");
++    return CallbackReturn::ERROR;
++  }
++
+   egm_manager_->read(motion_data_);
+ 
+   RCLCPP_INFO(LOGGER, "ros2_control hardware interface was successfully started!");

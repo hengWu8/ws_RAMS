@@ -1,0 +1,40 @@
+diff --git a/src/rws_manager.cpp b/src/rws_manager.cpp
+index a0cbfc3..88b4161 100644
+--- a/src/rws_manager.cpp
++++ b/src/rws_manager.cpp
+@@ -35,6 +35,7 @@
+  */
+ 
+ #include <stdexcept>
++#include <sstream>
+ 
+ #include "abb_egm_rws_managers/rws_manager.h"
+ #include "abb_egm_rws_managers/system_data_parser.h"
+@@ -92,7 +93,26 @@ RobotControllerDescription RWSManager::collectAndParseSystemData(const std::stri
+        system_data_.system.system_type.empty() ||
+        system_data_.system.system_options.empty())
+     {
+-      throw std::runtime_error{"Failed to collect general system info"};
++      std::ostringstream reason;
++      reason << "Failed to collect general system info (missing:";
++      if(system_data_.system.robot_ware_version.empty())
++      {
++        reason << " robot_ware_version";
++      }
++      if(system_data_.system.system_name.empty())
++      {
++        reason << " system_name";
++      }
++      if(system_data_.system.system_type.empty())
++      {
++        reason << " system_type";
++      }
++      if(system_data_.system.system_options.empty())
++      {
++        reason << " system_options";
++      }
++      reason << " )";
++      throw std::runtime_error{reason.str()};
+     }
+ 
+     //------------------------

@@ -2,6 +2,8 @@
 
 This file describes the server-side preparation that can be done from `ws_RAMS` for RobotStudio and pi0/openpi integration.
 
+For the exact first-working procedure, use `ROBOTSTUDIO_PI0_RUNBOOK.md`.
+
 Important limitation:
 
 - The server can prepare ROS2 launch/config/policy pieces.
@@ -239,6 +241,60 @@ Notes:
 - It does **not** mean the selected checkpoint is semantically aligned with the ABB IRB6700.
 - Real camera inputs and an ABB-specific observation/action mapping are still needed before meaningful closed-loop robot control with pi0.
 - If your machine has an NVIDIA GPU, prefer `--pytorch-device auto` or an explicit `cuda:N` device. CPU loading can be very slow and may exhaust host memory on large checkpoints.
+
+## Automated startup
+
+This workspace now includes a minimal one-command startup helper:
+
+`/home/heng/workspace/ws_RAMS/tools/start_robotstudio_pi0.sh`
+
+What it does:
+
+1. Starts the local `openpi_http_adapter.py`.
+2. Waits for `/healthz`.
+3. Sends a warm-up `/infer` request so the model is loaded early.
+4. Starts `robotstudio_pi0.launch.py`.
+5. Sets `policy_request_timeout_sec`.
+6. Switches `abb_pi0_bridge` into `streaming` mode.
+7. Optionally arms streaming output if you pass `--arm`.
+
+Safe default:
+
+- The script does **not** arm low-level motion output unless you pass `--arm`.
+
+Example:
+
+```bash
+cd /home/heng/workspace/ws_RAMS
+tools/start_robotstudio_pi0.sh \
+  --robotstudio-rws-ip 127.0.0.1 \
+  --robotstudio-rws-port 28080 \
+  --egm-port 6515 \
+  --pytorch-device cuda:1
+```
+
+Arm immediately:
+
+```bash
+cd /home/heng/workspace/ws_RAMS
+tools/start_robotstudio_pi0.sh \
+  --robotstudio-rws-ip 127.0.0.1 \
+  --robotstudio-rws-port 28080 \
+  --egm-port 6515 \
+  --pytorch-device cuda:1 \
+  --arm
+```
+
+Stop the background processes:
+
+```bash
+cd /home/heng/workspace/ws_RAMS
+tools/stop_robotstudio_pi0.sh
+```
+
+Runtime logs and pid files are written under:
+
+`/tmp/ws_rams_robotstudio_pi0`
 
 ## Automation idea for later
 

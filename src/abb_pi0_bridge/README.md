@@ -93,7 +93,22 @@ ros2 launch abb_pi0_bridge robotstudio_pi0.launch.py \
   robotstudio_rws_ip:=<YOUR_ROBOTSTUDIO_IP>
 ```
 
+One-command startup helper:
+
+```bash
+cd /home/heng/workspace/ws_RAMS
+tools/start_robotstudio_pi0.sh \
+  --robotstudio-rws-ip 127.0.0.1 \
+  --robotstudio-rws-port 28080 \
+  --egm-port 6515 \
+  --pytorch-device cuda:1
+```
+
+Add `--arm` only when you want the script to hand motion output to `pi0` immediately.
+
 For the full server-side checklist, see `ROBOTSTUDIO_PI0_SETUP.md`.
+
+For the exact first-working RobotStudio pi0 procedure, see `ROBOTSTUDIO_PI0_RUNBOOK.md`.
 
 ## Expected integration pattern
 
