@@ -25,7 +25,7 @@ The current adapter mode is:
 
 - `config_name = pi05_libero`
 - `mapping_mode = abb_libero`
-- `synthetic_vision = true`
+- `synthetic_vision = true` or bridge-supplied real `front` / `wrist` images
 - `prompt = "move left"`
 - `pytorch_device = cuda:1` in the validated run
 
@@ -33,6 +33,7 @@ The current RobotStudio/RWS path is:
 
 - RWS is exposed on the Linux server as `127.0.0.1:28080`
 - EGM UDP is direct between RobotStudio and the Linux server on port `6515`
+- Remote pi0/openpi inference host on Tailscale: `100.70.7.8 (tjzs-desktop)`
 
 ## 1. RobotStudio Side Checklist
 
@@ -115,7 +116,7 @@ tmux new -A -s robotstudio_pi0
 Then start the working stack without arming motion output:
 
 ```bash
-cd /home/heng/workspace/ws_RAMS
+cd /home/rob/workspace/ws_RAMS
 tools/start_robotstudio_pi0.sh \
   --robotstudio-rws-ip 127.0.0.1 \
   --robotstudio-rws-port 28080 \
@@ -136,7 +137,7 @@ Safe default:
 If you want `pi0` to control the robot immediately:
 
 ```bash
-cd /home/heng/workspace/ws_RAMS
+cd /home/rob/workspace/ws_RAMS
 tools/start_robotstudio_pi0.sh \
   --robotstudio-rws-ip 127.0.0.1 \
   --robotstudio-rws-port 28080 \
@@ -151,7 +152,7 @@ If you started without `--arm`, arm after you have confirmed RobotStudio is read
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 service call /abb_pi0_bridge/set_streaming_arm std_srvs/srv/SetBool "{data: true}"
 ```
@@ -160,7 +161,7 @@ Disarm:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 service call /abb_pi0_bridge/set_streaming_arm std_srvs/srv/SetBool "{data: false}"
 ```
@@ -169,7 +170,7 @@ Return to trajectory mode:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 service call /abb_pi0_bridge/activate_click_to_move_mode std_srvs/srv/Trigger "{}"
 ```
@@ -197,7 +198,7 @@ Check bridge status:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 topic echo --once /abb_pi0_bridge/status
 ```
@@ -216,7 +217,7 @@ Check actual low-level commands:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 topic echo /forward_command_controller_position/commands
 ```
@@ -225,7 +226,7 @@ Check robot feedback:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 topic echo /joint_states
 ```
@@ -234,7 +235,7 @@ Check controllers:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 control list_controllers
 ```
@@ -265,7 +266,7 @@ If the one-command helper is not desired, use the manual sequence.
 Terminal 1, start adapter:
 
 ```bash
-cd /home/heng/workspace/ws_RAMS
+cd /home/rob/workspace/ws_RAMS
 /home/heng/workspace/openpi_official/.venv/bin/python \
   tools/openpi_http_adapter.py \
   --host 127.0.0.1 \
@@ -281,7 +282,7 @@ Terminal 2, start bridge:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 launch abb_pi0_bridge robotstudio_pi0.launch.py \
   robotstudio_rws_ip:=127.0.0.1 \
@@ -296,7 +297,7 @@ Terminal 3, configure bridge:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 param set /abb_pi0_bridge policy_request_timeout_sec 60.0
 ros2 service call /abb_pi0_bridge/activate_streaming_mode std_srvs/srv/Trigger "{}"
@@ -308,7 +309,7 @@ ros2 service call /abb_pi0_bridge/set_streaming_arm std_srvs/srv/SetBool "{data:
 If you used the helper:
 
 ```bash
-cd /home/heng/workspace/ws_RAMS
+cd /home/rob/workspace/ws_RAMS
 tools/stop_robotstudio_pi0.sh
 ```
 
@@ -320,7 +321,7 @@ If you used manual terminals:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 service call /abb_pi0_bridge/set_streaming_arm std_srvs/srv/SetBool "{data: false}"
 ```
@@ -350,7 +351,7 @@ Disarm before recovery:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 service call /abb_pi0_bridge/set_streaming_arm std_srvs/srv/SetBool "{data: false}"
 ```
@@ -359,7 +360,7 @@ Arm after RAPID restart:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 
 ros2 service call /abb_pi0_bridge/set_streaming_arm std_srvs/srv/SetBool "{data: true}"
 ```
@@ -380,13 +381,13 @@ The current first working version is considered healthy when:
 
 Main runtime files:
 
-- `/home/heng/workspace/ws_RAMS/tools/openpi_http_adapter.py`
-- `/home/heng/workspace/ws_RAMS/tools/start_robotstudio_pi0.sh`
-- `/home/heng/workspace/ws_RAMS/tools/stop_robotstudio_pi0.sh`
-- `/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge/launch/robotstudio_pi0.launch.py`
-- `/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge/config/pi0_robotstudio_http.params.yaml`
+- `/home/rob/workspace/ws_RAMS/tools/openpi_http_adapter.py`
+- `/home/rob/workspace/ws_RAMS/tools/start_robotstudio_pi0.sh`
+- `/home/rob/workspace/ws_RAMS/tools/stop_robotstudio_pi0.sh`
+- `/home/rob/workspace/ws_RAMS/src/abb_pi0_bridge/launch/robotstudio_pi0.launch.py`
+- `/home/rob/workspace/ws_RAMS/src/abb_pi0_bridge/config/pi0_robotstudio_http.params.yaml`
 
 Useful documentation:
 
-- `/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge/ROBOTSTUDIO_PI0_SETUP.md`
-- `/home/heng/workspace/ws_RAMS/src/abb_pi0_bridge/ROBOTSTUDIO_PI0_RUNBOOK.md`
+- `/home/rob/workspace/ws_RAMS/src/abb_pi0_bridge/ROBOTSTUDIO_PI0_SETUP.md`
+- `/home/rob/workspace/ws_RAMS/src/abb_pi0_bridge/ROBOTSTUDIO_PI0_RUNBOOK.md`

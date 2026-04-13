@@ -36,10 +36,34 @@ Optional health endpoint:
     "joint_names": ["joint_1", "joint_2", "joint_3", "joint_4", "joint_5", "joint_6"],
     "joint_positions": [0.0, 0.1, -0.2, 0.0, 0.3, 0.0],
     "joint_velocities": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-    "joint_efforts": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    "joint_efforts": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "camera_images": {
+      "front": {
+        "name": "front",
+        "stamp_sec": 1710000000.101,
+        "frame_id": "fixed_cam_color_frame",
+        "topic": "/camera/fixed_cam/color/image_raw",
+        "width": 224,
+        "height": 224,
+        "mime_type": "image/jpeg",
+        "data_b64": "<base64-jpeg>"
+      },
+      "wrist": {
+        "name": "wrist",
+        "stamp_sec": 1710000000.111,
+        "frame_id": "wrist_cam_color_frame",
+        "topic": "/camera/wrist_cam/color/image_raw",
+        "width": 224,
+        "height": 224,
+        "mime_type": "image/jpeg",
+        "data_b64": "<base64-jpeg>"
+      }
+    }
   }
 }
 ```
+
+`camera_images` is optional. When omitted, the policy server should continue working from state-only input or apply its own fallback.
 
 ## Response schema
 
@@ -83,6 +107,7 @@ The bridge currently accepts any one of these equivalent forms:
 - The bridge rejects malformed vectors.
 - The bridge applies joint-limit clamping and per-step motion limiting after the response arrives.
 - The bridge may fall back to `mock_hold` if the policy request fails and fallback is enabled.
+- When camera transport is enabled, the bridge currently sends JPEG-compressed RGB observations encoded as base64 strings.
 
 ## What the policy server does not need to do
 

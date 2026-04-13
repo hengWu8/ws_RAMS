@@ -6,6 +6,7 @@
 
 - Keep the existing `click_to_move` and MoveIt path unchanged.
 - Subscribe to robot observations from `/joint_states`.
+- Optionally subscribe to fixed and wrist camera RGB topics.
 - Assemble a policy-friendly observation object.
 - Support both a mock policy and a real HTTP JSON policy server stub.
 - Apply safety filters before any command leaves the node.
@@ -17,7 +18,7 @@
 The bridge node is intentionally split into small layers:
 
 1. Observation assembly:
-   Order joint state data into a fixed ABB joint vector.
+   Order joint state data into a fixed ABB joint vector and optionally attach camera frames.
 2. Policy adapter:
    `mock_hold` is available for dry-run work, and `http_json` is a real server client stub for future policy serving.
 3. Mode arbitration:
@@ -37,6 +38,7 @@ This keeps the policy integration seam clear without forcing MoveIt planning on 
 - The mock policy returns the current joint positions, so the default behavior is observe-only / hold-current.
 - Commands are rate-limited by `max_position_step_rad`.
 - Commands are clamped to ABB joint limits from the current workcell description.
+- pi0 bridge commands are additionally constrained by a Cartesian TCP workspace guard: by default the TCP must remain within `0.5 m` of the pose captured when streaming mode/output is handed to pi0.
 - Stale joint state data is rejected.
 
 ## Launch
@@ -54,6 +56,30 @@ ros2 launch abb_pi0_bridge abb_pi0_bridge.launch.py \
   publish_commands:=false \
   control_rate_hz:=20.0
 ```
+
+Send local dual-RealSense images to a remote pi0 policy server over Tailscale:
+
+```bash
+ros2 launch abb_pi0_bridge abb_pi0_bridge.launch.py \
+  policy_backend:=http_json \
+  policy_server_url:=http://100.70.7.8:8001/infer \
+  enable_front_camera_observation:=true \
+  enable_wrist_camera_observation:=true \
+  front_camera_image_topic:=/camera/fixed_cam/color/image_raw \
+  wrist_camera_image_topic:=/camera/wrist_cam/color/image_raw \
+  publish_commands:=false
+```
+
+One-command full workcell bringup with ABB + MoveIt + `click_to_move` + dual RealSense + `abb_pi0_bridge`:
+
+```bash
+ros2 launch abb_pi0_bridge workcell_pi0.launch.py \
+  rws_ip:=192.168.125.1 \
+  policy_server_url:=http://100.70.7.8:8001/infer \
+  publish_commands:=false
+```
+
+For this ABB cell, the verified RWS address is `192.168.125.1`. The upper-controller USB Ethernet link `enxc8a362651863` must be configured as `192.168.125.109/24`, because the ABB `SIO/COM_TRP/ROB_1` transmission currently targets `192.168.125.109:6515` for EGM.
 
 Left-step policy stub for a visible motion check:
 
@@ -96,7 +122,7 @@ ros2 launch abb_pi0_bridge robotstudio_pi0.launch.py \
 One-command startup helper:
 
 ```bash
-cd /home/heng/workspace/ws_RAMS
+cd /home/rob/workspace/ws_RAMS
 tools/start_robotstudio_pi0.sh \
   --robotstudio-rws-ip 127.0.0.1 \
   --robotstudio-rws-port 28080 \
@@ -126,3 +152,33 @@ For now, the bridge should run beside the current stack instead of replacing it:
 - Add richer observations, such as tool pose and perception outputs.
 - Extend the current repo-level mode arbitration to controller-manager-backed switching when that interface is available in the deployment environment.
 - Add integration tests against fake hardware and controller_manager.
+
+## Local cameras + remote pi0
+
+The intended deployment split for your current setup is now:
+
+1. This ABB upper-controller machine runs ROS 2, `abb_pi0_bridge`, the ABB driver, and the two local RealSense cameras.
+2. A second machine connected over Tailscale runs `tools/openpi_http_adapter.py` plus the actual pi0/openpi checkpoint.
+   Current remote inference host: `100.70.7.8 (tjzs-desktop)`.
+3. `abb_pi0_bridge` publishes ABB joint observations together with optional JPEG-compressed `front` and `wrist` images over HTTP to the remote policy endpoint.
+4. The remote policy returns the next ABB joint target, and the bridge keeps responsibility for safety clamping and output arming.
+
+## Extrinsics And Timing
+
+- `click_to_move/launch/system_bringup.launch.py` now publishes camera TFs from `fixed_cam_mount -> fixed_cam_link` and `wrist_cam_mount -> wrist_cam_link` instead of anchoring them directly to `base_link` / `tool0`.
+- The transform offsets are launch-configurable through `fixed_tf_*` and `wrist_tf_*`, which makes hand-eye calibration updates much easier to apply without editing code.
+- `abb_pi0_bridge` now uses message-header time when available, checks camera freshness, checks camera/joint timestamp skew, and can auto-disarm streaming output when the observation set becomes invalid.
+
+## Cartesian Pi0 Safety Guard
+
+For the real workcell path, `system_bringup.launch.py` passes the expanded `robot_description` into `abb_pi0_bridge`. The bridge uses that URDF to compute FK from `base_link` to `tcp`.
+
+Default behavior:
+
+- `enable_cartesian_workspace_guard=true`
+- `cartesian_workspace_radius_m=0.5`
+- center resets to the current TCP pose when streaming mode is activated
+- center resets again when bridge output is armed
+- if a candidate pi0 joint target places `tcp` outside the radius, the command is rejected and bridge output is disarmed
+
+The current center, candidate TCP, and distance are visible in `/abb_pi0_bridge/status` under `cartesian_workspace_guard`.

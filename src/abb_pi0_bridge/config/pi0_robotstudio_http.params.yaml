@@ -15,6 +15,23 @@ abb_pi0_bridge:
     policy_server_url: http://127.0.0.1:8000/infer
     policy_request_timeout_sec: 5.0
     fallback_to_mock_on_policy_error: true
+    enable_front_camera_observation: false
+    enable_wrist_camera_observation: false
+    front_camera_image_topic: /camera/fixed_cam/color/image_raw
+    wrist_camera_image_topic: /camera/wrist_cam/color/image_raw
+    camera_image_timeout_sec: 0.5
+    max_camera_joint_skew_sec: 0.2
+    auto_disarm_on_observation_fault: true
+    camera_output_width: 224
+    camera_output_height: 224
+    camera_jpeg_quality: 80
+    enable_cartesian_workspace_guard: true
+    cartesian_workspace_radius_m: 0.5
+    cartesian_workspace_base_link: base_link
+    cartesian_workspace_tip_link: tcp
+    cartesian_workspace_reset_on_streaming_activate: true
+    cartesian_workspace_reset_on_arm: true
+    auto_disarm_on_workspace_violation: true
     joint_names:
       - joint_1
       - joint_2

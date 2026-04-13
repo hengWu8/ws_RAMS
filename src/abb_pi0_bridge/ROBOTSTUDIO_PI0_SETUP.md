@@ -15,6 +15,10 @@ Important network note:
 - ABB EGM uses UDP. A reverse SSH tunnel such as `ssh -R 27897:127.0.0.1:7897 ...` only forwards TCP and does not replace the direct UDP path required by EGM joint streaming.
 - For EGM, the RobotStudio virtual controller should send UDP directly to this server's reachable IP and the configured EGM port, which remains `6515` by default.
 
+Current remote pi0/openpi inference host on Tailscale:
+
+- `100.70.7.8` (`tjzs-desktop`)
+
 ## What is now available on the server
 
 - `abb_pi0_bridge` can run with a real HTTP policy backend.
@@ -60,7 +64,7 @@ Launch the RobotStudio bringup plus the local policy stub:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 ros2 launch abb_pi0_bridge robotstudio_pi0.launch.py \
   robotstudio_rws_ip:=<YOUR_ROBOTSTUDIO_IP> \
   robotstudio_rws_port:=<YOUR_RWS_TCP_PORT> \
@@ -150,6 +154,22 @@ Recommended recovery order:
 4. Start the RAPID program again so it re-enters `EGMRunJoint`.
 5. Re-run a direct controller command baseline before blaming `pi0`.
 
+New workcell note:
+
+- On the real ABB cell, RWS can still report `AUTO`, `motoron`, and a program pointer on `EGMRunJoint` while the live hardware-side EGM session is effectively not consuming references.
+- In this failure mode, `ros2_control` keeps sending non-zero commands, but the ABB-side low-level EGM state remains `EGM_STOPPED`, so the controller's planned joint targets stay equal to feedback and the robot does not move.
+- Use the readiness script before motion tests:
+
+```bash
+source /opt/ros/humble/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
+python3 /home/rob/workspace/ws_RAMS/tools/check_abb_egm_motion_readiness.py \
+  --rws-ip 192.168.125.1 \
+  --min-egm-window-deg 0.1
+```
+
+- Treat `live_egm_state_running=FAIL` as a hard stop for motion testing, even if the RWS-side checks pass.
+
 This recovery step is especially important before any A/B comparison between:
 
 - direct `/forward_command_controller_position/commands` publishing, and
@@ -161,7 +181,7 @@ Example launch if your virtual controller is reachable at `192.168.1.50`:
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 ros2 launch abb_pi0_bridge robotstudio_pi0.launch.py \
   robotstudio_rws_ip:=192.168.1.50 \
   robotstudio_rws_port:=80 \
@@ -199,7 +219,7 @@ This is not a full pi0 deployment yet.
 
 This workspace now includes a minimal ABB-to-openpi HTTP adapter at:
 
-`/home/heng/workspace/ws_RAMS/tools/openpi_http_adapter.py`
+`/home/rob/workspace/ws_RAMS/tools/openpi_http_adapter.py`
 
 Recommended first step:
 
@@ -211,7 +231,7 @@ Recommended first step:
 Example adapter launch:
 
 ```bash
-cd /home/heng/workspace/ws_RAMS
+cd /home/rob/workspace/ws_RAMS
 /home/heng/workspace/openpi_official/.venv/bin/python \
   tools/openpi_http_adapter.py \
   --host 127.0.0.1 \
@@ -225,7 +245,7 @@ Example RobotStudio bridge launch against the real-model adapter, still in dry-r
 
 ```bash
 source /opt/ros/humble/setup.bash
-source /home/heng/workspace/ws_RAMS/install/setup.bash
+source /home/rob/workspace/ws_RAMS/install/setup.bash
 ros2 launch abb_pi0_bridge robotstudio_pi0.launch.py \
   robotstudio_rws_ip:=127.0.0.1 \
   robotstudio_rws_port:=28080 \
@@ -237,16 +257,16 @@ ros2 launch abb_pi0_bridge robotstudio_pi0.launch.py \
 
 Notes:
 
-- The adapter currently uses ABB joint positions as a low-dimensional state, zero images, and a fixed prompt. This is only for validating the real-model request/response path.
+- The adapter currently uses ABB joint positions as a low-dimensional state and a fixed prompt. It can now also consume optional `front` and `wrist` JPEG images when the bridge sends them.
 - It does **not** mean the selected checkpoint is semantically aligned with the ABB IRB6700.
-- Real camera inputs and an ABB-specific observation/action mapping are still needed before meaningful closed-loop robot control with pi0.
+- An ABB-specific observation/action mapping is still needed before meaningful closed-loop robot control with pi0.
 - If your machine has an NVIDIA GPU, prefer `--pytorch-device auto` or an explicit `cuda:N` device. CPU loading can be very slow and may exhaust host memory on large checkpoints.
 
 ## Automated startup
 
 This workspace now includes a minimal one-command startup helper:
 
-`/home/heng/workspace/ws_RAMS/tools/start_robotstudio_pi0.sh`
+`/home/rob/workspace/ws_RAMS/tools/start_robotstudio_pi0.sh`
 
 What it does:
 
@@ -265,7 +285,7 @@ Safe default:
 Example:
 
 ```bash
-cd /home/heng/workspace/ws_RAMS
+cd /home/rob/workspace/ws_RAMS
 tools/start_robotstudio_pi0.sh \
   --robotstudio-rws-ip 127.0.0.1 \
   --robotstudio-rws-port 28080 \
@@ -276,7 +296,7 @@ tools/start_robotstudio_pi0.sh \
 Arm immediately:
 
 ```bash
-cd /home/heng/workspace/ws_RAMS
+cd /home/rob/workspace/ws_RAMS
 tools/start_robotstudio_pi0.sh \
   --robotstudio-rws-ip 127.0.0.1 \
   --robotstudio-rws-port 28080 \
@@ -288,7 +308,7 @@ tools/start_robotstudio_pi0.sh \
 Stop the background processes:
 
 ```bash
-cd /home/heng/workspace/ws_RAMS
+cd /home/rob/workspace/ws_RAMS
 tools/stop_robotstudio_pi0.sh
 ```
 
@@ -312,3 +332,36 @@ The observed RAPID restart requirement suggests a small recovery helper would be
    - re-run the direct-command baseline
 
 In other words, the useful automation target is not just "launch pi0", but "verify motion execution and recover stale RAPID/EGM sessions before enabling pi0 output".
+
+## Full Workcell Bringup On The ABB Upper-Controller
+
+If this Linux machine is the real ABB upper-controller and the pi0 model runs remotely on `100.70.7.8`, you can now bring up the whole stack with one command:
+
+```bash
+cd /home/rob/workspace/ws_RAMS
+tools/start_workcell_pi0_remote.sh \
+  --rws-ip 192.168.125.1 \
+  --policy-server-url http://100.70.7.8:8001/infer
+```
+
+For the real ABB cell tested on this machine, `192.168.125.1` is the verified RWS endpoint. The active physical link is the USB Ethernet interface `enxc8a362651863`, and it must be configured as `192.168.125.109/24` because the controller's `SIO/COM_TRP/ROB_1` EGM transmission target is `192.168.125.109:6515`.
+
+What this path starts:
+
+1. ABB ros2_control bringup
+2. MoveIt
+3. `click_to_move`
+4. both local RealSense cameras
+5. configurable camera static TFs
+6. `abb_pi0_bridge` with dual-camera HTTP observation enabled
+
+Safe default:
+
+- The script leaves `publish_commands=false` in launch and only arms low-level output if you pass `--arm`.
+
+Stop it with:
+
+```bash
+cd /home/rob/workspace/ws_RAMS
+tools/stop_workcell_pi0_remote.sh
+```

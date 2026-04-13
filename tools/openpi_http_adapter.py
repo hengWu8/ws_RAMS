@@ -14,6 +14,8 @@ real camera images or robot-specific policy inputs into the stack.
 from __future__ import annotations
 
 import argparse
+import base64
+from collections import deque
 import dataclasses
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -24,6 +26,7 @@ import shlex
 import subprocess
 import sys
 import threading
+import time
 from typing import Any
 
 import cv2
@@ -500,6 +503,73 @@ class SyntheticVisionRenderer:
         )
 
 
+def _decode_policy_camera_image(camera_payload: dict[str, Any], *, image_size: int) -> np.ndarray:
+    if not isinstance(camera_payload, dict):
+        raise ValueError("camera_images entries must be JSON objects.")
+
+    mime_type = str(camera_payload.get("mime_type", "image/jpeg"))
+    if mime_type != "image/jpeg":
+        raise ValueError(f"Unsupported camera mime_type '{mime_type}'. Expected image/jpeg.")
+
+    data_b64 = camera_payload.get("data_b64")
+    if not isinstance(data_b64, str) or not data_b64:
+        raise ValueError("camera_images entry is missing a non-empty data_b64 field.")
+
+    try:
+        encoded_bytes = base64.b64decode(data_b64, validate=True)
+    except (ValueError, TypeError) as exc:
+        raise ValueError("camera_images entry contains invalid base64 image data.") from exc
+
+    decoded = cv2.imdecode(np.frombuffer(encoded_bytes, dtype=np.uint8), cv2.IMREAD_COLOR)
+    if decoded is None:
+        raise ValueError("camera_images entry could not be decoded as a JPEG image.")
+
+    if image_size > 0 and (decoded.shape[0] != image_size or decoded.shape[1] != image_size):
+        interpolation = (
+            cv2.INTER_AREA
+            if decoded.shape[0] >= image_size and decoded.shape[1] >= image_size
+            else cv2.INTER_LINEAR
+        )
+        decoded = cv2.resize(decoded, (image_size, image_size), interpolation=interpolation)
+
+    return decoded
+
+
+def _extract_request_camera_images(
+    request_payload: dict[str, Any],
+    *,
+    image_size: int,
+) -> tuple[np.ndarray | None, np.ndarray | None]:
+    observation = request_payload.get("observation", {})
+    if not isinstance(observation, dict):
+        raise ValueError("request_payload.observation must be a JSON object when camera images are provided.")
+
+    camera_images = observation.get("camera_images")
+    if camera_images is None:
+        return None, None
+    if not isinstance(camera_images, dict):
+        raise ValueError("observation.camera_images must be a JSON object.")
+
+    front_payload = (
+        camera_images.get("front")
+        or camera_images.get("fixed")
+        or camera_images.get("fixed_cam")
+    )
+    wrist_payload = camera_images.get("wrist") or camera_images.get("wrist_cam")
+
+    front_image = (
+        _decode_policy_camera_image(front_payload, image_size=image_size)
+        if front_payload is not None
+        else None
+    )
+    wrist_image = (
+        _decode_policy_camera_image(wrist_payload, image_size=image_size)
+        if wrist_payload is not None
+        else None
+    )
+    return front_image, wrist_image
+
+
 def build_openpi_observation(
     request_payload: dict[str, Any],
     *,
@@ -524,12 +594,21 @@ def build_openpi_observation(
         state = mapper.state_from_joint_positions(current_positions, state_dim=state_dim)
 
     request_prompt = str(request_payload.get("prompt", prompt))
-    if renderer is None:
-        zeros_image = np.zeros((image_size, image_size, 3), dtype=np.uint8)
-        image = zeros_image
-        wrist_image = zeros_image
-    else:
-        image, wrist_image = renderer.render(snapshot=snapshot, prompt=request_prompt)
+    request_front_image, request_wrist_image = _extract_request_camera_images(
+        request_payload,
+        image_size=image_size,
+    )
+
+    fallback_image = np.zeros((image_size, image_size, 3), dtype=np.uint8)
+    fallback_wrist_image = fallback_image
+    if renderer is not None:
+        fallback_image, fallback_wrist_image = renderer.render(
+            snapshot=snapshot,
+            prompt=request_prompt,
+        )
+
+    image = request_front_image if request_front_image is not None else fallback_image
+    wrist_image = request_wrist_image if request_wrist_image is not None else fallback_wrist_image
 
     openpi_observation = {
         "observation/state": state,
@@ -579,6 +658,7 @@ class OpenPiPolicyAdapter:
         joint_count: int,
         delta_scale_rad: float,
         pytorch_device: str,
+        policy_loader: str,
         mapping_mode: str,
         workcell_xacro: str,
         base_link: str,
@@ -599,6 +679,7 @@ class OpenPiPolicyAdapter:
         self.joint_count = joint_count
         self.delta_scale_rad = delta_scale_rad
         self.pytorch_device = pytorch_device
+        self.policy_loader = policy_loader
         self.mapping_mode = mapping_mode
         self.mapper = (
             AbbLiberoMapper(
@@ -624,6 +705,15 @@ class OpenPiPolicyAdapter:
         self._policy = None
         self._policy_lock = threading.Lock()
         self._load_error: str | None = None
+        self._stats_lock = threading.Lock()
+        self._infer_request_count = 0
+        self._infer_success_count = 0
+        self._infer_error_count = 0
+        self._recent_success_times: deque[float] = deque()
+        self._last_success_unix_sec: float | None = None
+        self._last_success_infer_ms: float | None = None
+        self._last_error_text: str | None = None
+        self._last_error_unix_sec: float | None = None
 
     def health_payload(self) -> dict[str, Any]:
         return {
@@ -638,44 +728,101 @@ class OpenPiPolicyAdapter:
             "joint_count": self.joint_count,
             "delta_scale_rad": self.delta_scale_rad,
             "pytorch_device": self.pytorch_device,
+            "policy_loader": self.policy_loader,
             "mapping_mode": self.mapping_mode,
             "tcp_tip_link": self.mapper.tip_link if self.mapper is not None else None,
             "synthetic_vision": self.renderer.enabled,
+            "camera_transport": "http_json_base64_jpeg",
+            "infer_stats": self._infer_stats_payload(),
         }
 
     def infer(self, request_payload: dict[str, Any]) -> dict[str, Any]:
-        policy = self._get_policy()
-        openpi_observation, current_positions = build_openpi_observation(
-            request_payload,
-            mapper=self.mapper,
-            renderer=self.renderer,
-            state_dim=self.state_dim,
-            image_size=self.image_size,
-            prompt=self.prompt,
-        )
-        result = policy.infer(openpi_observation)
-        joint_positions = map_openpi_actions_to_joint_positions(
-            current_positions=current_positions,
-            actions=np.asarray(result["actions"]),
-            mapper=self.mapper,
-            joint_count=self.joint_count,
-            delta_scale_rad=self.delta_scale_rad,
-        )
-        return {
-            "joint_positions": joint_positions,
-            "adapter": {
-                "backend": "openpi",
-                "config_name": self.config_name,
-                "checkpoint_dir": self.checkpoint_dir,
-                "prompt": self.prompt,
-                "state_dim": self.state_dim,
-                "image_size": self.image_size,
-                "joint_count": self.joint_count,
-                "delta_scale_rad": self.delta_scale_rad,
-                "mapping_mode": self.mapping_mode,
-            },
-            "policy_timing": result.get("policy_timing"),
-        }
+        with self._stats_lock:
+            self._infer_request_count += 1
+        try:
+            policy = self._get_policy()
+            openpi_observation, current_positions = build_openpi_observation(
+                request_payload,
+                mapper=self.mapper,
+                renderer=self.renderer,
+                state_dim=self.state_dim,
+                image_size=self.image_size,
+                prompt=self.prompt,
+            )
+            result = policy.infer(openpi_observation)
+            joint_positions = map_openpi_actions_to_joint_positions(
+                current_positions=current_positions,
+                actions=np.asarray(result["actions"]),
+                mapper=self.mapper,
+                joint_count=self.joint_count,
+                delta_scale_rad=self.delta_scale_rad,
+            )
+            response_payload = {
+                "joint_positions": joint_positions,
+                "adapter": {
+                    "backend": "openpi",
+                    "config_name": self.config_name,
+                    "checkpoint_dir": self.checkpoint_dir,
+                    "prompt": self.prompt,
+                    "state_dim": self.state_dim,
+                    "image_size": self.image_size,
+                    "joint_count": self.joint_count,
+                    "delta_scale_rad": self.delta_scale_rad,
+                    "mapping_mode": self.mapping_mode,
+                },
+                "policy_timing": result.get("policy_timing"),
+            }
+            self._record_infer_success(response_payload)
+            return response_payload
+        except Exception as exc:
+            self._record_infer_failure(str(exc))
+            raise
+
+    def _record_infer_success(self, response_payload: dict[str, Any]) -> None:
+        now = time.time()
+        infer_ms = None
+        try:
+            infer_ms = float((response_payload.get("policy_timing") or {}).get("infer_ms"))
+        except (TypeError, ValueError):
+            infer_ms = None
+        with self._stats_lock:
+            self._infer_success_count += 1
+            self._last_success_unix_sec = now
+            self._last_success_infer_ms = infer_ms
+            self._last_error_text = None
+            self._recent_success_times.append(now)
+            self._prune_recent_successes(now)
+
+    def _record_infer_failure(self, error_text: str) -> None:
+        now = time.time()
+        with self._stats_lock:
+            self._infer_error_count += 1
+            self._last_error_text = error_text
+            self._last_error_unix_sec = now
+            self._prune_recent_successes(now)
+
+    def _infer_stats_payload(self) -> dict[str, Any]:
+        now = time.time()
+        with self._stats_lock:
+            self._prune_recent_successes(now)
+            recent_success_count = len(self._recent_success_times)
+            recent_success_hz = recent_success_count / 30.0
+            return {
+                "request_count_total": self._infer_request_count,
+                "success_count_total": self._infer_success_count,
+                "error_count_total": self._infer_error_count,
+                "recent_success_count_30s": recent_success_count,
+                "recent_success_hz_30s": recent_success_hz,
+                "last_success_unix_sec": self._last_success_unix_sec,
+                "last_success_infer_ms": self._last_success_infer_ms,
+                "last_error_text": self._last_error_text,
+                "last_error_unix_sec": self._last_error_unix_sec,
+            }
+
+    def _prune_recent_successes(self, now: float) -> None:
+        cutoff = now - 30.0
+        while self._recent_success_times and self._recent_success_times[0] < cutoff:
+            self._recent_success_times.popleft()
 
     def _get_policy(self):
         if self._policy is not None:
@@ -689,53 +836,64 @@ class OpenPiPolicyAdapter:
                 import torch
 
                 from openpi.policies import policy as openpi_policy
+                from openpi.policies import policy_config as openpi_policy_config
                 from openpi.shared import download as openpi_download
                 from openpi.shared import normalize as openpi_normalize
                 from openpi.training import config as openpi_config
                 import openpi.transforms as openpi_transforms
 
                 train_cfg = openpi_config.get_config(self.config_name)
-                train_cfg = dataclasses.replace(
-                    train_cfg,
-                    model=dataclasses.replace(train_cfg.model, pytorch_compile_mode=None),
-                )
                 checkpoint_dir = openpi_download.maybe_download(str(self.checkpoint_dir))
                 checkpoint_dir = Path(checkpoint_dir)
                 pytorch_device = _resolve_pytorch_device(self.pytorch_device, torch)
 
-                model = train_cfg.model.load_pytorch(
-                    train_cfg,
-                    str(checkpoint_dir / "model.safetensors"),
-                    device=pytorch_device,
-                )
-                model.paligemma_with_expert.to_bfloat16_for_selected_params("bfloat16")
+                if self.policy_loader == "official":
+                    self._policy = openpi_policy_config.create_trained_policy(
+                        train_cfg,
+                        checkpoint_dir,
+                        default_prompt=self.prompt,
+                        pytorch_device=pytorch_device,
+                    )
+                else:
+                    train_cfg = dataclasses.replace(
+                        train_cfg,
+                        model=dataclasses.replace(train_cfg.model, pytorch_compile_mode=None),
+                    )
 
-                data_config = train_cfg.data.create(train_cfg.assets_dirs, train_cfg.model)
-                if data_config.asset_id is None:
-                    raise ValueError("Asset id is required to load norm stats for ABB adapter inference.")
+                    model = train_cfg.model.load_pytorch(
+                        train_cfg,
+                        str(checkpoint_dir / "model.safetensors"),
+                        device=pytorch_device,
+                    )
+                    model.paligemma_with_expert.to_bfloat16_for_selected_params("bfloat16")
 
-                norm_stats = openpi_normalize.load(checkpoint_dir / "assets" / data_config.asset_id)
-                self._policy = openpi_policy.Policy(
-                    model,
-                    transforms=[
-                        openpi_transforms.InjectDefaultPrompt(self.prompt),
-                        *data_config.data_transforms.inputs,
-                        openpi_transforms.Normalize(norm_stats, use_quantiles=data_config.use_quantile_norm),
-                        *data_config.model_transforms.inputs,
-                    ],
-                    output_transforms=[
-                        *data_config.model_transforms.outputs,
-                        openpi_transforms.Unnormalize(norm_stats, use_quantiles=data_config.use_quantile_norm),
-                        *data_config.data_transforms.outputs,
-                    ],
-                    metadata=train_cfg.policy_metadata,
-                    is_pytorch=True,
-                    pytorch_device=pytorch_device,
-                )
+                    data_config = train_cfg.data.create(train_cfg.assets_dirs, train_cfg.model)
+                    if data_config.asset_id is None:
+                        raise ValueError("Asset id is required to load norm stats for ABB adapter inference.")
+
+                    norm_stats = openpi_normalize.load(checkpoint_dir / "assets" / data_config.asset_id)
+                    self._policy = openpi_policy.Policy(
+                        model,
+                        transforms=[
+                            openpi_transforms.InjectDefaultPrompt(self.prompt),
+                            *data_config.data_transforms.inputs,
+                            openpi_transforms.Normalize(norm_stats, use_quantiles=data_config.use_quantile_norm),
+                            *data_config.model_transforms.inputs,
+                        ],
+                        output_transforms=[
+                            *data_config.model_transforms.outputs,
+                            openpi_transforms.Unnormalize(norm_stats, use_quantiles=data_config.use_quantile_norm),
+                            *data_config.data_transforms.outputs,
+                        ],
+                        metadata=train_cfg.policy_metadata,
+                        is_pytorch=True,
+                        pytorch_device=pytorch_device,
+                    )
                 logging.info(
-                    "Loaded openpi policy config=%s checkpoint=%s device=%s",
+                    "Loaded openpi policy config=%s checkpoint=%s loader=%s device=%s",
                     self.config_name,
                     checkpoint_dir,
+                    self.policy_loader,
                     pytorch_device,
                 )
             except Exception as exc:  # pragma: no cover - surfaced via HTTP and logs
@@ -885,7 +1043,16 @@ def main(args: list[str] | None = None) -> None:
     parser.add_argument(
         "--pytorch-device",
         default="auto",
-        help="Device for the PyTorch checkpoint, e.g. auto, cpu, cuda, cuda:0.",
+        help="Device for PyTorch checkpoints, e.g. auto, cpu, cuda, cuda:0.",
+    )
+    parser.add_argument(
+        "--policy-loader",
+        choices=("manual_pytorch", "official"),
+        default="manual_pytorch",
+        help=(
+            "Policy loading path. 'official' uses openpi.policies.policy_config and supports "
+            "official JAX checkpoints such as gs://openpi-assets/checkpoints/pi05_libero."
+        ),
     )
     parser.add_argument(
         "--mapping-mode",
@@ -967,6 +1134,7 @@ def main(args: list[str] | None = None) -> None:
         joint_count=parsed.joint_count,
         delta_scale_rad=parsed.delta_scale_rad,
         pytorch_device=parsed.pytorch_device,
+        policy_loader=parsed.policy_loader,
         mapping_mode=parsed.mapping_mode,
         workcell_xacro=parsed.workcell_xacro,
         base_link=parsed.base_link,

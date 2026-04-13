@@ -14,7 +14,7 @@ computed, but the robot does not move":
 Typical usage:
 
   source /opt/ros/humble/setup.bash
-  source /home/heng/workspace/ws_RAMS/install/setup.bash
+  source /home/rob/workspace/ws_RAMS/install/setup.bash
   python3 tools/abb_pi0_diagnose.py
 
 The script only reads ROS graph/runtime information. It does not modify any

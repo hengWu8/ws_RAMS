@@ -1,0 +1,13 @@
+# ROS/colcon generated outputs
+build/
+install/
+log/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Runtime scratch files
+*.log
+.DS_Store

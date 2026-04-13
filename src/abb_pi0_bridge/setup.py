@@ -25,7 +25,7 @@ setup(
         (os.path.join("share", package_name, "launch"), glob("launch/*.launch.py")),
         (os.path.join("share", package_name, "config"), glob("config/*.yaml")),
     ],
-    install_requires=["setuptools"],
+    install_requires=["setuptools", "requests"],
     zip_safe=True,
     maintainer="Heng Wu",
     maintainer_email="hang-wu23@mails.tsinghua.edu.cn",
@@ -35,6 +35,7 @@ setup(
     entry_points={
         "console_scripts": [
             "abb_pi0_bridge_node = abb_pi0_bridge.bridge_node:main",
+            "rws_joint_state_publisher = abb_pi0_bridge.rws_joint_state_publisher:main",
             "pi0_policy_stub_server = abb_pi0_bridge.policy_stub_server:main",
             "robotstudio_preflight = abb_pi0_bridge.robotstudio_preflight:main",
         ],
