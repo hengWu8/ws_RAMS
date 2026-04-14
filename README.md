@@ -54,7 +54,7 @@ The dashboard only reads status:
 
 - ABB RWS `jointtarget` and `robtarget` for current joint/TCP pose.
 - Local `v4l2-ctl` camera enumeration for the two RealSense devices.
-- Remote pi0 adapter health on `100.70.7.8`.
+- Remote pi0 adapter health on `http://100.70.7.8:8002/healthz`.
 - Local ROS/ABB control-process watchlist.
 
 It does not start ROS, EGM, controller manager, or any robot command publisher.

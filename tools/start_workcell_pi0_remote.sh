@@ -138,6 +138,54 @@ if [[ -f "${LAUNCH_PID_FILE}" ]]; then
 fi
 
 echo "Starting workcell + remote pi0 bridge..."
+source_ros_inline="set +u && source /opt/ros/humble/setup.bash && source '${WS_RAMS_ROOT}/install/setup.bash' && set -u"
+
+read_rws_joints_rad_csv() {
+  RWS_IP="${RWS_IP}" RWS_PORT="${RWS_PORT}" python3 - <<'PY'
+import math
+import os
+import tools.workcell_dashboard as d
+
+cfg = d.make_dashboard_config(
+    rws_ip=os.environ["RWS_IP"],
+    rws_port=os.environ["RWS_PORT"],
+    rws_user=d.DEFAULT_RWS_USER,
+    rws_password=d.DEFAULT_RWS_PASSWORD,
+    rws_timeout_s=2.0,
+)
+payload = d.read_rws_jointtarget(cfg)
+degrees = payload.get("degrees")
+if not payload.get("ok") or not isinstance(degrees, list) or len(degrees) != 6:
+    raise SystemExit(f"failed to read six RWS joints: {payload}")
+radians = [math.radians(float(value)) for value in degrees]
+print(",".join(f"{value:.12g}" for value in radians))
+PY
+}
+
+PUBLISH_COMMANDS="false"
+PRESEED_POSITIONS_RAD=""
+if [[ "${ARM_OUTPUT}" == "true" ]]; then
+  PUBLISH_COMMANDS="true"
+  if [[ "${HOLD_SEED}" == "true" ]]; then
+    PRESEED_POSITIONS_RAD="$(read_rws_joints_rad_csv)"
+    echo "Pre-seeding forward position controller before launch because --arm was requested..."
+    bash -lc "${source_ros_inline} && exec python3 '${WS_RAMS_ROOT}/tools/seed_forward_position_hold.py' \
+      --joint-state-topic /abb_rws/joint_states \
+      --command-topic /forward_command_controller_position/commands \
+      --positions-rad '${PRESEED_POSITIONS_RAD}' \
+      --rate-hz 50 \
+      --startup-timeout-sec 0.2" >"${HOLD_SEED_LOG}" 2>&1 &
+    HOLD_SEED_PID="$!"
+    echo "${HOLD_SEED_PID}" > "${HOLD_SEED_PID_FILE}"
+    sleep 1
+    if ! kill -0 "${HOLD_SEED_PID}" >/dev/null 2>&1; then
+      echo "ERROR: pre-launch hold seeder failed. Refusing to arm." >&2
+      cat "${HOLD_SEED_LOG}" >&2 || true
+      exit 1
+    fi
+  fi
+fi
+
 launch_cmd=(
   "exec" "ros2" "launch" "abb_pi0_bridge" "workcell_pi0.launch.py"
   "rws_ip:='${RWS_IP}'"
@@ -148,7 +196,7 @@ launch_cmd=(
   "wrist_serial:='${WRIST_SERIAL}'"
   "policy_server_url:='${POLICY_SERVER_URL}'"
   "launch_moveit_rviz:='false'"
-  "publish_commands:='false'"
+  "publish_commands:='${PUBLISH_COMMANDS}'"
   "control_mode:='trajectory'"
 )
 
@@ -182,17 +230,24 @@ wait_for_service() {
   return 1
 }
 
-source_ros_inline="set +u && source /opt/ros/humble/setup.bash && source '${WS_RAMS_ROOT}/install/setup.bash' && set -u"
-
 start_hold_seed() {
   if [[ "${HOLD_SEED}" != "true" ]]; then
     echo "WARNING: hold seeding disabled. Do not start ABB EGM unless another current-position hold source is active." >&2
     return 0
   fi
+  if [[ -n "${HOLD_SEED_PID}" ]] && kill -0 "${HOLD_SEED_PID}" >/dev/null 2>&1; then
+    echo "Pre-launch hold seeder is already running with pid ${HOLD_SEED_PID}."
+    return 0
+  fi
   echo "Seeding forward position controller from ABB RWS joints before ABB EGM starts..."
+  local positions_arg=()
+  if [[ -n "${PRESEED_POSITIONS_RAD}" ]]; then
+    positions_arg=(--positions-rad "${PRESEED_POSITIONS_RAD}")
+  fi
   bash -lc "${source_ros_inline} && exec python3 '${WS_RAMS_ROOT}/tools/seed_forward_position_hold.py' \
     --joint-state-topic /abb_rws/joint_states \
     --command-topic /forward_command_controller_position/commands \
+    ${positions_arg[*]} \
     --rate-hz 20 \
     --startup-timeout-sec 12" >"${HOLD_SEED_LOG}" 2>&1 &
   HOLD_SEED_PID="$!"

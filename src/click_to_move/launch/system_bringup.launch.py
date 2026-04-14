@@ -517,11 +517,9 @@ def generate_launch_description():
                 "policy_backend": LaunchConfiguration("bridge_policy_backend"),
                 "policy_server_url": LaunchConfiguration("bridge_policy_server_url"),
                 "policy_request_timeout_sec": LaunchConfiguration("bridge_policy_request_timeout_sec"),
-                "cartesian_test_direction_xyz": [
-                    LaunchConfiguration("bridge_cartesian_test_direction_x"),
-                    LaunchConfiguration("bridge_cartesian_test_direction_y"),
-                    LaunchConfiguration("bridge_cartesian_test_direction_z"),
-                ],
+                "cartesian_test_direction_x": LaunchConfiguration("bridge_cartesian_test_direction_x"),
+                "cartesian_test_direction_y": LaunchConfiguration("bridge_cartesian_test_direction_y"),
+                "cartesian_test_direction_z": LaunchConfiguration("bridge_cartesian_test_direction_z"),
                 "cartesian_test_step_m": LaunchConfiguration("bridge_cartesian_test_step_m"),
                 "cartesian_test_speed_mps": LaunchConfiguration("bridge_cartesian_test_speed_mps"),
                 "cartesian_test_tracking_gain": LaunchConfiguration(

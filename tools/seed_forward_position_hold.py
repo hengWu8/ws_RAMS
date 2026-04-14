@@ -37,16 +37,23 @@ class ForwardPositionHoldSeeder(Node):
         command_topic: str,
         joint_names: Sequence[str],
         rate_hz: float,
+        initial_positions: Sequence[float] | None,
     ) -> None:
         super().__init__("seed_forward_position_hold")
         self.joint_names = tuple(joint_names)
-        self.latest_positions: tuple[float, ...] | None = None
+        self.latest_positions: tuple[float, ...] | None = (
+            tuple(float(value) for value in initial_positions)
+            if initial_positions is not None
+            else None
+        )
         self.publisher = self.create_publisher(Float64MultiArray, command_topic, 10)
         self.create_subscription(JointState, joint_state_topic, self._on_joint_state, 10)
         self.timer = self.create_timer(1.0 / rate_hz, self._publish_hold)
         self.get_logger().info(
             f"Seeding {command_topic} from {joint_state_topic} for joints={self.joint_names}"
         )
+        if self.latest_positions is not None:
+            self.get_logger().info("Using initial hold positions until JointState samples arrive.")
 
     def _on_joint_state(self, msg: JointState) -> None:
         index_by_name = {name: index for index, name in enumerate(msg.name)}
@@ -75,6 +82,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--rate-hz", type=float, default=20.0)
     parser.add_argument("--startup-timeout-sec", type=float, default=5.0)
     parser.add_argument("--duration-sec", type=float, default=0.0)
+    parser.add_argument(
+        "--positions-rad",
+        default="",
+        help=(
+            "Optional comma-separated initial joint positions in radians. "
+            "When set, publishing can start before the JointState topic exists."
+        ),
+    )
     args = parser.parse_args(argv)
 
     joint_names = tuple(name.strip() for name in args.joint_names.split(",") if name.strip())
@@ -82,6 +97,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         raise SystemExit("--joint-names must contain at least one joint name")
     if args.rate_hz <= 0.0:
         raise SystemExit("--rate-hz must be positive")
+    initial_positions = None
+    if args.positions_rad.strip():
+        initial_positions = tuple(
+            float(value.strip()) for value in args.positions_rad.split(",") if value.strip()
+        )
+        if len(initial_positions) != len(joint_names):
+            raise SystemExit(
+                "--positions-rad must contain the same number of values as --joint-names"
+            )
+        if not all(math.isfinite(value) for value in initial_positions):
+            raise SystemExit("--positions-rad values must be finite")
 
     rclpy.init()
     node = ForwardPositionHoldSeeder(
@@ -89,6 +115,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         command_topic=args.command_topic,
         joint_names=joint_names,
         rate_hz=args.rate_hz,
+        initial_positions=initial_positions,
     )
     should_stop = False
 

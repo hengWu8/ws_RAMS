@@ -3,6 +3,7 @@ from __future__ import annotations
 import base64
 from dataclasses import replace
 import json
+import math
 
 import rclpy
 from rclpy.callback_groups import MutuallyExclusiveCallbackGroup, ReentrantCallbackGroup
@@ -97,13 +98,21 @@ class AbbPi0BridgeNode(Node):
         self.fallback_to_mock_on_policy_error = bool(
             self.declare_parameter("fallback_to_mock_on_policy_error", True).value
         )
-        self.cartesian_test_direction_xyz = tuple(
+        cartesian_test_direction_xyz = tuple(
             float(value)
             for value in self.declare_parameter(
                 "cartesian_test_direction_xyz",
                 [0.0, 1.0, 0.0],
             ).value
         )
+        cartesian_test_direction_scalar_override = (
+            float(self.declare_parameter("cartesian_test_direction_x", float("nan")).value),
+            float(self.declare_parameter("cartesian_test_direction_y", float("nan")).value),
+            float(self.declare_parameter("cartesian_test_direction_z", float("nan")).value),
+        )
+        if all(math.isfinite(value) for value in cartesian_test_direction_scalar_override):
+            cartesian_test_direction_xyz = cartesian_test_direction_scalar_override
+        self.cartesian_test_direction_xyz = cartesian_test_direction_xyz
         self.cartesian_test_step_m = float(
             self.declare_parameter("cartesian_test_step_m", 0.001).value
         )

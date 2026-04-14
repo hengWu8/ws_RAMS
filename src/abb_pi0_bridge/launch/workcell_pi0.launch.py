@@ -60,7 +60,7 @@ def generate_launch_description():
             ),
             DeclareLaunchArgument(
                 "policy_server_url",
-                default_value="http://100.70.7.8:8001/infer",
+                default_value="http://100.70.7.8:8002/infer",
                 description="Remote pi0/openpi HTTP endpoint on the Tailscale-connected inference machine.",
             ),
             DeclareLaunchArgument(

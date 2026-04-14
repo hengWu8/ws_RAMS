@@ -74,15 +74,22 @@ The general pi05 bringup now follows the same ordering:
 
 ```text
 ROS workcell launch
-  -> abb_pi0_bridge starts with publish_commands=false
-  -> /abb_rws/joint_states true-state publisher starts
-  -> seed_forward_position_hold.py publishes current joints to the forward command controller
+  -> for armed tests, seed_forward_position_hold.py starts first from the RWS current jointtarget
+  -> abb_pi0_bridge starts, normally with publish_commands=false
+  -> /abb_rws/joint_states true-state publisher starts and refreshes the hold seed
   -> operator starts/restarts ABB RAPID EGM
   -> readiness check waits for EGM_RUNNING
   -> only then may streaming/arm be enabled
 ```
 
-This order matters. Starting ABB EGM before ROS/forward-controller current-position seeding is ready can expose stale or default command behavior at the hardware-interface layer. The hold seeder is stopped automatically before an armed test window so it does not compete with `abb_pi0_bridge`.
+This order matters. Starting ABB EGM before ROS/forward-controller current-position seeding is ready can expose stale or default command behavior at the hardware-interface layer. The armed-test scripts now pre-seed from RWS before launch so the forward command topic already contains the current joint target when the controller subscribes. The hold seeder is stopped automatically immediately before an armed test window so it does not compete with `abb_pi0_bridge`.
+
+Remote official pi05 endpoint used on the Tailscale inference machine:
+
+```text
+health: http://100.70.7.8:8002/healthz
+infer:  http://100.70.7.8:8002/infer
+```
 
 Safe pi05 observation bringup:
 
@@ -113,6 +120,19 @@ tools/run_cartesian_left_test.sh \
 ```
 
 While the script is waiting for EGM readiness, restart/start the RAPID EGM program on the ABB controller. The script will continue only after the readiness check passes.
+
+Official pi05 live smoke test:
+
+```bash
+cd /home/rob/workspace/ws_RAMS
+tools/run_pi05_live_test.sh \
+  --execute \
+  --duration-sec 0.8 \
+  --wait-for-egm-ready-sec 180 \
+  --bridge-max-position-step-rad 0.02
+```
+
+If the ABB RAPID task remains `stopped` or EGM stays `EGM_UNDEFINED`, this script refuses to arm and restores the normal safe pi05 bringup.
 
 ## HMI Motion Control
 
@@ -156,6 +176,7 @@ Before clicking start or running the script:
 - `EGMRunJoint \NoWaitCond + EGMWaitCond` stalled on the real controller in this setup, even though similar logic can work in examples.
 - `MoveAbsJ CJointT()` was not a safe substitute for a real operator ready point on this controller.
 - Starting ABB EGM before the ROS/forward-controller side had seeded a valid hold command could expose stale/default command behavior.
+- A ROS 2 launch substitution list for `cartesian_test_direction_xyz` was flattened into a string such as `0.01.00.0`; use scalar launch parameters `cartesian_test_direction_x/y/z` and let the bridge assemble the vector.
 - The bridge must use the RWS-backed true joint state for closed-loop Cartesian servo tests: `/abb_rws/joint_states`.
 
 ## Keep These Defaults Conservative

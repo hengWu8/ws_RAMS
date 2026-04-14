@@ -147,7 +147,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--safe-command-topic", default="/abb_pi0_bridge/safe_command")
     parser.add_argument("--command-topic", default="/forward_command_controller_position/commands")
     parser.add_argument("--expected-bridge-joint-state-topic", default="/abb_rws/joint_states")
-    parser.add_argument("--policy-health-url", default="http://100.70.7.8:8001/healthz")
+    parser.add_argument("--policy-health-url", default="http://100.70.7.8:8002/healthz")
     parser.add_argument("--egm-port", type=int, default=6515)
     parser.add_argument("--timeout-sec", type=float, default=3.0)
     parser.add_argument("--topic-retries", type=int, default=3)
