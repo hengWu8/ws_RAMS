@@ -23,6 +23,9 @@ MODULE TRob1Main
 !   from the FlexPendant/RobotStudio.
 ! - This point should be close to the intended EGM start pose and clear of all
 !   fixtures, cameras, cables, and humans.
+! - The program stops after reaching egm_ready. Start the ROS/pi05 script first
+!   and let it pre-seed the forward controller, then press Start once more to
+!   enter EGMRunJoint.
 !
 ! Safety posture:
 ! - No automatic MoveAbsJ home to a hidden/default target.
@@ -45,6 +48,8 @@ MODULE TRob1Main
         TPWrite "WS_RAMS blocking EGM mode: move to operator egm_ready first";
 
         MoveAbsJ egm_ready, v10, fine, tool0;
+        TPWrite "Reached egm_ready. Start ROS/pi05 preseed now, then press Start again for EGM.";
+        Stop;
 
         EGMGetId egm_id;
         EGMSetupUC ROB_1, egm_id, "default", "ROB_1", \Joint;

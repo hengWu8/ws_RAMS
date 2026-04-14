@@ -33,6 +33,7 @@ Key choices:
 
 - `MoveAbsJ egm_ready, v10, fine, tool0;` is the required ordinary first movement after controller start.
 - `egm_ready` is a `PERS jointtarget` that the operator must set manually to a known-safe pose.
+- The program intentionally executes `Stop;` immediately after reaching `egm_ready`.
 - Do not use `MoveAbsJ home` to a hidden/default all-zero target.
 - Do not use `MoveAbsJ CJointT()` for the prep move on this real controller; it produced unexpected pre-EGM behavior during debugging.
 - Use one long blocking `EGMRunJoint` window:
@@ -73,16 +74,17 @@ Use the tested script. It intentionally launches ROS first, seeds the forward po
 The general pi05 bringup now follows the same ordering:
 
 ```text
-ROS workcell launch
-  -> for armed tests, seed_forward_position_hold.py starts first from the RWS current jointtarget
-  -> abb_pi0_bridge starts, normally with publish_commands=false
+operator starts RAPID once
+  -> RAPID moves to egm_ready and stops before EGM
+  -> ROS/pi05 script starts and pre-seeds the forward controller from RWS current jointtarget
+  -> abb_pi0_bridge starts
   -> /abb_rws/joint_states true-state publisher starts and refreshes the hold seed
-  -> operator starts/restarts ABB RAPID EGM
+  -> operator presses Start once more to enter EGMRunJoint
   -> readiness check waits for EGM_RUNNING
   -> only then may streaming/arm be enabled
 ```
 
-This order matters. Starting ABB EGM before ROS/forward-controller current-position seeding is ready can expose stale or default command behavior at the hardware-interface layer. The armed-test scripts now pre-seed from RWS before launch so the forward command topic already contains the current joint target when the controller subscribes. The hold seeder is stopped automatically immediately before an armed test window so it does not compete with `abb_pi0_bridge`.
+This order matters. Starting ABB EGM before ROS/forward-controller current-position seeding is ready can expose stale or default command behavior at the hardware-interface layer. The forced RAPID `Stop;` after `egm_ready` prevents the controller from automatically entering EGM immediately after the ordinary prep move. The armed-test scripts then pre-seed from RWS before launch so the forward command topic already contains the current joint target when the controller subscribes. The hold seeder is stopped automatically immediately before an armed test window so it does not compete with `abb_pi0_bridge`.
 
 Remote official pi05 endpoint used on the Tailscale inference machine:
 
@@ -164,11 +166,13 @@ Before clicking start or running the script:
 
 1. ABB controller motors on, E-stop clear, work area clear.
 2. RAPID module loaded with the manually verified `egm_ready` target.
-3. Start the script or HMI command first.
-4. When it waits for EGM readiness, start/restart the RAPID EGM program.
-5. Confirm readiness passes before the bridge arms output.
-6. Watch the robot and be ready to stop from ABB side.
-7. After completion, verify `publish_commands=false` and `command_output_armed=false`.
+3. Press Start on RAPID once and let the robot move to `egm_ready`.
+4. Confirm RAPID stopped at the post-ready `Stop;`.
+5. Start the script or HMI command so ROS/pi05 pre-seeds the current-position hold.
+6. When the script waits for EGM readiness, press Start on RAPID once more to enter `EGMRunJoint`.
+7. Confirm readiness passes before the bridge arms output.
+8. Watch the robot and be ready to stop from ABB side.
+9. After completion, verify `publish_commands=false` and `command_output_armed=false`.
 
 ## Failure Modes We Saw
 
@@ -176,6 +180,7 @@ Before clicking start or running the script:
 - `EGMRunJoint \NoWaitCond + EGMWaitCond` stalled on the real controller in this setup, even though similar logic can work in examples.
 - `MoveAbsJ CJointT()` was not a safe substitute for a real operator ready point on this controller.
 - Starting ABB EGM before the ROS/forward-controller side had seeded a valid hold command could expose stale/default command behavior.
+- Automatically entering EGM immediately after `MoveAbsJ egm_ready` could let stale/default ROS commands pull the robot away from the ready point. The current RAPID file stops after `egm_ready` so the operator can start ROS preseed before entering EGM.
 - A ROS 2 launch substitution list for `cartesian_test_direction_xyz` was flattened into a string such as `0.01.00.0`; use scalar launch parameters `cartesian_test_direction_x/y/z` and let the bridge assemble the vector.
 - The bridge must use the RWS-backed true joint state for closed-loop Cartesian servo tests: `/abb_rws/joint_states`.
 
