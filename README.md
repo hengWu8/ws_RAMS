@@ -89,6 +89,7 @@ Important:
 
 - The underlying bringup still defaults to `publish_commands:=false`.
 - This means the bridge can come up for observation and remote pi0 link checks without automatically commanding the ABB robot.
+- The workcell launcher starts ROS first, seeds the forward position controller with the current ABB RWS joints, then optionally waits for you to start/restart the ABB RAPID EGM program. This preserves the real-cell startup order that made the visible 20 cm EGM test reliable.
 
 To stop both the HMI and the workcell bringup:
 

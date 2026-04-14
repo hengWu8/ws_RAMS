@@ -14,6 +14,22 @@ if [[ $# -gt 0 ]]; then
 fi
 
 PID_FILE="${RUNTIME_DIR}/launch.pid"
+HOLD_SEED_PID_FILE="${RUNTIME_DIR}/hold_seed.pid"
+
+if [[ -f "${HOLD_SEED_PID_FILE}" ]]; then
+  HOLD_SEED_PID="$(cat "${HOLD_SEED_PID_FILE}")"
+  if [[ -n "${HOLD_SEED_PID}" ]] && kill -0 "${HOLD_SEED_PID}" >/dev/null 2>&1; then
+    kill "${HOLD_SEED_PID}" >/dev/null 2>&1 || true
+    sleep 1
+    if kill -0 "${HOLD_SEED_PID}" >/dev/null 2>&1; then
+      kill -9 "${HOLD_SEED_PID}" >/dev/null 2>&1 || true
+    fi
+    echo "Stopped hold seeder pid ${HOLD_SEED_PID}."
+  else
+    echo "Hold seeder pid ${HOLD_SEED_PID} is not running."
+  fi
+  rm -f "${HOLD_SEED_PID_FILE}"
+fi
 
 if [[ ! -f "${PID_FILE}" ]]; then
   echo "No launch pid file found under ${RUNTIME_DIR}."

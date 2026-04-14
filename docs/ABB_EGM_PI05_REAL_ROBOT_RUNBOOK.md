@@ -70,6 +70,29 @@ If real-cell behavior diverges from RobotStudio, compare these fields first.
 
 Use the tested script. It intentionally launches ROS first, seeds the forward position controller with the current real joints, waits for ABB EGM readiness, then arms output only for the requested window.
 
+The general pi05 bringup now follows the same ordering:
+
+```text
+ROS workcell launch
+  -> abb_pi0_bridge starts with publish_commands=false
+  -> /abb_rws/joint_states true-state publisher starts
+  -> seed_forward_position_hold.py publishes current joints to the forward command controller
+  -> operator starts/restarts ABB RAPID EGM
+  -> readiness check waits for EGM_RUNNING
+  -> only then may streaming/arm be enabled
+```
+
+This order matters. Starting ABB EGM before ROS/forward-controller current-position seeding is ready can expose stale or default command behavior at the hardware-interface layer. The hold seeder is stopped automatically before an armed test window so it does not compete with `abb_pi0_bridge`.
+
+Safe pi05 observation bringup:
+
+```bash
+cd /home/rob/workspace/ws_RAMS
+tools/start_workcell_pi0_remote.sh --wait-for-egm-ready-sec 180
+```
+
+The script will start ROS first, seed a current-position hold command, then prompt you to turn Motors On and start/restart the ABB RAPID EGM program. It still leaves `publish_commands=false` unless `--arm` is explicitly requested.
+
 Example 20 cm run:
 
 ```bash
